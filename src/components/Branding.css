@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Open Sans Hebrew Bold';
+    src: url('../assets/fonts/OpenSansHebrew-Bold.ttf') format('ttf')
+}
+
+.Branding{
+    display: flex;
+    user-select: none;
+}
+
+.Branding h1{
+    font-family: 'Open Sans Hebrew Bold', sans-serif;
+    color: #FFFFFF;
+    -webkit-text-stroke: 1px #FFFFFF;
+}
