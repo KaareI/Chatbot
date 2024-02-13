@@ -1,12 +1,20 @@
-.Button{
+.Button {
     padding: 8px;
     background-color: transparent;
     border: none;
     transition: opacity 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.Button:hover{
+.Button:hover {
     cursor: pointer;
     opacity: 1.5;
     transform: scale(1.05);
+}
+
+#CustomButton {
+    display: block;
+    margin: auto;
 }

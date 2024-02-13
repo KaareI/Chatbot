@@ -1,16 +1,17 @@
+@import url('components/reset.css');
+
 @font-face {
-  font-family: 'Open Sans Hebrew Regular';
-  src: url('./assets/fonts/OpenSansHebrew-Regular.ttf') format('ttf')
+    font-family: 'Open Sans Hebrew Regular';
+    src: url('./assets/fonts/OpenSansHebrew-Regular.ttf') format('ttf')
 }
 
-
 .App {
-  height: 100vh;
-  width: 100vw;
-  background: linear-gradient(45deg, #BEBEBE, #ECECEC);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Open Sans Hebrew Regular', sans-serif;
+    height: 100svh;
+    width: 100vw;
+    background: linear-gradient(45deg, #BEBEBE, #ECECEC);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans Hebrew Regular', sans-serif;
 }
 

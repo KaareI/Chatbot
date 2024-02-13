@@ -3,12 +3,14 @@
     src: url('../assets/fonts/OpenSansHebrew-Bold.ttf') format('ttf')
 }
 
-.Branding{
+.Branding {
     display: flex;
+    align-items: center;
     user-select: none;
 }
 
-.Branding h1{
+.Branding h1 {
+    font-size: 24px;
     font-family: 'Open Sans Hebrew Bold', sans-serif;
     color: #FFFFFF;
     -webkit-text-stroke: 1px #FFFFFF;
