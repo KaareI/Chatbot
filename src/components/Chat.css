@@ -1,6 +1,6 @@
 /* Container which involves text exchange between ChatBot and Client */
 .Chat {
-    height: auto;
+    flex: 1;
     background-color: #252525;
     padding: 24px 6%;
     overflow-y: scroll;

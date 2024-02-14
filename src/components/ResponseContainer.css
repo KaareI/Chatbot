@@ -3,8 +3,6 @@
 /* Client "ResponseContainer"- targeted to align itself and it's child elements to the right side of the "Chat" */
 .Chat .ResponseContainer:nth-child(even) {
     margin-left: auto;
-    display: flex;
-    flex-direction: column;
     align-items: flex-end;
 }
 
@@ -12,6 +10,15 @@
 .ResponseContainer {
     width: 85%;
     margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Expand the "ResponseContainer" for smaller devices */
+@media screen and (max-width: 392px) {
+    .ResponseContainer {
+        width: 90%;
+    }
 }
 
 /* Response box with text inside with background color lighter grey (#353535) */

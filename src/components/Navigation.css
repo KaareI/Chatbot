@@ -1,5 +1,6 @@
 /* Top strip above "Chat" with background color black (#121212). Encloses back button and "Branding"*/
 .Navigation {
+    max-height: 72px;
     height: 10%;
     background-color: #121212;
     padding: 16px 4%;

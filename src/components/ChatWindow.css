@@ -50,7 +50,7 @@
     }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 940px) {
     .ChatWindow {
         width: 80%;
         height: 100svh;
