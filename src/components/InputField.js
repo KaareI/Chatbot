@@ -18,17 +18,17 @@ const InputField = () => {
                     width: "90%",
                     height: "100%",
                     padding: "16px",
-                    fontSize: "16px",
+                    fontSize: "14px",
                     backgroundColor: "transparent",
                     border: "none",
                     color: "#ECECEC",
-                    outline: "none"
+                    outline: "none",
                 }}
             />
 
             <button className={"Button"} style={{margin: "auto"}}>
                 <img src={SendButton} alt="Back Button"
-                     style={{width: '32px', height: '24px', margin: "auto"}}
+                     style={{width: '24px', height: '16px', margin: "auto"}}
                 />
             </button>
 

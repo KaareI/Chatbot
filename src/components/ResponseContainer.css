@@ -1,0 +1,46 @@
+/* "ResponseContainer"s alternate between Client and ChatBot- so consecutively can not two "ResponseContainer"s be Client's or ChatBot's */
+
+/* Client "ResponseContainer"- targeted to align itself and it's child elements to the right side of the "Chat" */
+.Chat .ResponseContainer:nth-child(even) {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Whole container for replies of ChatBot and Client both */
+.ResponseContainer {
+    width: 85%;
+    margin-bottom: 32px;
+}
+
+/* Response box with text inside with background color lighter grey (#353535) */
+.Response {
+    display: inline-block;
+    max-width: 100%;
+    background-color: #353535;
+    color: #ECECEC;
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Targets odd "Response" boxes of ChatBot to make space between responses */
+.ResponseContainer .Response:nth-child(odd) {
+    margin-top: 8px;
+}
+
+/* Additional class for ChatBot "Response" box */
+.Bot {
+    border-radius: 0 8px 8px 8px;
+    margin-left: 20px;
+}
+
+/* Additional class for Client "Response" box */
+.Client {
+    background-color: #1277FD;
+    border-radius: 8px 0px 8px 8px;
+    margin-left: auto;
+}
+
+

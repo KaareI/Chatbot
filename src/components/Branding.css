@@ -1,17 +1,23 @@
-@font-face {
-    font-family: 'Open Sans Hebrew Bold';
-    src: url('../assets/fonts/OpenSansHebrew-Bold.ttf') format('ttf')
-}
-
+/* Tickmill logo and ChatBot name */
 .Branding {
     display: flex;
     align-items: center;
     user-select: none;
+    margin-bottom: 3px;
 }
 
-.Branding h1 {
+/* Branding on the right side of the navigation */
+.BrandingBig {
     font-size: 24px;
     font-family: 'Open Sans Hebrew Bold', sans-serif;
     color: #FFFFFF;
-    -webkit-text-stroke: 1px #FFFFFF;
+    -webkit-text-stroke: 0.5px #FFFFFF;
+}
+
+/* Branding on top of each "ResponseContainer" for ChatBot */
+.BrandingSmall {
+    font-weight: 200;
+    font-size: 14px;
+    font-family: 'Open Sans Hebrew Regular', sans-serif;
+    color: #ECECEC;
 }

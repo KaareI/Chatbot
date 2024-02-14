@@ -1,0 +1,9 @@
+/* Text above Client's message "You"  */
+.Addressor{
+    display: flex;
+    justify-content: flex-end;
+    color: #ECECEC;
+    user-select: none;
+    margin-bottom: 3px;
+    font-size: 14px;
+}

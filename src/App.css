@@ -1,14 +1,10 @@
 @import url('components/reset.css');
-
-@font-face {
-    font-family: 'Open Sans Hebrew Regular';
-    src: url('./assets/fonts/OpenSansHebrew-Regular.ttf') format('ttf')
-}
+@import url('components/font.css');
 
 .App {
     height: 100svh;
     width: 100vw;
-    background: linear-gradient(45deg, #BEBEBE, #ECECEC);
+    background: linear-gradient(45deg, #353535, #454545);
     display: flex;
     justify-content: center;
     align-items: center;

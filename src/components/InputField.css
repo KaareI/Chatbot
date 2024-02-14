@@ -1,6 +1,12 @@
+/* Container that surronds input field and send button */
 .InputField {
     height: 75%;
     background-color: #353535;
     border-radius: 8px;
     display: flex;
+}
+
+/* Targets Client's input field */
+.InputField input {
+    width: 98% !important;
 }

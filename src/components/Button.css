@@ -11,10 +11,5 @@
 .Button:hover {
     cursor: pointer;
     opacity: 1.5;
-    transform: scale(1.05);
-}
-
-#CustomButton {
-    display: block;
-    margin: auto;
+    transform: scale(1.1);
 }

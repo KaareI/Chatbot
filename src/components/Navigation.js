@@ -15,10 +15,10 @@ const Navigation = () => {
         <div className="Navigation">
             <button className={"Button"}>
                 <img src={BackButton} alt="Back Button" style={
-                    {width: '40px', height: '24px'}
+                    {width: '32px', height: '16px'}
                 }/>
             </button>
-            <Branding></Branding>
+            <Branding imgWidth="24px" imgHeight="32px" imgMarginRight="8px"/>
         </div>
     );
 }

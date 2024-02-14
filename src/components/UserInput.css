@@ -1,5 +1,6 @@
+/* Last element in "ChatWindow", that has element "InputField" inside it */
 .UserInput {
     height: 13%;
-    padding: 0 56px;
+    padding: 0 6%;
     background-color: #252525;
 }

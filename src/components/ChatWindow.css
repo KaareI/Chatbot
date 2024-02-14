@@ -1,3 +1,4 @@
+/* Whole container for ChatBot window, includes: "Navigation", "Chat", "UserInput" */
 .ChatWindow {
     height: 85%;
     display: flex;

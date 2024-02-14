@@ -1,4 +1,12 @@
+/* Container which involves text exchange between ChatBot and Client */
 .Chat {
-    height: 77%;
+    height: auto;
     background-color: #252525;
+    padding: 24px 6%;
+    overflow-y: scroll;
+}
+
+/* Chat scrollbar */
+.Chat::-webkit-scrollbar {
+    width: 0;
 }
