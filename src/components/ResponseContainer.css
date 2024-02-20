@@ -41,6 +41,7 @@
 .Bot {
     border-radius: 0 8px 8px 8px;
     margin-left: 20px;
+    margin-right: auto;
 }
 
 /* Additional class for Client "Response" box */

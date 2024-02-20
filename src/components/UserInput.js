@@ -6,10 +6,11 @@ import './UserInput.css';
 // Import components
 import InputField from "./InputField";
 
-const UserInput = () => {
+const UserInput = ({ sendInput }) => {
     return (
         <div className={"UserInput"}>
-            <InputField></InputField>
+            {/* Pass the sendInput function to the InputField component */}
+            <InputField sendInput={sendInput} />
         </div>
     );
 }

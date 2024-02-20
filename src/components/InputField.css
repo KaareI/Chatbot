@@ -10,3 +10,9 @@
 .InputField input {
     width: 98% !important;
 }
+
+/* Disabled class for input field and button */
+.Disabled{
+    pointer-events: none;
+    opacity: 0.6;
+}

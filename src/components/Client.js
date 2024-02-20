@@ -1,13 +1,13 @@
 import React from "react";
 
 // Import CSS
-import './Client.css'
+import './Client.css';
 
-const Client = () => {
+const Client = ({ message }) => {
     return (
         <>
             <p className={"Addressor"}>You</p>
-            <p className={"Response Client"}>Does Tickmill offer Cash or Future CFDs?</p>
+            <p className={"Response Client"}>{message}</p>
         </>
     );
 }
