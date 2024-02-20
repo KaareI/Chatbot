@@ -1,15 +1,21 @@
-// Import CSS
+import React, {useState} from "react";
 import './App.css';
-
-// Import components
 import ChatWindow from "./components/ChatWindow";
 import Login from "./components/Login";
 
 function App() {
+    // State to manage login status
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+    // Handler function to set login status
+    const handleLoginSuccess = (data) => {
+        setIsLoggedIn(true); // Set login status to true
+    };
+
     return (
         <div className={"App"}>
-{/*            <ChatWindow></ChatWindow>*/}
-            <Login></Login>
+            {/* Conditional rendering based on login status */}
+            {isLoggedIn ? <ChatWindow/> : <Login onLoginSuccess={handleLoginSuccess}/>}
         </div>
     );
 }

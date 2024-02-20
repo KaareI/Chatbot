@@ -45,3 +45,21 @@
     font-weight: 700;
     letter-spacing: 0.5px;
 }
+
+/* Shake animation when credentials are incorrect */
+@keyframes shake {
+    0% { transform: skewX(-15deg); }
+    5% { transform: skewX(15deg); }
+    10% { transform: skewX(-15deg); }
+    15% { transform: skewX(15deg); }
+    20% { transform: skewX(0deg); }
+    100% { transform: skewX(0deg); }
+}
+
+/* Error class */
+.shake {
+    animation: shake 1.5s ease-in-out;
+    outline: 1px solid red;
+}
+
+

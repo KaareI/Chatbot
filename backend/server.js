@@ -63,3 +63,16 @@ app.post('/login', async (req, res) => {
         }
     });
 });
+
+// Logout handle
+app.get('/logout', (req, res) => {
+    // Destroy the user's session to log them out
+    req.session.destroy((err) => {
+        if (err) {
+            console.error('Error destroying session:', err);
+            return res.status(500).json({error: 'Server error'});
+        }
+        // Send a response indicating successful logout
+        res.status(200).json({ message: 'Logout successful' });
+    });
+});
