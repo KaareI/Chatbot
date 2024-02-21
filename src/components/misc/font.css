@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Open Sans Hebrew Regular';
+    src: url('../../assets/fonts/OpenSansHebrew-Regular.ttf') format('ttf')
+}
+
+@font-face {
+    font-family: 'Open Sans Hebrew Bold';
+    src: url('../../assets/fonts/OpenSansHebrew-Bold.ttf') format('ttf')
+}

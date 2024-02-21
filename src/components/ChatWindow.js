@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from 'react';
 
 // Import CSS
 import './ChatWindow.css'
@@ -7,21 +7,32 @@ import './ChatWindow.css'
 import Navigation from "./Navigation";
 import Chat from "./Chat";
 import UserInput from "./UserInput";
+import AccountInformation from "./misc/BotAnswers";
 
 const ChatWindow = () => {
 
     const [messages, setMessages] = useState([]);
 
     const handleSendMessage = (message) => {
-/*        console.log("Message in ChatWindow function: ", message)*/
-        const newMessage = {
-            id: messages.length + 1,
-            userId: 1, // You can assign a user ID here
-            message: message
-        };
-        setMessages([...messages, newMessage]);
+        setMessages(prevMessages => {
+/*            console.log("Messages length in ChatWindow function: ", prevMessages.length);*/
+            const newMessage = {
+                id: prevMessages.length + 1,
+                userId: 1, // You can assign a user ID here
+                message: message,
+            };
+/*            console.log("Message in ChatWindow function: ", message);*/
+            return [...prevMessages, newMessage];
+        });
     };
-/*    console.log("Messages in ChatWindow: ", messages)*/
+
+//TEMPO
+    useEffect(() => {
+        handleSendMessage("Are trading conditions the same on my demo and live account?")
+        handleSendMessage(AccountInformation[12].message)
+    }, []);
+//TEMPO
+
 
     return (
         <div className={"ChatWindow"}>
