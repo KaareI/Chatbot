@@ -13,12 +13,13 @@ const ChatWindow = () => {
 
     const [messages, setMessages] = useState([]);
 
-    const handleSendMessage = (message) => {
+    const handleSendMessage = (message, userMessage) => {
         setMessages(prevMessages => {
 /*            console.log("Messages length in ChatWindow function: ", prevMessages.length);*/
             const newMessage = {
                 id: prevMessages.length + 1,
-                userId: 1, // You can assign a user ID here
+                userId: 1,
+                userMessage:userMessage,
                 message: message,
             };
 /*            console.log("Message in ChatWindow function: ", message);*/
@@ -27,10 +28,10 @@ const ChatWindow = () => {
     };
 
 //TEMPO
-    useEffect(() => {
-        handleSendMessage("Are trading conditions the same on my demo and live account?")
-        handleSendMessage(TradingConditions[11].message)
-    }, []);
+/*    useEffect(() => {
+        handleSendMessage("Do trading conditions differ on my live and demo account?", true)
+        handleSendMessage(TradingConditions[19].message, false)
+    }, []);*/
 //TEMPO
 
 

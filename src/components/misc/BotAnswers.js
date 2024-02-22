@@ -6,6 +6,8 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Are trading conditions the same on my demo and live account?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Yes, the trading conditions are the same. However, please note that demo accounts operate in a
                     simulated environment which means that no slippage occurs whereas price updates might differ from
@@ -19,6 +21,7 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Can I change the balance of my demo account?"</em></h4>
                 <p className={"Response Bot"}>
                     Yes. Simply send an email with your demo account number and decided balance to our <a
                     title="Support Team" href="https://www.tickmill.eu/about/contact-us" target="_blank">Support
@@ -32,6 +35,7 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Can I change the settings of my demo account?"</em></h4>
                 <p className={"Response Bot"}>
                     Yes. Simply send an email with your demo account number and decided balance to our <a
                     title="Support Team" href="https://www.tickmill.eu/about/contact-us" target="_blank">Support
@@ -45,6 +49,8 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Can I have a demo and live account working at the same time?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Yes. In order to do so, install a MetaTrader platform in different folders on your computer for each
                     of your trading accounts.
@@ -57,6 +63,8 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Can the account be closed/deleted?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     You can close an account but we will keep your data, in accordance with legislation, on our files
                     for a minimum period of 7 years. <br/>If your account is inactive for 60 days or more and the
@@ -70,6 +78,8 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"How do I modify or delete a trade in the MetaTrader platform?"</em>
+                </h4>
                 <p className={"Response Bot"}>Right-click on the instrument you placed the trade with and use the
                     options ‘Modify the trade’ or ‘Delete the trade’.
                 </p>
@@ -81,6 +91,8 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"How do I open a MetaTrader account?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     You can open an account in the Client Area, efficiently and securely. Click <a title="Here"
                                                                                                    target="_blank"
@@ -95,6 +107,8 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"I forgot my Client Area password. What do I do?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Go to the <a title="Client Area" href="https://secure.tickmill.eu/users/login" target="_blank">Client
                     Area</a> login page click on the ‘Forgot your Password?’ link under the ‘Login’ button and follow
@@ -110,6 +124,8 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"I forgot my MetaTrader account password. What do I do?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     You can change the password of your MetaTrader 4 or MetaTrader 5 account inside the secure <a
                     title="Client Area" href="https://secure.tickmill.eu/users/login" target="_blank">Client Area</a>.
@@ -125,6 +141,8 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Is it possible to archive an account that is not in use?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     An account may get archived under certain conditions. If the account balance is equal or less than
                     50 GBP/EUR/USD/CHF and/or 250 PLN and there were no login attempts to the trading platform or no
@@ -140,6 +158,8 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What account types do you offer?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     We offer 3 account types: Classic, Pro and VIP. All accounts have the same execution
                     speed.<br/><br/>Their
@@ -174,6 +194,8 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What are the requirements to register for a Client Area?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     To register for an individual Client Area, you must submit your Proof of Address (POA) and Proof of
                     Identity (POI) documents, whereas to register for a Corporate Client Area, you must
@@ -206,6 +228,9 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"When are swaps charged at a triple rate for currency pairs and
+                    metals?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Triple swap charges apply for positions on FX pairs, Silver and Gold that are held overnight on
                     Wednesday. For the rest of the instruments, triple swap charges apply for positions that are held
@@ -226,6 +251,8 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Where can I check the SWAP rates?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     We update the swaps based on the rates given to us by our counterparties and we recommend checking
                     the swap rates on a regular basis within the MetaTrader platform. Our updated swaps are always
@@ -243,6 +270,8 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Where can I find my account balance and my trading history?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     You can find your account balance and trading history in the MetaTrader platform. The account
                     balance can also be seen in your <a title="Client Area"
@@ -257,6 +286,8 @@ export const AccountInformation = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Will my funds be protected at Tickmill?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     As a member of the Investors Compensation Fund (ICF) in Cyprus, all retail clients of Tickmill
                     Europe Ltd are covered in the event of default by Tickmill Europe Ltd. Eligible clients are covered
@@ -274,6 +305,9 @@ export const DepositsAndWithdrawals = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Can I transfer my money from trading account if I have an open
+                    position(s)?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Yes, you can. However, at the moment of transfer from trading account to Wallet, your free margin
                     must exceed the requested amount. Free margin is calculated as equity minus the necessary margin
@@ -290,6 +324,8 @@ export const DepositsAndWithdrawals = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Can I withdraw via a different payment method from the one I used to deposit?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Tickmill’s policy is to process withdrawals via the same method that you used to deposit. For
                     example, if you deposited using a credit card, the card will be credited with the amount equal to
@@ -303,6 +339,8 @@ export const DepositsAndWithdrawals = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Do you have any charges on deposits and withdrawals?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Tickmill has a zero fees policy on deposits and withdrawals.
                 </p>
@@ -314,6 +352,8 @@ export const DepositsAndWithdrawals = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"How do I deposit funds to my account?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     You can make a deposit inside your <a title="Client Area" target="_blank"
                                                           href="https://secure.tickmill.eu/users/login">Client
@@ -330,6 +370,8 @@ export const DepositsAndWithdrawals = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"How do I withdraw funds from my account?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     <a title="Log In" href="https://secure.tickmill.eu/users/login" target="_blank">Log in</a> to your
                     Client Area and fill in the respective withdrawal form. There are no fees on
@@ -343,6 +385,8 @@ export const DepositsAndWithdrawals = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"How fast do you process my withdrawals?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     We process all withdrawal requests within one working day.
                 </p>
@@ -354,6 +398,8 @@ export const DepositsAndWithdrawals = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"How long does it take for funds to reach my bank account?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     We process all withdrawal requests within one working day. The time necessary for the funds to reach
                     your bank account depends on your bank’s policy. Bank withdrawals can take 3-7 working days to be
@@ -368,6 +414,8 @@ export const DepositsAndWithdrawals = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Is broker to broker transfer allowed?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     We do not support broker to broker transfer, we only offer our standard payment methods.
                 </p>
@@ -379,6 +427,8 @@ export const DepositsAndWithdrawals = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What is the minimum deposit?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     The minimum deposit for all account types is $100. However, to get a VIP account, you have to reach
                     a balance of minimum $50,000.
@@ -394,6 +444,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Are the measures permanent?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     The product intervention measures have been adopted by the relevant competent authority on a
                     permanent basis.
@@ -406,6 +458,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Can I have a professional account and a retail account at the same time?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     A client can be a Retail or a Professional Client. Tickmill Europe Ltd will not be offering a retail
                     and a professional account at the same time. You will be classified either as a Professional or a
@@ -419,6 +473,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Do I get negative balance protection as an elective Professional Client?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Yes, professional clients can benefit from negative balance protection.<br/><br/>It is important to
                     note that Tickmill offers Negative Balance Protection to professional clients, which is not the
@@ -432,6 +488,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Do the product intervention measures apply to companies as well?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Yes, they do. The mesures apply to Retail Clients, whether they are individuals or corporations.
                 </p>
@@ -443,6 +501,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Do the product intervention measures only apply to clients living in the EU?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     The product intervention measures apply to all clients trading with Tickmill Europe Ltd,
                     irrespective of their location.
@@ -455,6 +515,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Does my professional qualification guarantee I will become a Professional Client?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     No. A relevant qualification alone will not guarantee that someone will become a Professional
                     Client. However, it will be looked upon favourably.
@@ -467,6 +529,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"How can I become a Professional Client?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     A client who wishes to be reclassified must meet the minimum criteria to be eligible to become an
                     elective Professional Client.<br/><br/>Clients who wish to do so must complete the relevant
@@ -484,6 +548,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Once I become a Professional Client, can I revert to Retail Client status if I wish?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Yes – Clients have the right to be reclassified at any time. Please <a title="Email"
                                                                                            href="mailto:compliance@tickmill.eu">email</a> our
@@ -497,6 +563,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What are the minimum requirements to become a Professional Client?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     A Professional Client must possess the relevant experience, knowledge and expertise to be able to
                     make their own investment decisions and properly assess the risks involved.<br/><br/>Please
@@ -510,6 +578,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What are the practical implications of becoming a Professional Client??"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     As a Professional Client, you will not have the following protections afforded to Retail Clients
                     under CySEC:<br/><br/>
@@ -537,6 +607,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What are the product intervention measures?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     The product intervention measures stipulated by the relevant competent authority restrict the
                     marketing, distribution or sale of CFDs to retail investors, by providing the following protections:<br/><br/>
@@ -565,6 +637,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What can I do if I fail to meet the minimum criteria to reclassify as a Professional Client?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Our Retail Clients will enjoy the maximum protection available under CySEC rules. If you do not meet
                     the minimum requirements, then you will continue to be classified as a Retail Client. Kindly note
@@ -578,6 +652,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What can I use in my investment portfolio?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     You can use bank statements, share certificates and SIPS (provided it is not a company pension).
                     This list is not exhaustive.<br/><br/>We will not accept company pensions, physical commodities and
@@ -591,6 +667,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What criteria do I need to meet to become a Professional Client?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Clients reclassifying as Elective Professionals are required to satisfy a 2/3 criterion:<br/><br/>
                     <ul>
@@ -609,6 +687,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What does a leverage limit imply?</em>
+                </h4>
                 <p className={"Response Bot"}>
                     The leverage limits imposed on CFDs set the maximum leverage that providers can offer you opening a
                     CFD position.<br/><br/>In order to comply with the ESMA Product Intervention measures, Tickmill has
@@ -625,6 +705,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What evidence will a client be asked to submit to reclassify as a Professional Client?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     <ul>
                         <li>Evidence of trading activity showing approximately <strong>40 trades of a significant
@@ -651,6 +733,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What is ESMA?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     ESMA is an independent EU Authority that contributes to safeguarding the stability of the European
                     Union’s financial system by enhancing the protection of investors and promoting stable and orderly
@@ -664,6 +748,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What is negative balance protection?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     <ul>
                         <li>The negative balance protection limits the maximum losses that a retail investor could have.
@@ -684,6 +770,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What is the new margin close-out rule and what are the practical implications of it?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     <ul>
                         <li>The margin close-out rule standardises the percentage of margin at which CFD providers are
@@ -709,6 +797,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What level of professional experience do I need to have to qualify as a Professional Client?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     The minimum professional experience requirement is to have worked in an industry and a role that
                     required a good understanding of CFDs and the foreign exchange market for at least one year.
@@ -721,6 +811,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Who can be a Professional Client?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     A Professional Client can be either ’by default’ or ’elective’:<br/><br/><strong><u>By Default
                     Professional Client:</u></strong><br/><br/>
@@ -780,6 +872,8 @@ export const ProductInterventionMeasures = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Will my funds still be protected if I become a Professional Client?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     If you choose to become an elective Professional Client, your funds will continue to be held in
                     segregated accounts but will not be covered by the Investor Compensation Fund (ICF).
@@ -795,6 +889,8 @@ export const TradingConditions = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Are hedging and scalping allowed?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Hedging is allowed. The required margin for hedging positions on <a title="Classic"
                                                                                         href="https://www.tickmill.eu/trading/classic-account">Classic</a>, <a
@@ -810,6 +906,8 @@ export const TradingConditions = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Do I get any requotes?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Tickmill is one of the few brokers that doesn’t have any requotes.
                 </p>
@@ -821,6 +919,8 @@ export const TradingConditions = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Do you offer FIX API connection?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     We offer FIX API connection to our large private clients and institutional clients. The minimum
                     account balance required is 500,000 £$€ and the required minimum monthly commission fee generated
@@ -837,6 +937,8 @@ export const TradingConditions = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Do you offer MetaTrader MultiTerminal?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     We do not offer MetaTrader MultiTerminal.<br/><br/>If you wish, you can install multiple MetaTrader
                     platforms and place them in different folders. You can download the <a title="Mt4 Platform"
@@ -857,6 +959,8 @@ export const TradingConditions = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Do you offer negative balance protection/cover negative balance?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Traders who use the maximum leverage available face the risk of a negative balance.<br/><br/>For
                     example: Let’s assume that you have 200 USD on your account and you open 1 lot on USDJPY on Friday
@@ -879,6 +983,8 @@ export const TradingConditions = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Do you offer Swap-Free accounts?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Yes, we offer Muslim traders all our accounts with a <a title="Swap-free Option"
                                                                             href="https://www.tickmill.eu/trading/islamic-account">swap-free
@@ -892,6 +998,8 @@ export const TradingConditions = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Do you provide tick data?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Currently, we do not provide tick data, as MetaTrader platforms are not able to store all ticks.
                     Therefore, the tick data would not be accurate. There is an option for the server to store tick
@@ -906,21 +1014,11 @@ export const TradingConditions = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Does slippage occur in your platform?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     At Tickmill, slippage can occur during big news announcements, depending on the market conditions
                     and volatility. There could be both positive and negative slippage.
-                </p>
-            </div>
-        )
-    },
-    {
-        id: 55,
-        message: (
-            <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
-                <p className={"Response Bot"}>
-                    We do offer Cash CFDs that allow you to trade with a continuous price that isn’t subject to an
-                    expiration date. The Cash CFD price is derived from the underlying futures contracts.
                 </p>
             </div>
         )
@@ -930,6 +1028,22 @@ export const TradingConditions = [
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Does Tickmill offer Cash or Future CFDs?"</em>
+                </h4>
+                <p className={"Response Bot"}>
+                    We do offer Cash CFDs that allow you to trade with a continuous price that isn’t subject to an
+                    expiration date. The Cash CFD price is derived from the underlying futures contracts.
+                </p>
+            </div>
+        )
+    },
+    {
+        id: 57,
+        message: (
+            <div className={"ResponseContainer"}>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"How can I find/check historical data?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     You can download historical data from the MetaTrader trading platform, by clicking on:<br/><br/>Tools
                     > History Centre – then choose a trading instrument and finally press the ‘Download’
@@ -942,10 +1056,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 57,
+        id: 58,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"How many platforms are available for trading?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     We offer some of the most popular and easy-to-use platforms, the MetaTrader 4 and the MetaTrader 5,
                     which are available for Windows, OS X, iOS and Android. At Tickmill, you can also trade instantly
@@ -955,10 +1071,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 58,
+        id: 59,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"VWAP Execution explained"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     The VWAP or Volume Weighted Average Price is the average price at which your order is executed,
                     where each trade price is weighted by the fraction of the volume associated with the
@@ -1040,10 +1158,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 59,
+        id: 60,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What are the advantages of trading with Tickmill?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Tickmill provides you with low spreads starting from 0.0 pips and ultra-fast execution speed of 0.15
                     second on average. Skrill, Neteller and credit card deposits are processed instantly while
@@ -1054,10 +1174,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 60,
+        id: 61,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What are the limits of setting SL, TP, and TS?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     You can set Stop Loss and Take Profit orders with no limits on all account types. SL and TP orders
                     will still be active, even if your computer is switched off. The minimum Trailing Stop level is 1.5
@@ -1068,10 +1190,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 61,
+        id: 62,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What are the minimum and maximum account leverage you offer?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     <strong>For Retail Clients:</strong><br/>The minimum leverage is 1:1. The maximum and default
                     leverage is 1:30.<br/><br/>
@@ -1094,10 +1218,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 62,
+        id: 63,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What are the minimum and maximum position sizes?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     The minimum trade size is 0.01 lot and the maximum trade size is 100 lots. The maximum amount of
                     orders you can open on a MetaTrader account is 200.
@@ -1106,10 +1232,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 63,
+        id: 64,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What are your margin call/stop out levels?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Our margin call / stop out levels are different depending on whether you are a Retail or a
                     Professional client:<br/><br/>
@@ -1154,10 +1282,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 64,
+        id: 65,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What are your spreads?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     We offer floating spreads for all account types – <a title="Classic"
                                                                          href="https://www.tickmill.eu/trading/classic-account"
@@ -1177,10 +1307,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 65,
+        id: 66,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What are your trading hours?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     FX trading is available 24 hours a day, 5 days a week. You can trade on Monday from 00:02 until
                     24:00, from Tuesday 00:00 to Thursday 24:00 and on Friday from 00:00 until 23:58 (MT4 Server time).
@@ -1206,10 +1338,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 66,
+        id: 67,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What commission will I be charged for trading on the MetaTrader platform?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     There are no commissions on the <a title="Classic Account"
                                                        href="https://www.tickmill.eu/trading/classic-account">Classic
@@ -1220,10 +1354,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 67,
+        id: 68,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What is slippage?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Slippage often occurs during periods of higher volatility (for example due to news events), making
                     an Order at a specific price impossible to execute, when market orders are used, and also when large
@@ -1236,10 +1372,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 68,
+        id: 69,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What is the commission on the Pro account?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     The <a title="Pro Account" href="https://www.tickmill.eu/trading/pro-account">Pro account</a> has a
                     commission of 2 currency units per side per lot (0.0020% notional) in the base currency of the
@@ -1253,10 +1391,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 69,
+        id: 70,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What is the commission on the VIP account?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     On the <a title="Vip Account" href="https://www.tickmill.eu/trading/vip-account">VIP account</a>,
                     there is a commission of 1 currency unit per side per lot (0.0010% notional) in the base currency of
@@ -1270,10 +1410,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 70,
+        id: 71,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What is the margin call procedure for MT4/MT5?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Negative price movement can potentially lead to a margin call and the subsequent triggering of an
                     automated margin close-out of positions. In the event that market conditions are unfavourable to
@@ -1293,10 +1435,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 70,
+        id: 72,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What is Tickmill’s trade execution model?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Tickmill’s execution model is designed to provide a fast and secure trading experience for clients.
                     Tickmill’s hybrid execution model therefore involves both market-making and straight through
@@ -1307,10 +1451,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 71,
+        id: 73,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"What is your order execution speed?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Our average execution speed is around 0.20 seconds.
                 </p>
@@ -1318,10 +1464,12 @@ export const TradingConditions = [
         )
     },
     {
-        id: 72,
+        id: 74,
         message: (
             <div className={"ResponseContainer"}>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <h4 className={"Response Bot"}><em>"Where is Tickmill regulated?"</em>
+                </h4>
                 <p className={"Response Bot"}>
                     Tickmill is the trading name of Tickmill Europe Ltd which is authorised and regulated by the Cyprus
                     Securities and Exchange Commission (CySEC).<br/><br/>Tickmill is also the trading name of Tickmill

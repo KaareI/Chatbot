@@ -27,7 +27,7 @@ const Chat = ({messages}) => {
             </div>
             {messages.map((message) => (
                 <div key={message.id} className={"ResponseContainer"}>
-                    {message.id % 2 === 1 ? (
+                    {message.userMessage === true ? (
                         <Client message={message.message} />
                     ) : (
                         message.message
