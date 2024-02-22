@@ -3,7 +3,13 @@ ul, ol {
     margin-left: 24px;
 }
 
+/* Targets "Greeting" component list */
 li{
-    margin-bottom: 4px;
     font-weight: bold;
+    margin-bottom: 4px;
+}
+
+/* Targets lists for chatbot responses */
+p li{
+    font-weight: initial;
 }

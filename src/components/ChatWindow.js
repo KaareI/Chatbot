@@ -7,7 +7,7 @@ import './ChatWindow.css'
 import Navigation from "./Navigation";
 import Chat from "./Chat";
 import UserInput from "./UserInput";
-import AccountInformation from "./misc/BotAnswers";
+import { AccountInformation, DepositsAndWithdrawals, ProductInterventionMeasures, TradingConditions } from './misc/BotAnswers';
 
 const ChatWindow = () => {
 
@@ -29,7 +29,7 @@ const ChatWindow = () => {
 //TEMPO
     useEffect(() => {
         handleSendMessage("Are trading conditions the same on my demo and live account?")
-        handleSendMessage(AccountInformation[12].message)
+        handleSendMessage(TradingConditions[11].message)
     }, []);
 //TEMPO
 
