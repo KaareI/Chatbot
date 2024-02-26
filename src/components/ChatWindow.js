@@ -28,10 +28,10 @@ const ChatWindow = () => {
     };
 
 //TEMPO
-/*    useEffect(() => {
+    useEffect(() => {
         handleSendMessage("Do trading conditions differ on my live and demo account?", true)
-        handleSendMessage(TradingConditions[19].message, false)
-    }, []);*/
+        handleSendMessage(TradingConditions[28].message, false)
+    }, []);
 //TEMPO
 
 
