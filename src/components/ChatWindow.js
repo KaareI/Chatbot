@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 
 // Import CSS
 import './ChatWindow.css'
@@ -7,7 +7,12 @@ import './ChatWindow.css'
 import Navigation from "./Navigation";
 import Chat from "./Chat";
 import UserInput from "./UserInput";
-import { AccountInformation, DepositsAndWithdrawals, ProductInterventionMeasures, TradingConditions } from './misc/BotAnswers';
+import {
+    AccountInformation,
+    DepositsAndWithdrawals,
+    ProductInterventionMeasures,
+    TradingConditions
+} from './misc/BotAnswers';
 
 const ChatWindow = () => {
 
@@ -16,46 +21,41 @@ const ChatWindow = () => {
     /* Create new message */
     const handleSendMessage = (message, userMessage) => {
         setMessages(prevMessages => {
-/*            console.log("Messages length in ChatWindow function: ", prevMessages.length);*/
+            /*            console.log("Messages length in ChatWindow function: ", prevMessages.length);*/
             const newMessage = {
                 orderId: prevMessages.length + 1,
-                userId: 1,
+                userId: null,
                 chatId: 1,
-                userMessage:userMessage,
+                userMessage: userMessage,
                 message: message,
             };
-/*            console.log("Message in ChatWindow function: ", message);*/
+            /*            console.log("Message in ChatWindow function: ", message);*/
             return [...prevMessages, newMessage];
         });
     };
 
     /* Save last message to database */
     const saveMessages = () => {
-/*        console.log("Messages before saving:", messages)*/
+        /*        console.log("Messages before saving:", messages)*/
         /* Make a request to server with messages */
         fetch("/saveMessages", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ messages }),
+            body: JSON.stringify({messages}),
             credentials: 'same-origin',
         })
 
             /* Handle response from server */
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Invalid credentials');
+                    throw new Error('Error saving messages');
+                } else {
+                    /* SUCCESSFUL SAVE OF MESSAGES */
+                    console.log("Messages saved")
                 }
-                // Handle successful response
-                return response.json();
             })
-
-            /* SUCCESSFUL SAVE OF MESSAGES */
-            .then(() => {
-                console.log("Messages saved")
-            })
-
             /* Handle errors that occur during the fetch request */
             .catch(error => {
                 console.log("error: ", error)
@@ -64,7 +64,7 @@ const ChatWindow = () => {
 
 //TEMPO
     useEffect(() => {
-/*        console.log("Messages", messages);*/
+        /*        console.log("Messages", messages);*/
         saveMessages()
     }, [messages]); // This useEffect will be triggered whenever the messages state changes
 //TEMPO

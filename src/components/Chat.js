@@ -25,8 +25,8 @@ const Chat = ({messages}) => {
             <div className={"ResponseContainer"}>
                 <Greeting></Greeting>
             </div>
-            {messages.map((message) => (
-                <div key={message.id} className={"ResponseContainer"}>
+            {messages.map((message, index) => (
+                <div key={index} className={"ResponseContainer"}>
                     {message.userMessage === true ? (
                         <Client message={message.message} />
                     ) : (

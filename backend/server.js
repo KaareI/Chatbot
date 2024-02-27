@@ -31,6 +31,8 @@ async function comparePassword(plaintextPassword, hash) {
     return result;
 }
 
+let loggedInUser;
+
 // Login logic
 app.post('/login', async (req, res) => {
     const {username, password} = req.body;
@@ -49,12 +51,16 @@ app.post('/login', async (req, res) => {
         }
 
         const hashedPassword = results[0].User_Password;
+        /*        console.log("Results",results[0])*/
 
         // Compare the provided password with the hashed password from the database
         const passwordsMatch = await comparePassword(password, hashedPassword);
 
         if (passwordsMatch) {
             // Authentication successful
+            // Get the id of logged-in user
+            /*            console.log("logged-in user id", results[0].id)*/
+            loggedInUser = results[0].id
             req.session.isAuthenticated = true;
             res.json(true);
         } else {
@@ -92,11 +98,13 @@ app.put('/saveMessages', (req, res) => {
         // Extract the last message from the messages array
         const lastMessage = messages[messages.length - 1];
 
-/*        console.log("orderId: " + lastMessage.orderId)
-        console.log("userId: " + lastMessage.userId)
-        console.log("chatId: " + lastMessage.chatId)
-        console.log("userMessage: " + lastMessage.userMessage)
-        console.log("Message: " + lastMessage.message)*/
+        lastMessage.userId = loggedInUser;
+
+        /*                console.log("orderId: " + lastMessage.orderId)
+                        console.log("userId: " + lastMessage.userId)
+                        console.log("chatId: " + lastMessage.chatId)
+                        console.log("userMessage: " + lastMessage.userMessage)
+                        console.log("Message: " + lastMessage.message)*/
 
         // Destructure the last message
         const {orderId, userId, chatId, userMessage, message} = lastMessage;
