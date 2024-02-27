@@ -13,12 +13,14 @@ const ChatWindow = () => {
 
     const [messages, setMessages] = useState([]);
 
+    /* Create new message */
     const handleSendMessage = (message, userMessage) => {
         setMessages(prevMessages => {
 /*            console.log("Messages length in ChatWindow function: ", prevMessages.length);*/
             const newMessage = {
-                id: prevMessages.length + 1,
+                orderId: prevMessages.length + 1,
                 userId: 1,
+                chatId: 1,
                 userMessage:userMessage,
                 message: message,
             };
@@ -27,10 +29,50 @@ const ChatWindow = () => {
         });
     };
 
+    /* Save last message to database */
+    const saveMessages = () => {
+/*        console.log("Messages before saving:", messages)*/
+        /* Make a request to server with messages */
+        fetch("/saveMessages", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ messages }),
+            credentials: 'same-origin',
+        })
+
+            /* Handle response from server */
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Invalid credentials');
+                }
+                // Handle successful response
+                return response.json();
+            })
+
+            /* SUCCESSFUL SAVE OF MESSAGES */
+            .then(() => {
+                console.log("Messages saved")
+            })
+
+            /* Handle errors that occur during the fetch request */
+            .catch(error => {
+                console.log("error: ", error)
+            });
+    };
+
+//TEMPO
+    useEffect(() => {
+/*        console.log("Messages", messages);*/
+        saveMessages()
+    }, [messages]); // This useEffect will be triggered whenever the messages state changes
+//TEMPO
+
 //TEMPO
     useEffect(() => {
         handleSendMessage("Do trading conditions differ on my live and demo account?", true)
-        handleSendMessage(TradingConditions[28].message, false)
+        handleSendMessage(AccountInformation[0].message, false)
     }, []);
 //TEMPO
 

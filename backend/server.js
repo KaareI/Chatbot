@@ -73,6 +73,56 @@ app.get('/logout', (req, res) => {
             return res.status(500).json({error: 'Server error'});
         }
         // Send a response indicating successful logout
-        res.status(200).json({ message: 'Logout successful' });
+        res.status(200).json({message: 'Logout successful'});
     });
 });
+
+app.put('/saveMessages', (req, res) => {
+
+    /* If user is logged in */
+    if (req.session.isAuthenticated) {
+
+        /* Retrieve all the messages */
+        const messages = req.body.messages;
+
+        if (!messages || messages.length === 0) {
+            return res.status(400).json({error: 'No messages provided'});
+        }
+
+        // Extract the last message from the messages array
+        const lastMessage = messages[messages.length - 1];
+
+/*        console.log("orderId: " + lastMessage.orderId)
+        console.log("userId: " + lastMessage.userId)
+        console.log("chatId: " + lastMessage.chatId)
+        console.log("userMessage: " + lastMessage.userMessage)
+        console.log("Message: " + lastMessage.message)*/
+
+        // Destructure the last message
+        const {orderId, userId, chatId, userMessage, message} = lastMessage;
+
+        let formattedMessage;
+
+        if (typeof message === 'string') {
+            // If the message is a simple string, use it directly
+            formattedMessage = message;
+        } else {
+            // If the message is a complex object, stringify it
+            formattedMessage = JSON.stringify(message);
+        }
+
+        const query = process.env.SAVEMESSAGE_QUERY;
+
+        // Execute the query with the data of the last message only
+        db.query(query, [orderId, userId, chatId, userMessage, formattedMessage], (err, results) => {
+            if (err) {
+                console.error('Error querying the database:', err);
+                return res.status(500).json({error: 'Error querying the database:'});
+            }
+
+            res.json({success: true, message: 'Last message saved successfully'});
+        });
+    }
+});
+
+

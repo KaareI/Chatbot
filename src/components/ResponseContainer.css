@@ -32,10 +32,11 @@
     line-height: 1.5;
 }
 
-/* Targets all Response boxes except the first one to create space between responses */
-.ResponseContainer .Response:not(:first-child) {
+/* Targets all "Bot" boxes except the first one to create space between responses */
+.ResponseContainer > .Bot:nth-child(n+3) {
     margin-top: 8px;
 }
+
 
 /* Additional class for ChatBot "Response" box */
 .Bot {
