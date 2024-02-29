@@ -6,7 +6,7 @@ import './Button.css';
 
 // Import assets
 import SendButton from "../assets/Send.png";
-import {TradingConditions} from "./misc/BotAnswers";
+import {TradingConditions, AccountInformation} from "./misc/BotAnswers";
 
 const InputField = ({sendInput}) => {
     const [inputValue, setInputValue] = useState('');
@@ -21,7 +21,8 @@ const InputField = ({sendInput}) => {
 
     //TEMPO
     const TempoFunction = () => {
-        sendInput(TradingConditions[19].message, false)
+        sendInput(AccountInformation[0].message, false)
+        setIsDisabled(false);
     }
     //TEMPO
 

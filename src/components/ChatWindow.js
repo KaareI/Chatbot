@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 // Import CSS
 import './ChatWindow.css'
@@ -21,17 +22,26 @@ const ChatWindow = () => {
     /* Create new message */
     const handleSendMessage = (message, userMessage) => {
         setMessages(prevMessages => {
-            /*            console.log("Messages length in ChatWindow function: ", prevMessages.length);*/
+/*            console.log("Messages length in ChatWindow component: ", prevMessages.length);*/
             const newMessage = {
+                uniqueId: generateUniqueID(),
                 orderId: prevMessages.length + 1,
                 userId: null,
                 chatId: 1,
                 userMessage: userMessage,
                 message: message,
             };
-            /*            console.log("Message in ChatWindow function: ", message);*/
+/*            console.log("Message in ChatWindow component: ", message);
+            console.log("Message is user message?: ", userMessage);*/
             return [...prevMessages, newMessage];
         });
+    };
+
+    /* Generate unique id */
+    const generateUniqueID = () => {
+        const uuid = uuidv4();
+        /*    console.log(uuid);*/
+        return uuid;
     };
 
     /* Save last message to database */
@@ -62,18 +72,19 @@ const ChatWindow = () => {
             });
     };
 
-//TEMPO
     useEffect(() => {
-        /*        console.log("Messages", messages);*/
-        saveMessages()
+        // Messages array is empty
+        if (messages.length !== 0) {
+            console.log("Messages", messages);
+            saveMessages()
+        }
     }, [messages]); // This useEffect will be triggered whenever the messages state changes
-//TEMPO
 
 //TEMPO
-    useEffect(() => {
-        handleSendMessage("Do trading conditions differ on my live and demo account?", true)
-        handleSendMessage(AccountInformation[0].message, false)
-    }, []);
+    /*    useEffect(() => {
+            handleSendMessage("Do trading conditions differ on my live and demo account?", true)
+            handleSendMessage(AccountInformation[0].message, false)
+        }, []);*/
 //TEMPO
 
 

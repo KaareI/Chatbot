@@ -83,54 +83,56 @@ app.get('/logout', (req, res) => {
     });
 });
 
+// Define a set to keep track of message IDs that have been sent
+const sentMessageIds = new Set();
 app.put('/saveMessages', (req, res) => {
-
     /* If user is logged in */
     if (req.session.isAuthenticated) {
-
         /* Retrieve all the messages */
         const messages = req.body.messages;
 
         if (!messages || messages.length === 0) {
-            return res.status(400).json({error: 'No messages provided'});
+            return res.status(400).json({ error: 'No messages provided' });
         }
 
-        // Extract the last message from the messages array
-        const lastMessage = messages[messages.length - 1];
-
-        lastMessage.userId = loggedInUser;
-
-        /*                console.log("orderId: " + lastMessage.orderId)
-                        console.log("userId: " + lastMessage.userId)
-                        console.log("chatId: " + lastMessage.chatId)
-                        console.log("userMessage: " + lastMessage.userMessage)
-                        console.log("Message: " + lastMessage.message)*/
-
-        // Destructure the last message
-        const {orderId, userId, chatId, userMessage, message} = lastMessage;
-
-        let formattedMessage;
-
-        if (typeof message === 'string') {
-            // If the message is a simple string, use it directly
-            formattedMessage = message;
-        } else {
-            // If the message is a complex object, stringify it
-            formattedMessage = JSON.stringify(message);
-        }
+        // Map each message to add the correct userId and uniqueId
+        const messagesWithUserId = messages.map(message => ({
+            ...message,
+            userId: loggedInUser
+        }));
 
         const query = process.env.SAVEMESSAGE_QUERY;
 
-        // Execute the query with the data of the last message only
-        db.query(query, [orderId, userId, chatId, userMessage, formattedMessage], (err, results) => {
-            if (err) {
-                console.error('Error querying the database:', err);
-                return res.status(500).json({error: 'Error querying the database:'});
-            }
+        // Iterate over each message and save it to the database if it hasn't been sent before
+        messagesWithUserId.forEach(message => {
+            const { uniqueId, orderId, userId, chatId, userMessage, message: msg } = message;
 
-            res.json({success: true, message: 'Last message saved successfully'});
+            // Check if the message ID has been sent before
+            if (!sentMessageIds.has(uniqueId)) {
+                let formattedMessage;
+
+                if (typeof msg === 'string') {
+                    // If the message is a simple string, use it directly
+                    formattedMessage = msg;
+                } else {
+                    // If the message is a complex object, stringify it
+                    formattedMessage = JSON.stringify(msg);
+                }
+
+                // Execute the query for each message
+                db.query(query, [orderId, userId, chatId, userMessage, formattedMessage], (err, results) => {
+                    if (err) {
+                        console.error('Error querying the database:', err);
+                    }
+                });
+
+                // Add the message ID to the set of sent messages
+                sentMessageIds.add(uniqueId);
+            }
         });
+
+        res.json({ success: true, message: 'Messages saved successfully' });
+    } else {
+        res.status(401).json({ error: 'User is not authenticated' });
     }
 });
-
-
