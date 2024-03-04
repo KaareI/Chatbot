@@ -6,7 +6,7 @@ import './Button.css';
 
 // Import assets
 import SendButton from "../assets/Send.png";
-import {TradingConditions, AccountInformation} from "./misc/BotAnswers";
+import {AccountInformation} from "./misc/BotAnswers";
 
 const InputField = ({sendInput}) => {
     const [inputValue, setInputValue] = useState('');

@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from 'react';
+
+// Import CSS
 import './Navigation.css';
 import './Button.css';
+
+// Import components
 import Branding from "./Branding";
 import BackButton from '../assets/Back.png'
+import SettingsButton from '../assets/Settings.png'
+import ChatButton from '../assets/Chat.png'
 
-const Navigation = () => {
+const Navigation = (props) => {
     const handleLogout = () => {
         fetch("/logout", {
             method: "GET",
@@ -22,12 +28,26 @@ const Navigation = () => {
             });
     };
 
+    const [inSettings, setInSettings] = useState(true);
+
+    const handleSettings = () => {
+        setInSettings(prevState => !prevState);
+        props.inSettings(inSettings);
+    }
+
     return (
         <div className="Navigation">
             <button className={"Button"} onClick={handleLogout}>
-                <img src={BackButton} alt="Back Button" style={{ width: '32px', height: '16px' }} />
+                <img src={BackButton} alt="Back Button" style={{width: '32px', height: '16px'}}/>
             </button>
-            <Branding imgWidth="24px" imgHeight="32px" imgMarginRight="8px" />
+            <Branding imgWidth="24px" imgHeight="32px" imgMarginRight="8px"/>
+            <button className={"Button"} onClick={handleSettings}>
+                {inSettings ? (
+                    <img src={SettingsButton} alt="Settings Button" style={{width: '24px', height: '24px'}}/>
+                ) : (
+                    <img src={ChatButton} alt="Chat Button" style={{width: '24px', height: '24px'}}/>
+                )}
+            </button>
         </div>
     );
 }

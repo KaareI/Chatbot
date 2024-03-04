@@ -1,0 +1,37 @@
+/* Child element of "ChatWindow", outer container of saved conversations */
+/* "SavedChats"'s part of CSS is in Chat.css file */
+.SavedChats{
+    display: flex;
+    justify-content: center;
+}
+
+/* Container that includes saved conversations buttons */
+.SavedConversations {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #ECECEC;
+}
+
+/* Saved conversations */
+.SavedConversations h2 {
+    margin: 24px 0;
+}
+
+/* Saved conversation button e.g.: September 12, 2024 - 2:00 PM */
+.SavedConversation {
+    display: block;
+    background-color: #353535;
+    padding: 12px 16px;
+    color: #ECECEC;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+/* New chat button */
+.NewChat{
+    background-color: #1277FD;
+    font-weight: bold;
+    color: #FFFFFF;
+}

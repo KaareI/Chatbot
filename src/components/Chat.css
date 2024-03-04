@@ -1,12 +1,12 @@
-/* Container which involves text exchange between ChatBot and Client */
-.Chat {
+/* Container which involves text exchange between ChatBot and Client & used in saved conversations*/
+.Chat, .SavedChats {
     flex: 1;
     background-color: #252525;
     padding: 24px 6%;
     overflow-y: scroll;
 }
 
-/* Chat scrollbar */
-.Chat::-webkit-scrollbar {
+/* "Chat", "SavedChats" scrollbar */
+.Chat::-webkit-scrollbar, .SavedChats::-webkit-scrollbar{
     width: 0;
 }

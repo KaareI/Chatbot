@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
 // Import CSS
 import './ChatWindow.css'
@@ -8,6 +8,7 @@ import './ChatWindow.css'
 import Navigation from "./Navigation";
 import Chat from "./Chat";
 import UserInput from "./UserInput";
+import SavedChats from "./SavedChats";
 import {
     AccountInformation,
     DepositsAndWithdrawals,
@@ -22,7 +23,7 @@ const ChatWindow = () => {
     /* Create new message */
     const handleSendMessage = (message, userMessage) => {
         setMessages(prevMessages => {
-/*            console.log("Messages length in ChatWindow component: ", prevMessages.length);*/
+            /*            console.log("Messages length in ChatWindow component: ", prevMessages.length);*/
             const newMessage = {
                 uniqueId: generateUniqueID(),
                 orderId: prevMessages.length + 1,
@@ -31,8 +32,8 @@ const ChatWindow = () => {
                 userMessage: userMessage,
                 message: message,
             };
-/*            console.log("Message in ChatWindow component: ", message);
-            console.log("Message is user message?: ", userMessage);*/
+            /*            console.log("Message in ChatWindow component: ", message);
+                        console.log("Message is user message?: ", userMessage);*/
             return [...prevMessages, newMessage];
         });
     };
@@ -68,14 +69,14 @@ const ChatWindow = () => {
             })
             /* Handle errors that occur during the fetch request */
             .catch(error => {
-                console.log("error: ", error)
+                console.error(error)
             });
     };
 
     useEffect(() => {
         // Messages array is empty
         if (messages.length !== 0) {
-            console.log("Messages", messages);
+            /*            console.log("Messages", messages);*/
             saveMessages()
         }
     }, [messages]); // This useEffect will be triggered whenever the messages state changes
@@ -87,12 +88,22 @@ const ChatWindow = () => {
         }, []);*/
 //TEMPO
 
+    /* Logic handles the rendering of settings */
+    const [inSettings, setInSettings] = useState(false);
+    const handleInSettings = (data) => {
+        setInSettings(data);
+    };
 
     return (
         <div className={"ChatWindow"}>
-            <Navigation></Navigation>
-            <Chat messages={messages}></Chat>
-            <UserInput sendInput={handleSendMessage}></UserInput>
+            <Navigation inSettings={handleInSettings}></Navigation>
+            {/* Rendering based on if user is in settings or not */}
+            {inSettings ? <SavedChats/> : (
+                <>
+                    <Chat messages={messages}></Chat>
+                    <UserInput sendInput={handleSendMessage}></UserInput>
+                </>
+            )}
         </div>
     )
 }
