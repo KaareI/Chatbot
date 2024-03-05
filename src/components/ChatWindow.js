@@ -90,8 +90,10 @@ const ChatWindow = () => {
 
     /* Logic handles the rendering of settings */
     const [inSettings, setInSettings] = useState(false);
-    const handleInSettings = (data) => {
-        setInSettings(data);
+    const handleSettings = () => {
+        // Invert the previous state
+        setInSettings(
+            prevState => !prevState);
     };
 
     const handleNewChat = (data) => {
@@ -99,18 +101,24 @@ const ChatWindow = () => {
         setInSettings(data);
     }
 
+
     return (
-        <div className={"ChatWindow"}>
-            <Navigation inSettings={handleInSettings}></Navigation>
+        <div className="ChatWindow">
+            <Navigation
+                inSettings={inSettings}
+                onSettingsToggle={handleSettings}
+            />
             {/* Rendering based on if user is in settings or not */}
-            {inSettings ? <SavedChats inSettings={handleNewChat}/> : (
+            {inSettings ? (
+                <SavedChats inSettings={handleNewChat} />
+            ) : (
                 <>
-                    <Chat messages={messages}></Chat>
-                    <UserInput sendInput={handleSendMessage}></UserInput>
+                    <Chat messages={messages} />
+                    <UserInput sendInput={handleSendMessage} />
                 </>
             )}
         </div>
-    )
+    );
 }
 
 export default ChatWindow;

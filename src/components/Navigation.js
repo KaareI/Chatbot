@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 // Import CSS
 import './Navigation.css';
@@ -28,24 +28,17 @@ const Navigation = (props) => {
             });
     };
 
-    const [inSettings, setInSettings] = useState(true);
-
-    const handleSettings = () => {
-        setInSettings(prevState => !prevState);
-        props.inSettings(inSettings);
-    }
-
     return (
         <div className="Navigation">
             <button className={"Button"} onClick={handleLogout}>
-                <img src={LogoutButton} alt="Back Button" style={{width: '24px', height: '24px'}}/>
+                <img src={LogoutButton} alt="Logout Button" style={{width: '24px', height: '24px'}}/>
             </button>
             <Branding imgWidth="24px" imgHeight="32px" imgMarginRight="8px"/>
-            <button className={"Button"} onClick={handleSettings}>
-                {inSettings ? (
-                    <img src={SettingsButton} alt="Settings Button" style={{width: '24px', height: '24px'}}/>
-                ) : (
+            <button className={"Button"} onClick={props.onSettingsToggle}>
+                {props.inSettings ? (
                     <img src={ChatButton} alt="Chat Button" style={{width: '24px', height: '24px'}}/>
+                ) : (
+                    <img src={SettingsButton} alt="Settings Button" style={{width: '24px', height: '24px'}}/>
                 )}
             </button>
         </div>

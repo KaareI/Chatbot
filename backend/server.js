@@ -135,7 +135,7 @@ app.put('/saveMessages', (req, res) => {
                     // If the message is a simple string, use it directly
                     formattedMessage = msg;
                 } else {
-                    // If the message is a complex object, stringify it
+                    // If the message is a complex object, stringify it, AKA bot messages
                     formattedMessage = JSON.stringify(msg);
                 }
 
