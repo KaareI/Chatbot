@@ -27,8 +27,6 @@ const ChatWindow = () => {
             const newMessage = {
                 uniqueId: generateUniqueID(),
                 orderId: prevMessages.length + 1,
-                userId: null,
-                chatId: 1,
                 userMessage: userMessage,
                 message: message,
             };

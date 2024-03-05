@@ -1,13 +1,12 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from 'react';
 
 // Import CSS
-import './Chat.css';
 import './SavedChats.css'
 
 const SavedChats = (props) => {
-
+    const [data, setData] = useState([]);
     const [error, setError] = useState('');
-    const createNewChat = () =>{
+    const createNewChat = () => {
         fetch("/generateChat", {
             method: "POST",
             credentials: 'same-origin',
@@ -28,17 +27,44 @@ const SavedChats = (props) => {
             });
     }
 
+    useEffect(() => {
+        const retrieveChats = () => {
+            fetch("/userChats", {
+                method: "GET",
+                credentials: 'same-origin',
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error retrieving chats');
+                    }
+                    return response.json();
+                })
+                .then(Data => {
+                    console.log("Chats data:", Data.results);
+                    setData(Data.results); // Update the data state with the fetched data
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        retrieveChats(); // Call the fetch function when the component is rendered
+    }, []);
+
     return (
         <div className={"SavedChats"}>
             <div className={"SavedConversations"}>
                 <h2>Saved Conversations</h2>
-                <button className={`Button SavedConversation NewChat ${error ? 'shake' : ''}`} onClick={createNewChat}>New Chat</button>
-                <button className={"Button SavedConversation"}>December 31, 2024 - 11:59 PM</button>
-                <button className={"Button SavedConversation"}>June 30, 2024 - 11:00 AM</button>
-                <button className={"Button SavedConversation"}>September 12, 2024 - 2:00 PM</button>
+                <button className={`Button SavedConversation NewChat ${error ? 'shake' : ''}`}
+                        onClick={createNewChat}>New Chat
+                </button>
+                {data.map(chat => (
+                    <button key={chat.Message_chat_id} className={"Button SavedConversation"} value={chat.Message_chat_id}>
+                        {chat.Message_time}
+                    </button>
+                ))}
             </div>
         </div>
     );
 }
-
 export default SavedChats;

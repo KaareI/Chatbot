@@ -11,6 +11,8 @@
     flex-direction: column;
     text-align: center;
     color: #ECECEC;
+    width: -webkit-fill-available;
+    max-width: 400px;
 }
 
 /* Saved conversations */
@@ -33,5 +35,4 @@
 .NewChat{
     background-color: #1277FD;
     font-weight: bold;
-    color: #FFFFFF;
 }

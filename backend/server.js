@@ -102,8 +102,25 @@ app.get('/logout', (req, res) => {
     });
 });
 
+function getDate() {
+    const date = new Date();
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const month = months[date.getMonth()];
+    const day = date.getDate();
+    const year = date.getFullYear();
+    let hour = date.getHours();
+    const minute = ('0' + date.getMinutes()).slice(-2); // Ensure two-digit minutes
+
+    // Adjust hour format
+    const period = hour >= 12 ? 'PM' : 'AM';
+    hour = hour % 12 || 12; // Convert hour to 12-hour format
+
+    return `${month} ${day}, ${year} - ${hour}:${minute} ${period}`;
+}
+
 // Define a set to keep track of message IDs that have been sent
 const sentMessageIds = new Set();
+// Save messages to database
 app.put('/saveMessages', (req, res) => {
     /* If user is logged in */
     if (req.session.isAuthenticated) {
@@ -119,13 +136,14 @@ app.put('/saveMessages', (req, res) => {
             ...message,
             userId: req.session.loggedInUserId,
             chatId: req.session.CurrentChatId,
+            time: getDate(),
         }));
 
         const query = process.env.SAVEMESSAGE_QUERY;
 
         // Iterate over each message and save it to the database if it hasn't been sent before
         messagesWithUserId.forEach(message => {
-            const {uniqueId, orderId, userId, chatId, userMessage, message: msg} = message;
+            const {uniqueId, orderId, userId, chatId, userMessage, time, message: msg} = message;
 
             // Check if the message ID has been sent before
             if (!sentMessageIds.has(uniqueId)) {
@@ -140,7 +158,7 @@ app.put('/saveMessages', (req, res) => {
                 }
 
                 // Execute the query for each message
-                db.query(query, [orderId, userId, chatId, userMessage, formattedMessage], (err, results) => {
+                db.query(query, [orderId, userId, chatId, userMessage, time, formattedMessage], (err, results) => {
                     if (err) {
                         console.error('Error querying the database:', err);
                     }
@@ -156,3 +174,25 @@ app.put('/saveMessages', (req, res) => {
         res.status(401).json({error: 'User is not authenticated'});
     }
 });
+
+// Retrieve all user chats
+app.get('/userChats', (req, res) => {
+    // Check if the user is authenticated
+    if (!req.session.isAuthenticated) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    // Execute a SQL query to retrieve Message_chat_id and Message_time values
+    const query = process.env.GETUSERCHATS_QUERY;
+    db.query(query, [req.session.loggedInUserId], (error, results) => {
+        if (error) {
+            console.error('Error fetching messages:', error);
+            res.status(500).json({ error: 'Internal server error' });
+        } else {
+/*            console.log(results)*/
+            res.json({ results });
+        }
+    });
+});
+
+

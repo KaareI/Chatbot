@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 // Import CSS
 import './Navigation.css';
