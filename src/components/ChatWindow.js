@@ -18,7 +18,12 @@ import {
 
 const ChatWindow = () => {
 
+    const [saveUserMessages, setSaveUserMessages] = useState(true);
     const [messages, setMessages] = useState([]);
+
+    const handleSaveUserMessages = (value) => {
+        setSaveUserMessages(value);
+    };
 
     /* Create new message */
     const handleSendMessage = (message, userMessage) => {
@@ -71,13 +76,15 @@ const ChatWindow = () => {
             });
     };
 
+    // This useEffect will be triggered whenever the messages state changes
     useEffect(() => {
-        // Messages array is empty
-        if (messages.length !== 0) {
-            /*            console.log("Messages", messages);*/
-            saveMessages()
+        if (saveUserMessages && messages.length !== 0) {
+            // Messages array is not empty and saveUserMessages is true
+            saveMessages();
         }
-    }, [messages]); // This useEffect will be triggered whenever the messages state changes
+    }, [messages]);
+    console.log("Messages: ", messages)
+
 
 //TEMPO
     /*    useEffect(() => {
@@ -96,6 +103,7 @@ const ChatWindow = () => {
 
     const handleNewChat = (data) => {
         setMessages([]);
+        setSaveUserMessages(true)
         setInSettings(data);
     }
 
@@ -108,11 +116,15 @@ const ChatWindow = () => {
             />
             {/* Rendering based on if user is in settings or not */}
             {inSettings ? (
-                <SavedChats inSettings={handleNewChat} />
+                <SavedChats
+                    inSettings={handleNewChat}
+                    saveUserMessages={saveUserMessages}
+                    setSaveUserMessages={handleSaveUserMessages}
+                />
             ) : (
                 <>
-                    <Chat messages={messages} />
-                    <UserInput sendInput={handleSendMessage} />
+                    <Chat messages={messages}/>
+                    <UserInput sendInput={handleSendMessage}/>
                 </>
             )}
         </div>

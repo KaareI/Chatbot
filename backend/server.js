@@ -1,4 +1,4 @@
-const { v4: uuidv4 } = require('uuid');
+const {v4: uuidv4} = require('uuid');
 const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
@@ -35,8 +35,8 @@ async function comparePassword(plaintextPassword, hash) {
 /* Generate unique chat id */
 const createChatID = (req) => {
     const uuid = uuidv4();
-/*    console.log("Created chat id: ", uuid);
-    console.log("Length of chat id: ", uuid.length);*/
+    /*    console.log("Created chat id: ", uuid);
+        console.log("Length of chat id: ", uuid.length);*/
     req.session.CurrentChatId = uuid;
 };
 
@@ -179,7 +179,7 @@ app.put('/saveMessages', (req, res) => {
 app.get('/userChats', (req, res) => {
     // Check if the user is authenticated
     if (!req.session.isAuthenticated) {
-        return res.status(401).json({ error: 'Unauthorized' });
+        return res.status(401).json({error: 'Unauthorized'});
     }
 
     // Execute a SQL query to retrieve Message_chat_id and Message_time values
@@ -187,12 +187,63 @@ app.get('/userChats', (req, res) => {
     db.query(query, [req.session.loggedInUserId], (error, results) => {
         if (error) {
             console.error('Error fetching messages:', error);
-            res.status(500).json({ error: 'Internal server error' });
+            res.status(500).json({error: 'Internal server error'});
         } else {
-/*            console.log(results)*/
-            res.json({ results });
+            /*            console.log(results)*/
+            res.json({results});
         }
     });
 });
 
+// Retrieve specific user conversation
+app.get('/previousChat', (req, res) => {
+    // Check if the user is authenticated
+    if (!req.session.isAuthenticated) {
+        return res.status(401).json({error: 'Unauthorized'});
+    }
 
+    // Retrieve chat ID from the request body
+    const {chatId} = req.query;
+    /*    console.log("Chat Id: ", chatId)
+        console.log("Chat Id length: ", chatId.length)
+        console.log("Chat Id type: ", typeof chatId)*/
+    // Make sure chatId exists
+    if (!chatId) {
+        return res.status(400).json({error: 'Chat ID is required'});
+    }
+
+    const query = process.env.GETPREVIOUSCHAT_QUERY;
+    db.query(query, [chatId, req.session.loggedInUserId], (error, results) => {
+        if (error) {
+            console.error('Error fetching messages:', error);
+            res.status(500).json({error: 'Internal server error'});
+        } else {
+            /*            console.log(results)*/
+
+            // Unstringify bot messages
+            const unstringifiedResults = results.map(message => {
+                if (message.Message_user_message === 0) {
+                    // Parse the JSON string to an object
+                    const parsedMessage = JSON.parse(message.Message_message);
+                    // Update the message object with the parsed JSON
+                    return {...message, Message_message: parsedMessage};
+                } else {
+                    // For other messages, return the original message object
+                    return message;
+                }
+            });
+
+            // Rewrite keys
+            const updatedData = unstringifiedResults.map(message => {
+                return {
+                    message: message.Message_message,
+                    orderId: message.Message_order_id,
+                    userMessage: message.Message_user_message
+                };
+            });
+
+/*            console.log(updatedData);*/
+            res.json(updatedData);
+        }
+    });
+});
