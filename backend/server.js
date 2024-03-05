@@ -1,3 +1,4 @@
+const { v4: uuidv4 } = require('uuid');
 const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
@@ -31,7 +32,13 @@ async function comparePassword(plaintextPassword, hash) {
     return result;
 }
 
-let loggedInUser;
+/* Generate unique chat id */
+const createChatID = (req) => {
+    const uuid = uuidv4();
+/*    console.log("Created chat id: ", uuid);
+    console.log("Length of chat id: ", uuid.length);*/
+    req.session.CurrentChatId = uuid;
+};
 
 // Login logic
 app.post('/login', async (req, res) => {
@@ -58,9 +65,11 @@ app.post('/login', async (req, res) => {
 
         if (passwordsMatch) {
             // Authentication successful
+            // Create new chat id
             // Get the id of logged-in user
             /*            console.log("logged-in user id", results[0].id)*/
-            loggedInUser = results[0].id
+            createChatID(req);
+            req.session.loggedInUserId = results[0].id
             req.session.isAuthenticated = true;
             res.json(true);
         } else {
@@ -92,20 +101,21 @@ app.put('/saveMessages', (req, res) => {
         const messages = req.body.messages;
 
         if (!messages || messages.length === 0) {
-            return res.status(400).json({ error: 'No messages provided' });
+            return res.status(400).json({error: 'No messages provided'});
         }
 
-        // Map each message to add the correct userId and uniqueId
+        // Map each message to add the correct userId
         const messagesWithUserId = messages.map(message => ({
             ...message,
-            userId: loggedInUser
+            userId: req.session.loggedInUserId,
+            chatId: req.session.CurrentChatId,
         }));
 
         const query = process.env.SAVEMESSAGE_QUERY;
 
         // Iterate over each message and save it to the database if it hasn't been sent before
         messagesWithUserId.forEach(message => {
-            const { uniqueId, orderId, userId, chatId, userMessage, message: msg } = message;
+            const {uniqueId, orderId, userId, chatId, userMessage, message: msg} = message;
 
             // Check if the message ID has been sent before
             if (!sentMessageIds.has(uniqueId)) {
@@ -131,8 +141,8 @@ app.put('/saveMessages', (req, res) => {
             }
         });
 
-        res.json({ success: true, message: 'Messages saved successfully' });
+        res.json({success: true, message: 'Messages saved successfully'});
     } else {
-        res.status(401).json({ error: 'User is not authenticated' });
+        res.status(401).json({error: 'User is not authenticated'});
     }
 });
