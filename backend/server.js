@@ -40,6 +40,16 @@ const createChatID = (req) => {
     req.session.CurrentChatId = uuid;
 };
 
+// Endpoint for creating a new chat id from client side
+app.post('/generateChat', (req, res) => {
+    if (req.session.isAuthenticated) {
+        createChatID(req);
+        res.send('Chat generated successfully');
+    } else {
+        res.status(403).send('Unauthorized');
+    }
+});
+
 // Login logic
 app.post('/login', async (req, res) => {
     const {username, password} = req.body;

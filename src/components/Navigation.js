@@ -6,7 +6,7 @@ import './Button.css';
 
 // Import components
 import Branding from "./Branding";
-import BackButton from '../assets/Back.png'
+import LogoutButton from '../assets/Logout.png'
 import SettingsButton from '../assets/Settings.png'
 import ChatButton from '../assets/Chat.png'
 
@@ -38,7 +38,7 @@ const Navigation = (props) => {
     return (
         <div className="Navigation">
             <button className={"Button"} onClick={handleLogout}>
-                <img src={BackButton} alt="Back Button" style={{width: '32px', height: '16px'}}/>
+                <img src={LogoutButton} alt="Back Button" style={{width: '24px', height: '24px'}}/>
             </button>
             <Branding imgWidth="24px" imgHeight="32px" imgMarginRight="8px"/>
             <button className={"Button"} onClick={handleSettings}>

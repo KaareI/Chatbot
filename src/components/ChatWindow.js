@@ -94,11 +94,16 @@ const ChatWindow = () => {
         setInSettings(data);
     };
 
+    const handleNewChat = (data) => {
+        setMessages([]);
+        setInSettings(data);
+    }
+
     return (
         <div className={"ChatWindow"}>
             <Navigation inSettings={handleInSettings}></Navigation>
             {/* Rendering based on if user is in settings or not */}
-            {inSettings ? <SavedChats/> : (
+            {inSettings ? <SavedChats inSettings={handleNewChat}/> : (
                 <>
                     <Chat messages={messages}></Chat>
                     <UserInput sendInput={handleSendMessage}></UserInput>
