@@ -108,14 +108,8 @@ function getDate() {
     const month = months[date.getMonth()];
     const day = date.getDate();
     const year = date.getFullYear();
-    let hour = date.getHours();
-    const minute = ('0' + date.getMinutes()).slice(-2); // Ensure two-digit minutes
 
-    // Adjust hour format
-    const period = hour >= 12 ? 'PM' : 'AM';
-    hour = hour % 12 || 12; // Convert hour to 12-hour format
-
-    return `${month} ${day}, ${year} - ${hour}:${minute} ${period}`;
+    return `${month} ${day}, ${year}`;
 }
 
 // Define a set to keep track of message IDs that have been sent
@@ -173,7 +167,7 @@ app.get('/userChats', (req, res) => {
         return res.status(401).json({error: 'Unauthorized'});
     }
 
-    // Execute a SQL query to retrieve Message_chat_id and Message_time values
+    // Execute a SQL query to retrieve message chat id and message time values
     const query = process.env.GETUSERCHATS_QUERY;
     db.query(query, [req.session.loggedInUserId], (error, results) => {
         if (error) {
@@ -185,14 +179,22 @@ app.get('/userChats', (req, res) => {
             // Rewrite keys
             const updatedData = results.map(message => {
                 return {
-                    chatId: message. Message_chat_id,
-                    time: message.Message_time
+                    message: message[process.env.MESSAGE_VARIABLE],
+                    chatId: message[process.env.CHATID_VARIABLE],
+                    time: message[process.env.TIME_VARIABLE]
                 };
             });
 
-/*            console.log(updatedData)*/
+            // Assuming `results` is an array of objects with a `message` property
 
-            res.json(updatedData);
+            const truncatedResults = updatedData.map(result => {
+                const truncatedMessage = result.message.length > 35 ? result.message.substring(0, 35) : result.message;
+                return { ...result, message: truncatedMessage };
+            });
+
+            console.log(truncatedResults)
+
+            res.json(truncatedResults);
         }
     });
 });
@@ -227,9 +229,9 @@ app.get('/previousChat', (req, res) => {
             // Rewrite keys
             const updatedData = results.map(message => {
                 return {
-                    message: message.Message_message,
-                    orderId: message.Message_order_id,
-                    userMessage: message.Message_user_message
+                    message: message[process.env.MESSAGE_VARIABLE],
+                    orderId: message[process.env.ORDERID_VARIABLE],
+                    userMessage: message[process.env.USERMESSAGE_VARIABLE]
                 };
             });
 

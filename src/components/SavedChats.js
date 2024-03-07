@@ -19,21 +19,25 @@ const SavedChats = ({
                     }) => {
     const [data, setData] = useState([]);
     const [error, setError] = useState('');
+    const [errorButtonId, setErrorButtonId] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const resolveMessage = (message) => {
+
         // Split the message string to extract the module name and index
         const [moduleName, index] = message.split('[');
-        if (!moduleName || !index) return message; // If the message format is incorrect, return as is
+
+        // If the message format is incorrect
+        if (!moduleName || !index) return "Invalid bot message";
 
         // Extract the index value by removing ']' and converting to a number
         const messageIndex = parseInt(index.slice(0, -1), 10);
 
         // Dynamically access the module by name
         const module = modules[moduleName];
-        if (!module || !Array.isArray(module)) return message; // If the module doesn't exist or not an array, return as is
 
-        // Return the message from the module if the index is valid, otherwise return the original message
-        return module[messageIndex] ? module[messageIndex].message : message;
+        // Return the message from the module if the index is valid
+        return module[messageIndex] ? module[messageIndex].message : "Invalid bot message";
     };
 
 // Define a mapping of module names to the actual modules
@@ -61,7 +65,11 @@ const SavedChats = ({
             .catch(error => {
                 console.error(error)
                 setError('User not logged in?');
-                setTimeout(() => setError(''), 1500);
+                setErrorButtonId('newChatButton'); // Set the button ID causing the error
+                setTimeout(() => {
+                    setError('');
+                    setErrorButtonId(null);
+                }, 1500);
             });
     }
 
@@ -78,13 +86,17 @@ const SavedChats = ({
                     return response.json();
                 })
                 .then(Data => {
-                    /*
-                                                            console.log("Chats data:", Data);
-                    */
-                    setData(Data);
+/*                    console.log("Chats data:", Data);*/
+                    setTimeout(() => {
+                        setData(Data);
+                        // Remove loading div for user
+                        setLoading(false);
+                    }, 500);
+
                 })
                 .catch(error => {
                     console.error('Error:', error);
+                    setError('Error retrieving user chats');
                 });
         }
 
@@ -106,18 +118,18 @@ const SavedChats = ({
                 return response.json();
             })
             .then(results => {
-/*                console.log('Previous chat', results);
-                console.log('Previous chat data type: ', typeof (results));*/
-
-                // Resolve messages before setting them
+                /*                console.log('Previous chat', results);*/
+                // Resolve bot messages
                 const resolvedMessages = results.map(result => ({
                     ...result,
+                    // If message is not bot message, then resolve the message
                     message: result.userMessage === 0 || result.userMessage === false
                         ? resolveMessage(result.message)
                         : result.message
                 }));
-                setMessages(resolvedMessages);
 
+                /* Set previous conversation messages for rendering */
+                setMessages(resolvedMessages);
                 /* Empty current stored messages for saving */
                 setStoredMessages([]);
                 // Save user messages after chat is rendered
@@ -128,7 +140,11 @@ const SavedChats = ({
             .catch(error => {
                 console.error('Error:', error);
                 setError('Error loading previous chat data');
-                setTimeout(() => setError(''), 1500);
+                setErrorButtonId(chatID); // Set the button ID causing the error
+                setTimeout(() => {
+                    setError('');
+                    setErrorButtonId(null);
+                }, 1500);
             });
     }
 
@@ -136,19 +152,24 @@ const SavedChats = ({
         <div className={"SavedChats"}>
             <div className={"SavedConversations"}>
                 <h2>Saved Conversations</h2>
-                <button className={`Button SavedConversation NewChat ${error ? 'shake' : ''}`}
-                        onClick={createNewChat}>New Chat
+                <button
+                    id="newChatButton" // Assign an ID for the new chat button
+                    className={`Button SavedConversation NewChat ${errorButtonId === 'newChatButton' ? 'shake' : ''}`}
+                    onClick={createNewChat}
+                >
+                    New Chat
                 </button>
+                {error && <h3 className={"BigError SavedConversation"}>{error}</h3>}
+                {!error && loading && <h3 className={"SavedConversation"}>Loading chats...</h3>}
                 {data.map(chat => (
                     <button
                         key={chat.chatId}
-                        className={`Button SavedConversation ${error ? 'shake' : ''}`}
+                        className={`Button SavedConversation ${errorButtonId === chat.chatId ? 'shake' : ''}`}
                         onClick={() => loadChat(chat.chatId)}
                     >
-                        {chat.time}
+                        {chat.time} - <i>"{chat.message}..."</i>
                     </button>
                 ))}
-
             </div>
         </div>
     );
