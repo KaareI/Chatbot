@@ -8,7 +8,7 @@ import './Button.css';
 import SendButton from "../assets/Send.png";
 import {AccountInformation} from "./misc/BotAnswers";
 
-const InputField = ({sendInput}) => {
+const InputField = ({sendInput, storeMessages}) => {
     const [inputValue, setInputValue] = useState('');
     const [isDisabled, setIsDisabled] = useState(false);
 
@@ -35,6 +35,8 @@ const InputField = ({sendInput}) => {
         sendInput(inputValue, true);
         setInputValue('')
         TempoFunction();
+        storeMessages(inputValue, true);
+        storeMessages('AccountInformation[0].message', false);
     };
 
     return (

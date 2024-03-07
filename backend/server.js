@@ -125,7 +125,7 @@ app.put('/saveMessages', (req, res) => {
     /* If user is logged in */
     if (req.session.isAuthenticated) {
         /* Retrieve all the messages */
-        const messages = req.body.messages;
+        const messages = req.body.storedMessages;
 
         if (!messages || messages.length === 0) {
             return res.status(400).json({error: 'No messages provided'});
@@ -147,18 +147,9 @@ app.put('/saveMessages', (req, res) => {
 
             // Check if the message ID has been sent before
             if (!sentMessageIds.has(uniqueId)) {
-                let formattedMessage;
-
-                if (typeof msg === 'string') {
-                    // If the message is a simple string, use it directly
-                    formattedMessage = msg;
-                } else {
-                    // If the message is a complex object, stringify it, AKA bot messages
-                    formattedMessage = JSON.stringify(msg);
-                }
 
                 // Execute the query for each message
-                db.query(query, [orderId, userId, chatId, userMessage, time, formattedMessage], (err, results) => {
+                db.query(query, [orderId, userId, chatId, userMessage, time, msg], (err, results) => {
                     if (err) {
                         console.error('Error querying the database:', err);
                     }
@@ -189,8 +180,19 @@ app.get('/userChats', (req, res) => {
             console.error('Error fetching messages:', error);
             res.status(500).json({error: 'Internal server error'});
         } else {
-            /*            console.log(results)*/
-            res.json({results});
+
+            console.log("Rewriting keys")
+            // Rewrite keys
+            const updatedData = results.map(message => {
+                return {
+                    chatId: message. Message_chat_id,
+                    time: message.Message_time
+                };
+            });
+
+/*            console.log(updatedData)*/
+
+            res.json(updatedData);
         }
     });
 });
@@ -218,23 +220,12 @@ app.get('/previousChat', (req, res) => {
             console.error('Error fetching messages:', error);
             res.status(500).json({error: 'Internal server error'});
         } else {
-            /*            console.log(results)*/
 
-            // Unstringify bot messages
-            const unstringifiedResults = results.map(message => {
-                if (message.Message_user_message === 0) {
-                    // Parse the JSON string to an object
-                    const parsedMessage = JSON.parse(message.Message_message);
-                    // Update the message object with the parsed JSON
-                    return {...message, Message_message: parsedMessage};
-                } else {
-                    // For other messages, return the original message object
-                    return message;
-                }
-            });
+/*            console.log(results)*/
 
+            console.log("Rewriting keys")
             // Rewrite keys
-            const updatedData = unstringifiedResults.map(message => {
+            const updatedData = results.map(message => {
                 return {
                     message: message.Message_message,
                     orderId: message.Message_order_id,
@@ -242,7 +233,6 @@ app.get('/previousChat', (req, res) => {
                 };
             });
 
-/*            console.log(updatedData);*/
             res.json(updatedData);
         }
     });

@@ -18,12 +18,27 @@ import {
 
 const ChatWindow = () => {
 
-    const [saveUserMessages, setSaveUserMessages] = useState(true);
-    const [messages, setMessages] = useState([]);
-
-    const handleSaveUserMessages = (value) => {
-        setSaveUserMessages(value);
+    /* Store messages */
+    const [storedMessages, setStoredMessages] = useState([]);
+    const handleStoredMessages = (message, userMessage) => {
+        setStoredMessages(prevMessages => {
+            const newMessage = {
+                uniqueId: generateUniqueID(),
+                orderId: prevMessages.length + 1,
+                userMessage: userMessage,
+                message: message,
+            };
+            return [...prevMessages, newMessage];
+        });
     };
+    /*    console.log("storedMessages: ", storedMessages)
+        console.log("storedMessages type: ", typeof (storedMessages))*/
+
+    /* Option to save conversation */
+    const [saveUserMessages, setSaveUserMessages] = useState(true);
+
+    /* Current conversation messages */
+    const [messages, setMessages] = useState([]);
 
     /* Create new message */
     const handleSendMessage = (message, userMessage) => {
@@ -35,8 +50,9 @@ const ChatWindow = () => {
                 userMessage: userMessage,
                 message: message,
             };
-            /*            console.log("Message in ChatWindow component: ", message);
-                        console.log("Message is user message?: ", userMessage);*/
+/*            console.log("Message in ChatWindow component: ", message);
+            console.log("Message type in ChatWindow component: ", typeof(message));
+            console.log("Message is user message?: ", userMessage);*/
             return [...prevMessages, newMessage];
         });
     };
@@ -57,7 +73,7 @@ const ChatWindow = () => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({messages}),
+            body: JSON.stringify({storedMessages}),
             credentials: 'same-origin',
         })
 
@@ -67,7 +83,7 @@ const ChatWindow = () => {
                     throw new Error('Error saving messages');
                 } else {
                     /* SUCCESSFUL SAVE OF MESSAGES */
-                    console.log("Messages saved")
+                    console.log("Messages saved...")
                 }
             })
             /* Handle errors that occur during the fetch request */
@@ -76,18 +92,19 @@ const ChatWindow = () => {
             });
     };
 
-    // This useEffect will be triggered whenever the messages state changes
+    // This useEffect will be triggered whenever the storedMessages state changes
     useEffect(() => {
-        if (saveUserMessages && messages.length !== 0) {
+        if (saveUserMessages && storedMessages.length !== 0) {
             // Messages array is not empty and saveUserMessages is true
             saveMessages();
         }
-    }, [messages]);
-    console.log("Messages: ", messages)
-
+        /*        console.log("Messages: ", messages)
+                console.log("Messages type: ", typeof (messages))*/
+    }, [storedMessages]);
 
 //TEMPO
-    /*    useEffect(() => {
+    // FOR DESIGNING BOT MESSAGES
+/*        useEffect(() => {
             handleSendMessage("Do trading conditions differ on my live and demo account?", true)
             handleSendMessage(AccountInformation[0].message, false)
         }, []);*/
@@ -101,12 +118,23 @@ const ChatWindow = () => {
             prevState => !prevState);
     };
 
-    const handleNewChat = (data) => {
+    /* Creation of a new chat */
+    const handleNewChat = () => {
+        /* Empty current chat messages and stored messages for saving */
         setMessages([]);
+        setStoredMessages([]);
+        /* Save user messages */
         setSaveUserMessages(true)
-        setInSettings(data);
+        /* User is not in settings anymore so rerender chat */
+        setInSettings(false);
     }
 
+    useEffect(() => {
+/*        console.log("Messages in chat: ", messages);
+        console.log("Stored messages for saving: ", storedMessages);
+        console.log("Saving user messages: ", saveUserMessages);
+        console.log("Rendering settings: ", inSettings);*/
+    }, [inSettings]);
 
     return (
         <div className="ChatWindow">
@@ -117,14 +145,20 @@ const ChatWindow = () => {
             {/* Rendering based on if user is in settings or not */}
             {inSettings ? (
                 <SavedChats
-                    inSettings={handleNewChat}
-                    saveUserMessages={saveUserMessages}
-                    setSaveUserMessages={handleSaveUserMessages}
+                    newChat={handleNewChat}
+                    loadConversation={handleSendMessage}
+                    setInSettings={setInSettings}
+                    setSaveUserMessages={setSaveUserMessages}
+                    setMessages={setMessages}
+                    setStoredMessages={setStoredMessages}
                 />
             ) : (
                 <>
                     <Chat messages={messages}/>
-                    <UserInput sendInput={handleSendMessage}/>
+                    <UserInput
+                        sendInput={handleSendMessage}
+                        storeMessages={handleStoredMessages}
+                    />
                 </>
             )}
         </div>
