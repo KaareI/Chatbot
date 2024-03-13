@@ -74,13 +74,14 @@ app.post('/login', async (req, res) => {
         const passwordsMatch = await comparePassword(password, hashedPassword);
 
         if (passwordsMatch) {
-            // Authentication successful
-            // Create new chat id
-            // Get the id of logged-in user
             /*            console.log("logged-in user id", results[0].id)*/
-            createChatID(req);
-            req.session.loggedInUserId = results[0].id
+            // Authentication successful
             req.session.isAuthenticated = true;
+            // Get the id of logged-in user
+            req.session.loggedInUserId = results[0].id
+            // Create new chat id
+            createChatID(req);
+
             res.json(true);
         } else {
             // Authentication failed
@@ -112,8 +113,6 @@ function getDate() {
     return `${month} ${day}, ${year}`;
 }
 
-// Define a set to keep track of message IDs that have been sent
-const sentMessageIds = new Set();
 // Save messages to database
 app.put('/saveMessages', (req, res) => {
     /* If user is logged in */
@@ -137,21 +136,15 @@ app.put('/saveMessages', (req, res) => {
 
         // Iterate over each message and save it to the database if it hasn't been sent before
         messagesWithUserId.forEach(message => {
-            const {uniqueId, orderId, userId, chatId, userMessage, time, message: msg} = message;
+            const {orderId, userId, chatId, userMessage, time, message: msg} = message;
 
-            // Check if the message ID has been sent before
-            if (!sentMessageIds.has(uniqueId)) {
+            // Execute the query for each message
+            db.query(query, [orderId, userId, chatId, userMessage, time, msg], (err, results) => {
+                if (err) {
+                    console.error('Error querying the database:', err);
+                }
+            });
 
-                // Execute the query for each message
-                db.query(query, [orderId, userId, chatId, userMessage, time, msg], (err, results) => {
-                    if (err) {
-                        console.error('Error querying the database:', err);
-                    }
-                });
-
-                // Add the message ID to the set of sent messages
-                sentMessageIds.add(uniqueId);
-            }
         });
 
         res.json({success: true, message: 'Messages saved successfully'});
@@ -166,6 +159,10 @@ app.get('/userChats', (req, res) => {
     if (!req.session.isAuthenticated) {
         return res.status(401).json({error: 'Unauthorized'});
     }
+
+/*
+    console.log("Chat id in all user chats", req.session.CurrentChatId)
+*/
 
     // Execute a SQL query to retrieve message chat id and message time values
     const query = process.env.GETUSERCHATS_QUERY;
@@ -188,11 +185,11 @@ app.get('/userChats', (req, res) => {
             // Assuming `results` is an array of objects with a `message` property
 
             const truncatedResults = updatedData.map(result => {
-                const truncatedMessage = result.message.length > 35 ? result.message.substring(0, 35) : result.message;
-                return { ...result, message: truncatedMessage };
+                const truncatedMessage = result.message.length > 65 ? result.message.substring(0, 65) : result.message;
+                return {...result, message: truncatedMessage};
             });
 
-            console.log(truncatedResults)
+            /*            console.log(truncatedResults)*/
 
             res.json(truncatedResults);
         }
@@ -208,13 +205,15 @@ app.get('/previousChat', (req, res) => {
 
     // Retrieve chat ID from the request body
     const {chatId} = req.query;
-    /*    console.log("Chat Id: ", chatId)
-        console.log("Chat Id length: ", chatId.length)
-        console.log("Chat Id type: ", typeof chatId)*/
+/*    console.log("Chat Id in loaded chat: ", chatId)
+    console.log("Chat Id length: ", chatId.length)
+    console.log("Chat Id type: ", typeof chatId)*/
     // Make sure chatId exists
     if (!chatId) {
         return res.status(400).json({error: 'Chat ID is required'});
     }
+
+    req.session.CurrentChatId = chatId;
 
     const query = process.env.GETPREVIOUSCHAT_QUERY;
     db.query(query, [chatId, req.session.loggedInUserId], (error, results) => {
@@ -223,7 +222,7 @@ app.get('/previousChat', (req, res) => {
             res.status(500).json({error: 'Internal server error'});
         } else {
 
-/*            console.log(results)*/
+            /*            console.log(results)*/
 
             console.log("Rewriting keys")
             // Rewrite keys

@@ -11,11 +11,12 @@ import {
 
 const SavedChats = ({
                         setInSettings,
-                        loadConversation,
                         setSaveUserMessages,
                         newChat,
                         setMessages,
-                        setStoredMessages
+                        setStoredMessages,
+                        setPreviousChat,
+                        setBaseOrderID
                     }) => {
     const [data, setData] = useState([]);
     const [error, setError] = useState('');
@@ -65,7 +66,7 @@ const SavedChats = ({
             .catch(error => {
                 console.error(error)
                 setError('User not logged in?');
-                setErrorButtonId('newChatButton'); // Set the button ID causing the error
+                setErrorButtonId('newChatButton');
                 setTimeout(() => {
                     setError('');
                     setErrorButtonId(null);
@@ -86,7 +87,7 @@ const SavedChats = ({
                     return response.json();
                 })
                 .then(Data => {
-/*                    console.log("Chats data:", Data);*/
+                    /*                    console.log("Chats data:", Data);*/
                     setTimeout(() => {
                         setData(Data);
                         // Remove loading div for user
@@ -134,6 +135,10 @@ const SavedChats = ({
                 setStoredMessages([]);
                 // Save user messages after chat is rendered
                 setSaveUserMessages(true);
+                // Set the state of previousChat to true for stored messages orderId handling
+                setPreviousChat(true)
+                // Set the starting order id for the first message being sent
+                setBaseOrderID(resolvedMessages.length + 1)
                 // Switch user view
                 setInSettings(false)
             })
@@ -167,7 +172,7 @@ const SavedChats = ({
                         className={`Button SavedConversation ${errorButtonId === chat.chatId ? 'shake' : ''}`}
                         onClick={() => loadChat(chat.chatId)}
                     >
-                        {chat.time} - <i>"{chat.message}..."</i>
+                        <strong>{chat.time}</strong> - <i>"{chat.message}..."</i>
                     </button>
                 ))}
             </div>

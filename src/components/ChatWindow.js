@@ -18,50 +18,63 @@ import {
 
 const ChatWindow = () => {
 
+    /* Current conversation messages */
+    const [messages, setMessages] = useState([]);
+
+    /* State of bot generating answer */
+    const [generatedAnswer, setGeneratedAnswer] = useState(false);
+
+    const [previousChat, setPreviousChat] = useState(false);
+    const [baseOrderID, setBaseOrderID] = useState(0);
+
     /* Store messages */
     const [storedMessages, setStoredMessages] = useState([]);
     const handleStoredMessages = (message, userMessage) => {
         setStoredMessages(prevMessages => {
+            /* Order id of a message in chat AKA position */
+            let newOrderId;
+
+            /* If user is loading previous chat */
+            if (previousChat) {
+                newOrderId = prevMessages.length + messages.length + 1;
+            } else {
+                newOrderId = prevMessages.length + 1;
+            }
+
             const newMessage = {
-                uniqueId: generateUniqueID(),
-                orderId: prevMessages.length + 1,
+                orderId: newOrderId,
                 userMessage: userMessage,
                 message: message,
             };
+
             return [...prevMessages, newMessage];
         });
     };
-    /*    console.log("storedMessages: ", storedMessages)
-        console.log("storedMessages type: ", typeof (storedMessages))*/
+
+    // This useEffect will be triggered whenever the messages state changes
+    /*    useEffect(() => {
+            if (previousChat) {
+                setBaseOrderID(messages.length + 1)
+            }
+        }, [storedMessages]);*/
 
     /* Option to save conversation */
     const [saveUserMessages, setSaveUserMessages] = useState(true);
-
-    /* Current conversation messages */
-    const [messages, setMessages] = useState([]);
 
     /* Create new message */
     const handleSendMessage = (message, userMessage) => {
         setMessages(prevMessages => {
             /*            console.log("Messages length in ChatWindow component: ", prevMessages.length);*/
             const newMessage = {
-                uniqueId: generateUniqueID(),
                 orderId: prevMessages.length + 1,
                 userMessage: userMessage,
                 message: message,
             };
-/*            console.log("Message in ChatWindow component: ", message);
-            console.log("Message type in ChatWindow component: ", typeof(message));
-            console.log("Message is user message?: ", userMessage);*/
+            /*            console.log("Message in ChatWindow component: ", message);
+                        console.log("Message type in ChatWindow component: ", typeof(message));
+                        console.log("Message is user message?: ", userMessage);*/
             return [...prevMessages, newMessage];
         });
-    };
-
-    /* Generate unique id */
-    const generateUniqueID = () => {
-        const uuid = uuidv4();
-        /*    console.log(uuid);*/
-        return uuid;
     };
 
     /* Save last message to database */
@@ -104,18 +117,17 @@ const ChatWindow = () => {
 
 //TEMPO
     // FOR DESIGNING BOT MESSAGES
-/*        useEffect(() => {
-            handleSendMessage("Do trading conditions differ on my live and demo account?", true)
-            handleSendMessage(AccountInformation[0].message, false)
-        }, []);*/
+    /*        useEffect(() => {
+                handleSendMessage("Do trading conditions differ on my live and demo account?", true)
+    /!*            handleSendMessage(AccountInformation[0].message, false)*!/
+            }, []);*/
 //TEMPO
 
     /* Logic handles the rendering of settings */
     const [inSettings, setInSettings] = useState(false);
     const handleSettings = () => {
         // Invert the previous state
-        setInSettings(
-            prevState => !prevState);
+        setInSettings(prevState => !prevState);
     };
 
     /* Creation of a new chat */
@@ -125,15 +137,20 @@ const ChatWindow = () => {
         setStoredMessages([]);
         /* Save user messages */
         setSaveUserMessages(true)
+        // Set the state of previousChat to false for stored messages orderId handling
+        setPreviousChat(false)
         /* User is not in settings anymore so rerender chat */
         setInSettings(false);
     }
 
     useEffect(() => {
-/*        console.log("Messages in chat: ", messages);
-        console.log("Stored messages for saving: ", storedMessages);
-        console.log("Saving user messages: ", saveUserMessages);
-        console.log("Rendering settings: ", inSettings);*/
+        /*        console.log("Messages in chat: ", messages);
+                console.log("Stored messages for saving: ", storedMessages);
+                console.log("Saving user messages: ", saveUserMessages);
+                console.log("Rendering settings: ", inSettings);
+                console.log("Rendering previous chat: ", previousChat);
+                console.log("Base order ID is: ", baseOrderID);*/
+        console.log("");
     }, [inSettings]);
 
     return (
@@ -146,18 +163,25 @@ const ChatWindow = () => {
             {inSettings ? (
                 <SavedChats
                     newChat={handleNewChat}
-                    loadConversation={handleSendMessage}
                     setInSettings={setInSettings}
                     setSaveUserMessages={setSaveUserMessages}
                     setMessages={setMessages}
                     setStoredMessages={setStoredMessages}
+                    setPreviousChat={setPreviousChat}
+                    setBaseOrderID={setBaseOrderID}
                 />
             ) : (
                 <>
-                    <Chat messages={messages}/>
+                    <Chat messages={messages}
+                          generatedAnswer={generatedAnswer}
+                    />
                     <UserInput
                         sendInput={handleSendMessage}
                         storeMessages={handleStoredMessages}
+                        setGeneratedAnswer={setGeneratedAnswer}
+                        setBaseOrderID={setBaseOrderID}
+                        baseOrderID={baseOrderID}
+                        messages={messages}
                     />
                 </>
             )}

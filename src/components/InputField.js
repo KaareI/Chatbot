@@ -8,7 +8,7 @@ import './Button.css';
 import SendButton from "../assets/Send.png";
 import {AccountInformation} from "./misc/BotAnswers";
 
-const InputField = ({sendInput, storeMessages}) => {
+const InputField = ({sendInput, storeMessages, setGeneratedAnswer, baseOrderID, messages, setBaseOrderID}) => {
     const [inputValue, setInputValue] = useState('');
     const [isDisabled, setIsDisabled] = useState(false);
 
@@ -20,9 +20,17 @@ const InputField = ({sendInput, storeMessages}) => {
     };
 
     //TEMPO
-    const TempoFunction = () => {
-        sendInput(AccountInformation[0].message, false)
-        setIsDisabled(false);
+    const botResponse = () => {
+        /* Add loading animation till answer is generated */
+        setGeneratedAnswer(false)
+        setTimeout(() => {
+            sendInput(AccountInformation[0].message, false)
+            // User can now type
+            setIsDisabled(false);
+            // Stop loading animation for user
+            setGeneratedAnswer(true)
+        }, 2000);
+
     }
     //TEMPO
 
@@ -30,11 +38,16 @@ const InputField = ({sendInput, storeMessages}) => {
     * Send the user message
     * Empty the input value */
     const handleButtonClick = () => {
+        // User can not type
         setIsDisabled(true);
         /*        console.log(inputValue)*/
+        // Send user input value
         sendInput(inputValue, true);
+        // Set input value to empty
         setInputValue('')
-        TempoFunction();
+        // Get bot response
+        botResponse();
+        // Store messages for saving
         storeMessages(inputValue, true);
         storeMessages('AccountInformation[0].message', false);
     };
