@@ -53,8 +53,11 @@
     color: #ECECEC;
 }
 
-.Bot a:hover{
-    color: #c00;
+/* Enable hover effects for non-touch devices */
+@media (hover: hover) {
+    .Bot a:hover{
+        color: #c00;
+    }
 }
 
 /* Additional class for Client "Response" box */

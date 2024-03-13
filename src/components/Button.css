@@ -8,8 +8,13 @@
     justify-content: center;
 }
 
-.Button:hover {
-    cursor: pointer;
-    opacity: 1.5;
-    transform: scale(1.1);
+/* Enable hover effects for non-touch devices */
+@media (hover: hover) {
+    .Button:hover {
+        cursor: pointer;
+        opacity: 1.5;
+        transform: scale(1.1);
+    }
 }
+
+
