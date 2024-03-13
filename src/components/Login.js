@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 // Import CSS
 import './Login.css';
@@ -17,6 +17,14 @@ const Login = (props) => {
         checkCredentials(username, password);
     };
 
+    /* Send user message when "ENTER" is pressed */
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            handleLogin();
+        }
+    };
+
+
     // Function to send credentials to the server
     const checkCredentials = (username, password) => {
         /* Make a request to server with credentials */
@@ -25,7 +33,7 @@ const Login = (props) => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({username, password}),
             credentials: 'same-origin',
         })
 
@@ -62,14 +70,14 @@ const Login = (props) => {
                 <img src={User} alt="User Logo"
                      style={{width: '24px', height: '24px', marginLeft: "16px"}}
                 />
-                <input type="text" id="loginUser" placeholder="Username" required
+                <input type="text" id="loginUser" placeholder="Username" required onKeyDown={handleKeyPress}
                        value={username} onChange={(e) => setUsername(e.target.value)}/>
             </div>
             <div className={`FieldContainer ${error ? 'shake' : ''}`}>
                 <img src={Lock} alt="Lock"
                      style={{width: '28px', height: '24px', marginLeft: "16px"}}
                 />
-                <input type="password" id="loginPassword" placeholder="Password" required
+                <input type="password" id="loginPassword" placeholder="Password" required onKeyDown={handleKeyPress}
                        value={password} onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <button className={"Button LoginButton"} onClick={handleLogin}>

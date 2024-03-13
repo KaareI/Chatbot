@@ -179,9 +179,6 @@ const ChatWindow = () => {
                         sendInput={handleSendMessage}
                         storeMessages={handleStoredMessages}
                         setGeneratedAnswer={setGeneratedAnswer}
-                        setBaseOrderID={setBaseOrderID}
-                        baseOrderID={baseOrderID}
-                        messages={messages}
                     />
                 </>
             )}

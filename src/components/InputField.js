@@ -8,7 +8,7 @@ import './Button.css';
 import SendButton from "../assets/Send.png";
 import {AccountInformation} from "./misc/BotAnswers";
 
-const InputField = ({sendInput, storeMessages, setGeneratedAnswer, baseOrderID, messages, setBaseOrderID}) => {
+const InputField = ({sendInput, storeMessages, setGeneratedAnswer}) => {
     const [inputValue, setInputValue] = useState('');
     const [isDisabled, setIsDisabled] = useState(false);
 
