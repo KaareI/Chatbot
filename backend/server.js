@@ -103,14 +103,25 @@ app.get('/logout', (req, res) => {
     });
 });
 
-function getDate() {
-    const date = new Date();
+/* Convert the date from database to more readable format */
+function convertDatabaseDate(dateString) {
+    const date = new Date(dateString);
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const month = months[date.getMonth()];
     const day = date.getDate();
     const year = date.getFullYear();
 
     return `${month} ${day}, ${year}`;
+}
+
+/* Get date for saving in database */
+function getDatabaseDate() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
 }
 
 // Save messages to database
@@ -129,7 +140,7 @@ app.put('/saveMessages', (req, res) => {
             ...message,
             userId: req.session.loggedInUserId,
             chatId: req.session.CurrentChatId,
-            time: getDate(),
+            time: getDatabaseDate(),
         }));
 
         const query = process.env.SAVEMESSAGE_QUERY;
@@ -160,10 +171,6 @@ app.get('/userChats', (req, res) => {
         return res.status(401).json({error: 'Unauthorized'});
     }
 
-/*
-    console.log("Chat id in all user chats", req.session.CurrentChatId)
-*/
-
     // Execute a SQL query to retrieve message chat id and message time values
     const query = process.env.GETUSERCHATS_QUERY;
     db.query(query, [req.session.loggedInUserId], (error, results) => {
@@ -172,7 +179,6 @@ app.get('/userChats', (req, res) => {
             res.status(500).json({error: 'Internal server error'});
         } else {
 
-            console.log("Rewriting keys")
             // Rewrite keys
             const updatedData = results.map(message => {
                 return {
@@ -182,14 +188,14 @@ app.get('/userChats', (req, res) => {
                 };
             });
 
-            // Assuming `results` is an array of objects with a `message` property
-
+            // Truncate messages length and format date
             const truncatedResults = updatedData.map(result => {
                 const truncatedMessage = result.message.length > 65 ? result.message.substring(0, 65) : result.message;
-                return {...result, message: truncatedMessage};
+                const formattedTime = convertDatabaseDate(result.time);
+                return {...result, message: truncatedMessage, time: formattedTime};
             });
 
-            /*            console.log(truncatedResults)*/
+/*            console.log(truncatedResults)*/
 
             res.json(truncatedResults);
         }
@@ -205,9 +211,9 @@ app.get('/previousChat', (req, res) => {
 
     // Retrieve chat ID from the request body
     const {chatId} = req.query;
-/*    console.log("Chat Id in loaded chat: ", chatId)
-    console.log("Chat Id length: ", chatId.length)
-    console.log("Chat Id type: ", typeof chatId)*/
+    /*    console.log("Chat Id in loaded chat: ", chatId)
+        console.log("Chat Id length: ", chatId.length)
+        console.log("Chat Id type: ", typeof chatId)*/
     // Make sure chatId exists
     if (!chatId) {
         return res.status(400).json({error: 'Chat ID is required'});
