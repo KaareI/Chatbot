@@ -7,6 +7,14 @@
     overflow: hidden;
 }
 
+.Disclaimer{
+    color: #ECECEC;
+    font-size: 14px;
+    text-align: center;
+    height: auto !important;
+    padding: 16px 6% !important;
+}
+
 /* Large monitors & screens */
 @media screen and (min-width: 1536px) {
     .ChatWindow {

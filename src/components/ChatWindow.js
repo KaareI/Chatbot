@@ -79,7 +79,9 @@ const ChatWindow = () => {
 
     /* Save last message to database */
     const saveMessages = () => {
-        /*        console.log("Messages before saving:", messages)*/
+                console.log("Messages before saving:", messages)
+        console.log("Stored messages before saving: ", storedMessages);
+
         /* Make a request to server with messages */
         fetch("/saveMessages", {
             method: "PUT",
@@ -96,6 +98,7 @@ const ChatWindow = () => {
                     throw new Error('Error saving messages');
                 } else {
                     /* SUCCESSFUL SAVE OF MESSAGES */
+                    setStoredMessages([]);
                     console.log("Messages saved...")
                 }
             })
@@ -161,15 +164,19 @@ const ChatWindow = () => {
             />
             {/* Rendering based on if user is in settings or not */}
             {inSettings ? (
-                <SavedChats
-                    newChat={handleNewChat}
-                    setInSettings={setInSettings}
-                    setSaveUserMessages={setSaveUserMessages}
-                    setMessages={setMessages}
-                    setStoredMessages={setStoredMessages}
-                    setPreviousChat={setPreviousChat}
-                    setBaseOrderID={setBaseOrderID}
-                />
+                <>
+                    <SavedChats
+                        newChat={handleNewChat}
+                        setInSettings={setInSettings}
+                        setSaveUserMessages={setSaveUserMessages}
+                        setMessages={setMessages}
+                        setStoredMessages={setStoredMessages}
+                        setPreviousChat={setPreviousChat}
+                        setBaseOrderID={setBaseOrderID}
+                    />
+                    <p className={"Disclaimer UserInput"}><strong>Disclaimer:</strong> Your conversations are saved for 30 days for quality assurance. After this period,
+                        they are permanently deleted.</p>
+                </>
             ) : (
                 <>
                     <Chat messages={messages}

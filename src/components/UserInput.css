@@ -1,4 +1,4 @@
-/* Last element in "ChatWindow", that has element "InputField" inside it */
+/* Outer container element in "ChatWindow" */
 .UserInput {
     max-height: 64px;
     height: 13%;
