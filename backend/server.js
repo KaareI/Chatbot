@@ -1,6 +1,7 @@
 const {v4: uuidv4} = require('uuid');
 const express = require('express');
 const cors = require('cors');
+const cron = require('node-cron');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const db = require('./db')
@@ -22,6 +23,13 @@ app.use(session({
     saveUninitialized: true
 }));
 
+// Schedule to delete data every
+cron.schedule('0 0 * * *', () => {
+    console.log('Checking for old chats to delete...');
+    deleteOldData();
+});
+deleteOldData()
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
@@ -39,6 +47,49 @@ const createChatID = (req) => {
         console.log("Length of chat id: ", uuid.length);*/
     req.session.CurrentChatId = uuid;
 };
+
+// Function to delete data older than 30 days
+function deleteOldData() {
+
+    const thirtyDaysAgo = new Date();
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
+
+    /*    const formattedDate = thirtyDaysAgo.toISOString().split('T')[0];*/
+    const formattedDate = '2024-03-12';
+
+    // Get old chat id's
+    const retrieveQuery = process.env.RETRIEVEOLDDATA_QUERY;
+    db.query(retrieveQuery, [formattedDate], (error, results) => {
+        if (error) {
+            console.error('Error retrieving old data:', error);
+        } else {
+
+            // If results array is empty, exit the function
+            if (results.length === 0) {
+                console.log('No old conversations found to delete.');
+                return;
+            }
+
+            const chatIDsToDelete = results.map(result => result.chatID);
+
+            // Generate the placeholders for the parameterized query
+            const placeholders = chatIDsToDelete.map(() => '?').join(',');
+
+            const deleteQuery = process.env.DELETEOLDDATA_QUERY.replace('{placeholders}', placeholders);
+
+            // Delete old chats with ids
+            db.query(deleteQuery, chatIDsToDelete, (deleteError, deleteResults) => {
+                if (deleteError) {
+                    console.error('Error deleting old data:', deleteError);
+                } else {
+                    console.log('Old data deleted successfully.');
+/*                    console.log(deleteResults)*/
+                }
+            });
+        }
+    });
+}
+
 
 // Endpoint for creating a new chat id from client side
 app.post('/generateChat', (req, res) => {
