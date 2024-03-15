@@ -23,7 +23,7 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// Schedule to delete data every
+// Schedule to delete data every day
 cron.schedule('0 0 * * *', () => {
     console.log('Checking for old chats to delete...');
     deleteOldData();
@@ -54,8 +54,7 @@ function deleteOldData() {
     const thirtyDaysAgo = new Date();
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
 
-    /*    const formattedDate = thirtyDaysAgo.toISOString().split('T')[0];*/
-    const formattedDate = '2024-03-12';
+    const formattedDate = thirtyDaysAgo.toISOString().split('T')[0];
 
     // Get old chat id's
     const retrieveQuery = process.env.RETRIEVEOLDDATA_QUERY;
@@ -83,7 +82,7 @@ function deleteOldData() {
                     console.error('Error deleting old data:', deleteError);
                 } else {
                     console.log('Old data deleted successfully.');
-/*                    console.log(deleteResults)*/
+                    /*                    console.log(deleteResults)*/
                 }
             });
         }
@@ -246,7 +245,7 @@ app.get('/userChats', (req, res) => {
                 return {...result, message: truncatedMessage, time: formattedTime};
             });
 
-/*            console.log(truncatedResults)*/
+            /*            console.log(truncatedResults)*/
 
             res.json(truncatedResults);
         }
