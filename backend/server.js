@@ -82,7 +82,7 @@ function deleteOldData() {
                     console.error('Error deleting old data:', deleteError);
                 } else {
                     console.log('Old data deleted successfully.');
-                    /*                    console.log(deleteResults)*/
+                    /*                                        console.log(deleteResults)*/
                 }
             });
         }

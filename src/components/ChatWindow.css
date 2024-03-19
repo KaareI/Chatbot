@@ -62,7 +62,9 @@
     .ChatWindow {
         width: 80%;
         height: 100svh;
+        border-radius: 0;
     }
+
 }
 
 @media screen and (max-width: 864px) {

@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {v4 as uuidv4} from 'uuid';
 
 // Import CSS
 import './ChatWindow.css'
@@ -13,7 +12,8 @@ import {
     AccountInformation,
     DepositsAndWithdrawals,
     ProductInterventionMeasures,
-    TradingConditions
+    TradingConditions,
+    Greeting
 } from './misc/BotAnswers';
 
 const ChatWindow = () => {
@@ -50,13 +50,6 @@ const ChatWindow = () => {
             return [...prevMessages, newMessage];
         });
     };
-
-    // This useEffect will be triggered whenever the messages state changes
-    /*    useEffect(() => {
-            if (previousChat) {
-                setBaseOrderID(messages.length + 1)
-            }
-        }, [storedMessages]);*/
 
     /* Option to save conversation */
     const [saveUserMessages, setSaveUserMessages] = useState(true);
@@ -120,11 +113,14 @@ const ChatWindow = () => {
 
 //TEMPO
     // FOR DESIGNING BOT MESSAGES
-    /*        useEffect(() => {
+            useEffect(() => {
                 handleSendMessage("Do trading conditions differ on my live and demo account?", true)
-    /!*            handleSendMessage(AccountInformation[0].message, false)*!/
-            }, []);*/
+                handleSendMessage(Greeting[2].message, false)
+            }, []);
 //TEMPO
+
+    /* TradingConditions[11].message */
+    /* TradingConditions[16].message */
 
     /* Logic handles the rendering of settings */
     const [inSettings, setInSettings] = useState(false);

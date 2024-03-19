@@ -81,7 +81,7 @@ export const AccountInformation = [
                 <h4 className={"Response Bot"}><em>"How do I modify or delete a trade in the MetaTrader platform?"</em>
                 </h4>
                 <p className={"Response Bot"}>Right-click on the instrument you placed the trade with and use the
-                    options ‘Modify the trade’ or ‘Delete the trade’.
+                    options <em>‘Modify the trade’</em> or <em>‘Delete the trade’</em>.
                 </p>
             </div>
         )
@@ -299,7 +299,8 @@ export const AccountInformation = [
                     <p className={"Response Bot"}>
                         We update the swaps based on the rates given to us by our counterparties and we recommend
                         checking the swap rates on a regular basis within the MetaTrader platform. Our updated swaps are
-                        always available by clicking here.
+                        always available by clicking <a title="Here"
+                                                        href="https://www.tickmill.eu/conditions/spreads-swaps">here</a>.
                     </p>
                     <p className={"Response Bot"}>
                         You can also check the swap rates by logging into the MetaTrader trading platform and select:
@@ -999,10 +1000,9 @@ export const TradingConditions = [
                 </h4>
                 <p className={"Response Bot"}>
                     Hedging is allowed. The required margin for hedging positions on <a title="Classic"
-                                                                                        href="https://www.tickmill.eu/trading/classic-account">Classic</a>, <a
-                    title="Pro" href="https://www.tickmill.eu/trading/pro-account">Pro</a>, and <a title="Vip"
-                                                                                                   href="https://www.tickmill.eu/trading/vip-account">VIP</a> accounts
-                    is 0. Scalping is also allowed. There are no time limitations for keeping the positions open.
+                                                                                        href="https://www.tickmill.eu/trading/classic-account">Classic</a>,
+                    and Raw accounts is 0. Scalping is also allowed. There are no time limitations for keeping the
+                    positions open.
                 </p>
             </div>
         )
@@ -1796,5 +1796,49 @@ export const TradingConditions = [
             </div>
         )
     },
+];
+
+export const Greeting = [
+    {
+        message: (
+            <div className={"ResponseContainer"}>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <p className={"Response Bot"}>
+                    Hello! How may I assist you today?
+                </p>
+            </div>
+        )
+    },
+    {
+        message: (
+            <div className={"ResponseContainer"}>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <p className={"Response Bot"}>
+                    Greetings! I'm here to provide support and assistance. What can I do for you?
+                </p>
+            </div>
+        )
+    },
+    {
+        message: (
+            <div className={"ResponseContainer"}>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <p className={"Response Bot"}>
+                    Hello there, thank you for reaching out. How may I be of service?
+                </p>
+            </div>
+        )
+    },
+    {
+        message: (
+            <div className={"ResponseContainer"}>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <p className={"Response Bot"}>
+                    Greetings! How may I assist you on this fine day?
+                </p>
+            </div>
+        )
+    },
+
 ];
 
