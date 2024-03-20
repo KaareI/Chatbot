@@ -1,6 +1,6 @@
 import Branding from "../Branding";
 
-export const AccountInformation = [
+export const BotResponse = [
     {
         id: 1,
         message: (
@@ -352,11 +352,7 @@ export const AccountInformation = [
                     </p>
                 </div>
             )
-    }
-    ,
-];
-
-export const DepositsAndWithdrawals = [
+    },
     {
         id: 17,
         message: (
@@ -499,9 +495,6 @@ export const DepositsAndWithdrawals = [
             </div>
         )
     },
-];
-
-export const ProductInterventionMeasures = [
     {
         id: 26,
         message: (
@@ -988,9 +981,6 @@ export const ProductInterventionMeasures = [
                 </div>
             )
     },
-];
-
-export const TradingConditions = [
     {
         id: 48,
         message: (

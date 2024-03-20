@@ -9,11 +9,7 @@ import Chat from "./Chat";
 import UserInput from "./UserInput";
 import SavedChats from "./SavedChats";
 import {
-    AccountInformation,
-    DepositsAndWithdrawals,
-    ProductInterventionMeasures,
-    TradingConditions,
-    Greeting
+    BotResponse
 } from './misc/BotAnswers';
 
 const ChatWindow = () => {
@@ -25,7 +21,6 @@ const ChatWindow = () => {
     const [generatedAnswer, setGeneratedAnswer] = useState(false);
 
     const [previousChat, setPreviousChat] = useState(false);
-    const [baseOrderID, setBaseOrderID] = useState(0);
 
     /* Store messages */
     const [storedMessages, setStoredMessages] = useState([]);
@@ -33,13 +28,14 @@ const ChatWindow = () => {
         setStoredMessages(prevMessages => {
             /* Order id of a message in chat AKA position */
             let newOrderId;
+            newOrderId = prevMessages.length + messages.length + 1;
 
             /* If user is loading previous chat */
-            if (previousChat) {
+/*            if (previousChat) {
                 newOrderId = prevMessages.length + messages.length + 1;
             } else {
                 newOrderId = prevMessages.length + 1;
-            }
+            }*/
 
             const newMessage = {
                 orderId: newOrderId,
@@ -72,7 +68,7 @@ const ChatWindow = () => {
 
     /* Save last message to database */
     const saveMessages = () => {
-                console.log("Messages before saving:", messages)
+        console.log("Messages before saving:", messages)
         console.log("Stored messages before saving: ", storedMessages);
 
         /* Make a request to server with messages */
@@ -112,11 +108,11 @@ const ChatWindow = () => {
     }, [storedMessages]);
 
 //TEMPO
-    // FOR DESIGNING BOT MESSAGES
-            useEffect(() => {
-                handleSendMessage("Do trading conditions differ on my live and demo account?", true)
-                handleSendMessage(Greeting[2].message, false)
-            }, []);
+    /*    // FOR DESIGNING BOT MESSAGES
+                useEffect(() => {
+                    handleSendMessage("Do trading conditions differ on my live and demo account?", true)
+                    handleSendMessage(BotResponse[2].message, false)
+                }, []);*/
 //TEMPO
 
     /* TradingConditions[11].message */
@@ -142,15 +138,14 @@ const ChatWindow = () => {
         setInSettings(false);
     }
 
-    useEffect(() => {
-        /*        console.log("Messages in chat: ", messages);
+/*    useEffect(() => {
+         console.log("Messages in chat: ", messages);
                 console.log("Stored messages for saving: ", storedMessages);
                 console.log("Saving user messages: ", saveUserMessages);
                 console.log("Rendering settings: ", inSettings);
                 console.log("Rendering previous chat: ", previousChat);
-                console.log("Base order ID is: ", baseOrderID);*/
         console.log("");
-    }, [inSettings]);
+    }, [inSettings]);*/
 
     return (
         <div className="ChatWindow">
@@ -168,9 +163,10 @@ const ChatWindow = () => {
                         setMessages={setMessages}
                         setStoredMessages={setStoredMessages}
                         setPreviousChat={setPreviousChat}
-                        setBaseOrderID={setBaseOrderID}
+                        setGeneratedAnswer={setGeneratedAnswer}
                     />
-                    <p className={"Disclaimer UserInput"}><strong>Disclaimer:</strong> Your conversations are saved for 30 days for quality assurance. After this period,
+                    <p className={"Disclaimer UserInput"}><strong>Disclaimer:</strong> Your conversations are saved for
+                        30 days for quality assurance. After this period,
                         they are permanently deleted.</p>
                 </>
             ) : (

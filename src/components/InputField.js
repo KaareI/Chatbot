@@ -6,7 +6,7 @@ import './Button.css';
 
 // Import assets
 import SendButton from "../assets/Send.png";
-import {AccountInformation} from "./misc/BotAnswers";
+import {BotResponse} from "./misc/BotAnswers";
 
 const InputField = ({sendInput, storeMessages, setGeneratedAnswer}) => {
     const [inputValue, setInputValue] = useState('');
@@ -19,37 +19,78 @@ const InputField = ({sendInput, storeMessages, setGeneratedAnswer}) => {
         }
     };
 
-    //TEMPO
-    const botResponse = () => {
+    const askQuestion = (question) => {
+        /* Make a request to server with question */
+        return fetch("http://localhost:5001/ask", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ question }),
+        })
+            /* Handle response from server */
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error interpreting question');
+                }
+                return response.json();
+            })
+            /* Handle errors that occur during the fetch request */
+            .catch(error => {
+                console.error('Error:', error);
+                throw error;
+            });
+    };
+
+    const botResponse = (userQuestion) => {
         /* Add loading animation till answer is generated */
-        setGeneratedAnswer(false)
-        setTimeout(() => {
-            sendInput(AccountInformation[0].message, false)
-            // User can now type
-            setIsDisabled(false);
-            // Stop loading animation for user
-            setGeneratedAnswer(true)
-        }, 2000);
+        setGeneratedAnswer(false);
+        return new Promise((resolve, reject) => {
+            askQuestion(userQuestion)
+                .then(object => {
+                    console.log(object);
+                    const answerID = object.id;
+                    let answer;
+                    for (const response of BotResponse) {
+                        if (response.id === answerID) {
+                            answer = response;
+                            break;
+                        }
+                    }
+                    setTimeout(() => {
+                        sendInput(answer.message, false)
+                        // User can now type
+                        setIsDisabled(false);
+                        // Stop loading animation for user
+                        setGeneratedAnswer(true)
+                        resolve(answerID); // Resolve the promise with answerID
+                    }, 1000);
+                })
+                .catch(error => {
+                    reject(error); // Reject the promise if there's an error
+                });
+        });
+    };
 
-    }
-    //TEMPO
 
-    /* Disable send button and input field
-    * Send the user message
-    * Empty the input value */
+
     const handleButtonClick = () => {
         // User can not type
         setIsDisabled(true);
-        /*        console.log(inputValue)*/
         // Send user input value
         sendInput(inputValue, true);
         // Set input value to empty
         setInputValue('')
         // Get bot response
-        botResponse();
-        // Store messages for saving
-        storeMessages(inputValue, true);
-        storeMessages('AccountInformation[0].message', false);
+        botResponse(inputValue)
+            .then(answerID => {
+                // Store messages for saving
+                storeMessages(inputValue, true);
+                storeMessages(answerID, false);
+            })
+            .catch(error => {
+                // Handle error here
+            });
     };
 
     return (

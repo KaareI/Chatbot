@@ -2,12 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 // Import CSS
 import './SavedChats.css'
-import {
-    AccountInformation,
-    DepositsAndWithdrawals,
-    ProductInterventionMeasures,
-    TradingConditions
-} from './misc/BotAnswers';
+import {BotResponse} from './misc/BotAnswers';
 
 const SavedChats = ({
                         setInSettings,
@@ -16,38 +11,23 @@ const SavedChats = ({
                         setMessages,
                         setStoredMessages,
                         setPreviousChat,
-                        setBaseOrderID
+                        setGeneratedAnswer
                     }) => {
     const [data, setData] = useState([]);
     const [error, setError] = useState('');
     const [errorButtonId, setErrorButtonId] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const resolveMessage = (message) => {
+    const resolveMessage = (answerID) => {
+        const keyID =parseInt(answerID)
 
-        // Split the message string to extract the module name and index
-        const [moduleName, index] = message.split('[');
-
-        // If the message format is incorrect
-        if (!moduleName || !index) return "Invalid bot message";
-
-        // Extract the index value by removing ']' and converting to a number
-        const messageIndex = parseInt(index.slice(0, -1), 10);
-
-        // Dynamically access the module by name
-        const module = modules[moduleName];
-
-        // Return the message from the module if the index is valid
-        return module[messageIndex] ? module[messageIndex].message : "Invalid bot message";
+        for (const response of BotResponse) {
+            if (response.id === keyID) {
+                return response.message;
+            }
+        }
     };
 
-// Define a mapping of module names to the actual modules
-    const modules = {
-        AccountInformation,
-        DepositsAndWithdrawals,
-        ProductInterventionMeasures,
-        TradingConditions
-    };
 
     const createNewChat = () => {
         fetch("/generateChat", {
@@ -107,6 +87,8 @@ const SavedChats = ({
     const loadChat = (chatID) => {
         console.log("Loading previous chat...")
         setSaveUserMessages(false);
+        // Add loading animation for generating answer
+        setGeneratedAnswer(false);
         /*        console.log("Chat id: ", chatID)*/
         fetch(`/previousChat?chatId=${chatID}`, {
             method: 'GET',
@@ -136,9 +118,9 @@ const SavedChats = ({
                 // Save user messages after chat is rendered
                 setSaveUserMessages(true);
                 // Set the state of previousChat to true for stored messages orderId handling
-                setPreviousChat(true)
-                // Set the starting order id for the first message being sent
-                setBaseOrderID(resolvedMessages.length + 1)
+                setPreviousChat(true);
+                // Remove loading animation for generating answer
+                setGeneratedAnswer(true);
                 // Switch user view
                 setInSettings(false)
             })
