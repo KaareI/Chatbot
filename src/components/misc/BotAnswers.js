@@ -1786,49 +1786,29 @@ export const BotResponse = [
             </div>
         )
     },
+    {
+        id: 9999,
+        message: (
+            <div className={"ResponseContainer"}>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <p className={"Response Bot"}>
+                    I'm having trouble answering to you. Try to rephrase question or contact <a title="Client Support"
+                                                                                                href="https://www.tickmill.eu/about/contact-us"
+                                                                                                target="_blank">Client
+                    Support</a>
+                </p>
+            </div>
+        )
+    },
+    {
+        id: 9998,
+        message: (
+            <div className={"ResponseContainer"}>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <p className={"Response Bot"}>
+                    Glad I could assist!
+                </p>
+            </div>
+        )
+    },
 ];
-
-export const Greeting = [
-    {
-        message: (
-            <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
-                <p className={"Response Bot"}>
-                    Hello! How may I assist you today?
-                </p>
-            </div>
-        )
-    },
-    {
-        message: (
-            <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
-                <p className={"Response Bot"}>
-                    Greetings! I'm here to provide support and assistance. What can I do for you?
-                </p>
-            </div>
-        )
-    },
-    {
-        message: (
-            <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
-                <p className={"Response Bot"}>
-                    Hello there, thank you for reaching out. How may I be of service?
-                </p>
-            </div>
-        )
-    },
-    {
-        message: (
-            <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
-                <p className={"Response Bot"}>
-                    Greetings! How may I assist you on this fine day?
-                </p>
-            </div>
-        )
-    },
-
-];
-

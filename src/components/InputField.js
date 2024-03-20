@@ -21,7 +21,7 @@ const InputField = ({sendInput, storeMessages, setGeneratedAnswer}) => {
 
     const askQuestion = (question) => {
         /* Make a request to server with question */
-        return fetch("http://localhost:5001/ask", {
+        return fetch("/question", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -49,7 +49,7 @@ const InputField = ({sendInput, storeMessages, setGeneratedAnswer}) => {
             askQuestion(userQuestion)
                 .then(object => {
                     console.log(object);
-                    const answerID = object.id;
+                    const answerID = parseInt(object.id);
                     let answer;
                     for (const response of BotResponse) {
                         if (response.id === answerID) {

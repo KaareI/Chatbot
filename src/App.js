@@ -1,5 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+
+// Import CSS
 import './App.css';
+
+// Import components
 import ChatWindow from "./components/ChatWindow";
 import Login from "./components/Login";
 

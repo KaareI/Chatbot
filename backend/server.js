@@ -43,8 +43,6 @@ async function comparePassword(plaintextPassword, hash) {
 /* Generate unique chat id */
 const createChatID = (req) => {
     const uuid = uuidv4();
-    /*    console.log("Created chat id: ", uuid);
-        console.log("Length of chat id: ", uuid.length);*/
     req.session.CurrentChatId = uuid;
 };
 
@@ -88,7 +86,6 @@ function deleteOldData() {
         }
     });
 }
-
 
 // Endpoint for creating a new chat id from client side
 app.post('/generateChat', (req, res) => {
@@ -293,4 +290,35 @@ app.get('/previousChat', (req, res) => {
             res.json(updatedData);
         }
     });
+});
+
+// Retrieve answer for user question
+app.post('/question', async (req, res) => {
+    // Check if the user is authenticated
+    if (!req.session.isAuthenticated) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    const { question } = req.body;
+    const secretKey = process.env.SECRET_KEY;
+
+    try {
+        const response = await fetch('http://127.0.0.1:5001/ask', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ question, secretKey }),
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
+
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: 'Error fetching data' });
+    }
 });
