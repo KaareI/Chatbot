@@ -1,25 +1,25 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Import CSS
 import './SavedChats.css'
-import {BotResponse} from './misc/BotAnswers';
+import { BotResponse } from './misc/BotAnswers';
 
 const SavedChats = ({
-                        setInSettings,
-                        setSaveUserMessages,
-                        newChat,
-                        setMessages,
-                        setStoredMessages,
-                        setPreviousChat,
-                        setGeneratedAnswer
-                    }) => {
+    setInSettings,
+    setSaveUserMessages,
+    newChat,
+    setMessages,
+    setStoredMessages,
+    setPreviousChat,
+    setGeneratedAnswer
+}) => {
     const [data, setData] = useState([]);
     const [error, setError] = useState('');
     const [errorButtonId, setErrorButtonId] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const resolveMessage = (answerID) => {
-        const keyID =parseInt(answerID)
+        const keyID = parseInt(answerID)
 
         for (const response of BotResponse) {
             if (response.id === keyID) {

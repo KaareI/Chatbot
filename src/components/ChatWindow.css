@@ -13,6 +13,7 @@
     text-align: center;
     height: auto !important;
     padding: 16px 6% !important;
+    max-height: initial !important;
 }
 
 /* Large monitors & screens */

@@ -114,14 +114,12 @@ app.post('/login', async (req, res) => {
             return res.status(401).json({error: 'Invalid username'});
         }
 
-        const hashedPassword = results[0].User_Password;
-        /*        console.log("Results",results[0])*/
+        const hashedPassword = results[0].process.env.PASSWORD;
 
         // Compare the provided password with the hashed password from the database
         const passwordsMatch = await comparePassword(password, hashedPassword);
 
         if (passwordsMatch) {
-            /*            console.log("logged-in user id", results[0].id)*/
             // Authentication successful
             req.session.isAuthenticated = true;
             // Get the id of logged-in user
