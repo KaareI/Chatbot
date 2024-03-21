@@ -1,3 +1,5 @@
+import React, { useRef, useEffect } from 'react';
+
 // Import CSS
 import './Chat.css';
 import './ResponseContainer.css';
@@ -7,10 +9,14 @@ import Greeting from "./Greeting";
 import Client from "./Client";
 
 const Chat = ({messages, generatedAnswer}) => {
+    const lastMessageRef = useRef(null);
 
-    /*    console.log("Messages in Chat component: ", messages)
-        console.log("Message 1 message in Chat component: ", messages[0].message)
-        console.log("Message 1 Usermessage in Chat component: ", messages[0].userMessage)*/
+    useEffect(() => {
+        // Scroll to the last message when messages change
+        if (lastMessageRef.current) {
+            lastMessageRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [messages]);
 
     if (messages === undefined || messages.length === 0) {
         // Return the chat interface with just the greeting
@@ -26,10 +32,10 @@ const Chat = ({messages, generatedAnswer}) => {
     return (
         <div className={"Chat"}>
             <div className={"ResponseContainer"}>
-                <Greeting></Greeting>
+                <Greeting />
             </div>
             {messages.map((message, index) => (
-                <div key={index} className={"ResponseContainer"}>
+                <div key={index} className={"ResponseContainer"} ref={index === messages.length - 1 ? lastMessageRef : null}>
                     {message.userMessage === true || message.userMessage === 1 ? (
                         <Client message={message.message}/>
                     ) : (
