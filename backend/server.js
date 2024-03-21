@@ -226,23 +226,12 @@ app.get('/userChats', (req, res) => {
             res.status(500).json({error: 'Internal server error'});
         } else {
 
-            // Rewrite keys
-            const updatedData = results.map(message => {
-                return {
-                    message: message[process.env.MESSAGE_VARIABLE],
-                    chatId: message[process.env.CHATID_VARIABLE],
-                    time: message[process.env.TIME_VARIABLE]
-                };
-            });
-
             // Truncate messages length and format date
-            const truncatedResults = updatedData.map(result => {
+            const truncatedResults = results.map(result => {
                 const truncatedMessage = result.message.length > 65 ? result.message.substring(0, 65) : result.message;
                 const formattedTime = convertDatabaseDate(result.time);
                 return {...result, message: truncatedMessage, time: formattedTime};
             });
-
-            /*            console.log(truncatedResults)*/
 
             res.json(truncatedResults);
         }
@@ -258,9 +247,6 @@ app.get('/previousChat', (req, res) => {
 
     // Retrieve chat ID from the request body
     const {chatId} = req.query;
-    /*    console.log("Chat Id in loaded chat: ", chatId)
-        console.log("Chat Id length: ", chatId.length)
-        console.log("Chat Id type: ", typeof chatId)*/
     // Make sure chatId exists
     if (!chatId) {
         return res.status(400).json({error: 'Chat ID is required'});
@@ -275,19 +261,7 @@ app.get('/previousChat', (req, res) => {
             res.status(500).json({error: 'Internal server error'});
         } else {
 
-            /*            console.log(results)*/
-
-            console.log("Rewriting keys")
-            // Rewrite keys
-            const updatedData = results.map(message => {
-                return {
-                    message: message[process.env.MESSAGE_VARIABLE],
-                    orderId: message[process.env.ORDERID_VARIABLE],
-                    userMessage: message[process.env.USERMESSAGE_VARIABLE]
-                };
-            });
-
-            res.json(updatedData);
+            res.json(results);
         }
     });
 });
