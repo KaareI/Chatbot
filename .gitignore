@@ -6,8 +6,8 @@
 .pnp.js
 .idea
 .env
+__pycache__
 backend/node_modules
-backend/__pycache__
 
 # testing
 /coverage

@@ -80,7 +80,6 @@ function deleteOldData() {
                     console.error('Error deleting old data:', deleteError);
                 } else {
                     console.log('Old data deleted successfully.');
-                    /*                                        console.log(deleteResults)*/
                 }
             });
         }
@@ -114,7 +113,8 @@ app.post('/login', async (req, res) => {
             return res.status(401).json({error: 'Invalid username'});
         }
 
-        const hashedPassword = results[0].process.env.PASSWORD;
+        const pswdVariable = process.env.PASSWORD
+        const hashedPassword = results[0][pswdVariable];
 
         // Compare the provided password with the hashed password from the database
         const passwordsMatch = await comparePassword(password, hashedPassword);

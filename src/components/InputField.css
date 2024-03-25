@@ -7,8 +7,15 @@
 }
 
 /* Targets Client's input field */
-.InputField input {
+#userInput {
     width: 98% !important;
+    height: 100%;
+    padding: 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    color: #ECECEC;
+    outline: none;
 }
 
 /* Disabled class for input field and button */

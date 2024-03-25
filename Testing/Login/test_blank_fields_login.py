@@ -36,6 +36,8 @@ def blank_fields_login():
                 error_found = True
                 break
 
+        time.sleep(1)
+
         if input_fields and error_found:
             # Log test success
             logging.info({'Blank Fields Login'})

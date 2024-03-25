@@ -99,21 +99,12 @@ const InputField = ({sendInput, storeMessages, setGeneratedAnswer}) => {
             <input
                 type="text"
                 placeholder="Ask a question..."
+                id="userInput"
                 value={inputValue}
                 onChange={(event) => setInputValue(event.target.value)}
                 onKeyDown={handleKeyPress}
                 className={isDisabled ? 'Disabled' : ''}
                 disabled={isDisabled}
-                style={{
-                    width: "90%",
-                    height: "100%",
-                    padding: "16px",
-                    fontSize: "14px",
-                    backgroundColor: "transparent",
-                    border: "none",
-                    color: "#ECECEC",
-                    outline: "none",
-                }}
             />
 
             <button

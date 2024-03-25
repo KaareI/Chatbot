@@ -15,17 +15,21 @@ def invalid_password_login():
     driver.get('http://localhost:3000/')
 
     try:
+
+        username = "test"
+        password = "invalid_password"
+
         # Enter valid username
         username_input = WebDriverWait(driver, 5).until(
             EC.presence_of_element_located((By.ID, 'loginUser'))
         )
-        username_input.send_keys('test')
+        username_input.send_keys(username)
 
         # Enter invalid password
         password_input = WebDriverWait(driver, 5).until(
             EC.presence_of_element_located((By.ID, 'loginPassword'))
         )
-        password_input.send_keys('invalid_password')
+        password_input.send_keys(password)
 
         # Click login button
         login_button = WebDriverWait(driver, 5).until(
@@ -46,6 +50,8 @@ def invalid_password_login():
             if 'message' in entry and 'Unauthorized' in entry['message']:
                 error_found = True
                 break
+            
+        time.sleep(1)
 
         if input_fields and error_found:
             # Log test success
