@@ -77,7 +77,7 @@ class Bot:
         ]
 
         for variant in thank_variants:
-            if variant in text.lower():
+            if text.lower() == variant:
                 return {"id": "9998"}
         return None
 
