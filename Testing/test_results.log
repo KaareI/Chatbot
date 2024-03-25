@@ -1,0 +1,15 @@
+INFO:root:
+
+Database test 2024-03-25 23:29:29
+ERROR:root:Duplicate order IDs found:
+ERROR:root:  Chat ID: 90ad4ac0-0d0c-4cea-b95f-dfa43a01f908, Order ID: 1
+ERROR:root:Duplicate chat IDs found with different users:
+ERROR:root:  Chat ID: 90ad4ac0-0d0c-4cea-b95f-dfa43a01f908, User ID: 3
+ERROR:root:  Chat ID: 90ad4ac0-0d0c-4cea-b95f-dfa43a01f908, User ID: 3
+ERROR:root:  Chat ID: 90ad4ac0-0d0c-4cea-b95f-dfa43a01f908, User ID: 3
+ERROR:root:  Chat ID: 90ad4ac0-0d0c-4cea-b95f-dfa43a01f908, User ID: 3
+INFO:root:
+
+Database test 2024-03-25 23:33:35
+ERROR:root:Duplicate order IDs found:
+ERROR:root:  Chat ID: 90ad4ac0-0d0c-4cea-b95f-dfa43a01f908, Order ID: 1
