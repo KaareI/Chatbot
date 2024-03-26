@@ -7,6 +7,7 @@ from datetime import datetime
 # Import test functions from separate files
 from test_unique_order_ids import unique_order_ids
 from test_unique_chat_ids import unique_chat_ids
+from test_undefined_null_fields import undefined_null_fields
 
 # Configure logging
 logging.basicConfig(filename='test_results.log', level=logging.INFO)
@@ -20,6 +21,7 @@ logging.info(f'\n\nDatabase test {current_time}')
 unique_order_ids()
 # Each ChatID must be unique to a single user, ensuring no duplicates exist.
 unique_chat_ids()
-# there can not be undefined or null fields
+# There can not be undefined or null fields
+undefined_null_fields()
 # saving to database
 # delete test data

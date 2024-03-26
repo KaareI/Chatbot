@@ -39,8 +39,9 @@ def unique_order_ids():
             # Log or print the error list
             if error_list:
                 logging.error("Duplicate order IDs found:")
-                for chat_id, order_id in error_list:
-                    logging.error(f"  Chat ID: {chat_id}, Order ID: {order_id}")
+                for i, (chat_id, order_id) in enumerate(error_list):
+                    newline = "\n" if i == len(error_list) - 1 else ""  # Add newline only for last element
+                    logging.error(f"    Chat ID: {chat_id}, Order ID: {order_id}{newline}")
             else:
                 logging.info("No duplicate order IDs found.")
 
