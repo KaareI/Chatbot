@@ -15,4 +15,6 @@ current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 # Execute test cases
 logging.info(f'\n\nChat test {current_time}')
+# Ask every question in FAQ
 questions()
+# saving to database

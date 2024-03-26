@@ -8,12 +8,15 @@ from datetime import datetime
 from test_unique_order_ids import unique_order_ids
 from test_unique_chat_ids import unique_chat_ids
 from test_undefined_null_fields import undefined_null_fields
+from test_delete_test_user_data import delete_test_user_data
 
 # Configure logging
 logging.basicConfig(filename='test_results.log', level=logging.INFO)
 
 # Get the current time
 current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+delete_test_data = True
 
 # Execute test cases
 logging.info(f'\n\nDatabase test {current_time}')
@@ -23,5 +26,6 @@ unique_order_ids()
 unique_chat_ids()
 # There can not be undefined or null fields
 undefined_null_fields()
-# saving to database
-# delete test data
+# Delete test user's data that is saved to database during testing
+if delete_test_data:
+    delete_test_user_data()
