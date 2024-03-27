@@ -13,19 +13,20 @@ from test_delete_test_user_data import delete_test_user_data
 # Configure logging
 logging.basicConfig(filename='test_results.log', level=logging.INFO)
 
-# Get the current time
-current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+def database_tests(delete_test_data=False):
 
-delete_test_data = True
+    # Get the current time
+    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-# Execute test cases
-logging.info(f'\n\nDatabase test {current_time}')
-# Check that there are not any duplicate order ids in each chat
-unique_order_ids()
-# Each ChatID must be unique to a single user, ensuring no duplicates exist.
-unique_chat_ids()
-# There can not be undefined or null fields
-undefined_null_fields()
-# Delete test user's data that is saved to database during testing
-if delete_test_data:
-    delete_test_user_data()
+    # Execute test cases
+    logging.info(f'\n\nDatabase test {current_time}')
+    # Check that there are not any duplicate order ids in each chat
+    unique_order_ids()
+    # Each ChatID must be unique to a single user, ensuring no duplicates exist.
+    unique_chat_ids()
+    # There can not be undefined or null fields
+    undefined_null_fields()
+    # Delete test user's data that is saved to database during testing
+    if delete_test_data:
+        delete_test_user_data()
+    logging.info("\n")

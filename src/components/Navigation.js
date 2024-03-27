@@ -38,7 +38,7 @@ const Navigation = (props) => {
                 {props.inSettings ? (
                     <img src={ChatButton} alt="Chat Button" style={{width: '24px', height: '24px'}}/>
                 ) : (
-                    <img src={SettingsButton} alt="Settings Button" style={{width: '24px', height: '24px'}}/>
+                    <img src={SettingsButton} id="Settings" alt="Settings Button" style={{width: '24px', height: '24px'}}/>
                 )}
             </button>
         </div>
