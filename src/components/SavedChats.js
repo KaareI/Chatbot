@@ -141,7 +141,7 @@ const SavedChats = ({
                 <h2>Saved Conversations</h2>
                 <button
                     id="newChatButton" // Assign an ID for the new chat button
-                    className={`Button SavedConversation NewChat ${errorButtonId === 'newChatButton' ? 'shake' : ''}`}
+                    className={`Button NewChat SavedConversation${errorButtonId === 'newChatButton' ? 'shake' : ''}`}
                     onClick={createNewChat}
                 >
                     New Chat
@@ -150,8 +150,9 @@ const SavedChats = ({
                 {!error && loading && <h3 className={"SavedConversation"}>Loading chats...</h3>}
                 {data.map(chat => (
                     <button
+                        id="forTests"
                         key={chat.chatId}
-                        className={`Button SavedConversation ${errorButtonId === chat.chatId ? 'shake' : ''}`}
+                        className={`Button SavedConversation${errorButtonId === chat.chatId ? 'shake' : ''}`}
                         onClick={() => loadChat(chat.chatId)}
                     >
                         <strong>{chat.time}</strong> - <i>"{chat.message}..."</i>
