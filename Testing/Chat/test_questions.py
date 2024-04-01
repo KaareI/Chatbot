@@ -26,7 +26,7 @@ logging.basicConfig(filename="test_results.log", level=logging.INFO)
 def questions():
     driver = webdriver.Chrome()
     driver.get("http://localhost:3000/")
-    logging.info("All questions test:")
+    logging.info("\n\nAll questions test:")
 
     errorList = []
 
@@ -39,7 +39,7 @@ def questions():
 
             for question in CORPUS:
                 user_input = WebDriverWait(driver, 5).until(
-                    EC.presence_of_element_located((By.ID, "userInput"))
+                    EC.presence_of_element_located((By.ID, user_input_id))
                 )
                 user_input.clear()
                 user_input.send_keys(question["Question"])

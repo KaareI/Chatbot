@@ -1,47 +1,19 @@
-INFO:root:
+INFO:root: LOGIN TESTS: 2024-04-01 13:23:23
 
-Chat test 2024-04-01 11:52:00
-INFO:root:All questions test:
-INFO:root:All questions work
-INFO:root:
+INFO:root:Valid login test:
+INFO:root:  SUCCESS
 
-Database test 2024-04-01 11:54:29
-INFO:root:No duplicate order IDs found.
-INFO:root:No duplicate chat IDs found.
-INFO:root:No rows with faulty data found.
-INFO:root:
 
-INFO:root:New chat test:
-INFO:root:Handling new chat works
-INFO:root:
+INFO:root:Invalid username login test:
+INFO:root:  SUCCESS
 
-Database test 2024-04-01 11:54:41
-INFO:root:No duplicate order IDs found.
-INFO:root:No duplicate chat IDs found.
-INFO:root:No rows with faulty data found.
-INFO:root:
 
-INFO:root:Previous chat test:
-INFO:root:  Loading previous chat works
-INFO:root:
+INFO:root:Invalid password login test:
+INFO:root:  SUCCESS
 
-Database test 2024-04-01 11:54:54
-INFO:root:No duplicate order IDs found.
-INFO:root:No duplicate chat IDs found.
-INFO:root:No rows with faulty data found.
-INFO:root:Test user's data deleted successfully.
-INFO:root:
 
-INFO:root:
+INFO:root:Blank fields login test:
+ERROR:root:   Failed to find login button by HTML ID: loginButto
 
-Chat test 2024-04-01 11:58:01
-INFO:root:New chat test:
-INFO:root:Handling new chat works
-INFO:root:
 
-Database test:
-INFO:root:No duplicate order IDs found.
-INFO:root:No duplicate chat IDs found.
-INFO:root:No rows with faulty data found.
-INFO:root:
 

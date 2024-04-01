@@ -1,5 +1,4 @@
 import logging
-import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -11,18 +10,29 @@ logging.basicConfig(filename='test_results.log', level=logging.INFO)
 def blank_fields_login():
     driver = webdriver.Chrome()
     driver.get('http://localhost:3000/')
+    logging.info("Blank fields login test:")
+
 
     try:
         # Leave username field blank
         # Leave password field blank
 
-        # Click login button
-        login_button = WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.CLASS_NAME, 'LoginButton'))
-        )
-        login_button.click()
+        # IDs
+        login_button_id = "loginButto"
 
         # Click login button
+        try:
+            login_button = WebDriverWait(driver, 5).until(
+                EC.element_to_be_clickable((By.ID, login_button_id))
+            )
+            login_button.click()
+        except:
+            logging.error(
+                "   Failed to find login button by HTML ID: " + login_button_id + "\n\n\n"
+            )
+            return
+
+        # User feedback for wrong credentials
         input_fields = WebDriverWait(driver, 5).until(
             EC.presence_of_element_located((By.CLASS_NAME, 'shake'))
         )
@@ -36,17 +46,15 @@ def blank_fields_login():
                 error_found = True
                 break
 
-        time.sleep(1)
-
         if input_fields and error_found:
             # Log test success
-            logging.info({'Blank Fields Login'})
+            logging.info('  SUCCESS\n\n\n')
         else:
-            logging.error({'Blank Fields Login'})
+            logging.error('    Blank fields login failed:\n' + "Input fields had visual error feedback: " + str(input_fields.is_displayed()) + "\nUnauthorized found in browser console: " + str(error_found) + "\n\n\n")
 
     except Exception as e:
         # Log test failure
-        logging.error(f'Blank Fields Login test failed: {str(e)}')
+        logging.error(f'    Blank fields login test failed: {str(e)}' + "\n\n\n")
 
     finally:
         driver.quit()

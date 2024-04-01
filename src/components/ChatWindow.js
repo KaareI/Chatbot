@@ -148,7 +148,7 @@ const ChatWindow = () => {
     }, [inSettings]);*/
 
     return (
-        <div className="ChatWindow">
+        <div className="ChatWindow" id="ChatWindowID">
             <Navigation
                 inSettings={inSettings}
                 onSettingsToggle={handleSettings}

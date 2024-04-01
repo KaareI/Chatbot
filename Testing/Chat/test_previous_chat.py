@@ -25,7 +25,7 @@ logging.basicConfig(filename="test_results.log", level=logging.INFO)
 def previous_chat():
     driver = webdriver.Chrome()
     driver.get("http://localhost:3000/")
-    logging.info("Previous chat test:")
+    logging.info("\n\nPrevious chat test:")
 
     try:
         if login_user(driver):

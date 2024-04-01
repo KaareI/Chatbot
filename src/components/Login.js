@@ -80,7 +80,7 @@ const Login = (props) => {
                 <input type="password" id="loginPassword" placeholder="Password" required onKeyDown={handleKeyPress}
                        value={password} onChange={(e) => setPassword(e.target.value)}/>
             </div>
-            <button className={"Button LoginButton"} onClick={handleLogin}>
+            <button className={"Button LoginButton"} id="loginButton" onClick={handleLogin}>
                 <p>Login</p>
             </button>
         </div>
