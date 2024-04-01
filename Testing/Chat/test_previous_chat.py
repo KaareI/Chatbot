@@ -1,5 +1,4 @@
 import logging
-import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -136,8 +135,6 @@ def previous_chat():
                         return
                         driver.quit()
 
-                    time.sleep(9)
-
                     # Click settings button
                     try:
                         settings_button = WebDriverWait(driver, 5).until(
@@ -200,7 +197,7 @@ def previous_chat():
 
         # Failed login
         else:
-            logging.error(" Test failed due to inavlid login")
+            logging.error(" Test failed due to invalid login")
 
         # Successful test
         if test_successful:
