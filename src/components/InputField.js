@@ -31,7 +31,7 @@ const InputField = ({sendInput, storeMessages, setGeneratedAnswer}) => {
             /* Handle response from server */
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Error interpreting question');
+                    return {id: '9999'}
                 }
                 return response.json();
             })
