@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from similarity import find_most_similar
-from corpus import CORPUS
 from dotenv import load_dotenv
 import os
 
@@ -31,12 +30,13 @@ class Bot:
         pre_built = [
             {
                 "Question": "What is your purpose?",
-                "Answer": "I assist user experience by providing an interactive FAQ chat.\n",
+                "Answer": "I assist user experience by providing an interactive FAQ chat.",
+                "id": "5000"
             },
         ]
         for each_question in pre_built:
             if each_question["Question"].lower() in text.lower():
-                return each_question
+                return {"id": each_question["id"]}
         return None
 
     def thank_responses(self, text):

@@ -1787,6 +1787,17 @@ export const BotResponse = [
         )
     },
     {
+        id: 5000,
+        message: (
+            <div className={"ResponseContainer"}>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <p className={"Response Bot"}>
+                    I assist user experience by providing an interactive FAQ chat.
+                </p>
+            </div>
+        )
+    },
+    {
         id: 9999,
         message: (
             <div className={"ResponseContainer"}>
