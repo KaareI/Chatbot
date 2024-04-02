@@ -1,3 +1,4 @@
+# V1
 import re, math
 from collections import Counter
 from corpus import CORPUS
