@@ -25,7 +25,7 @@ logging.basicConfig(filename="test_results.log", level=logging.INFO)
 def previous_chat():
     driver = webdriver.Chrome()
     driver.get("http://localhost:3000/")
-    logging.info("\n\nPrevious chat test:")
+    logging.info("Previous chat test:")
 
     try:
         if login_user(driver):
@@ -197,13 +197,13 @@ def previous_chat():
 
         # Failed login
         else:
-            logging.error(" Test failed due to invalid login")
+            logging.error("   Test failed due to invalid login\n")
 
         # Successful test
         if test_successful:
-            logging.info("  Loading previous chat works")
+            logging.info("   SUCCESS\n")
 
     except Exception as e:
-        logging.error(f"    An error occurred: {str(e)}")
+        logging.error(f"   An error occurred: {str(e)}\n")
     finally:
         driver.quit()

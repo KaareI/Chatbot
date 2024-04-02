@@ -1,5 +1,5 @@
 import logging
-import time
+import mysql.connector
 import db
 import os
 from dotenv import load_dotenv
@@ -25,12 +25,12 @@ def delete_test_user_data():
             connection.commit()
 
             # Log success message
-            logging.info("Test user's data deleted successfully.")
+            logging.info("   Test user's data deleted successfully.\n\n\n")
 
         except mysql.connector.Error as err:
-            logging.error("Error deleteing test user's data: %s", err)
+            logging.error("   Error deleteing test user's data: %s", err + "\n\n\n")
         finally:
             # Close the connection regardless of success or failure
             connection.close()
     else:
-        logging.error("Failed to connect to database.")
+        logging.error("   Failed to connect to database.\n\n\n")

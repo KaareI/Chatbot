@@ -21,7 +21,7 @@ logging.basicConfig(filename="test_results.log", level=logging.INFO)
 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 # Execute test cases
-logging.info(f"\n\nChat test {current_time}")
+logging.info(f" CHAT TESTS: {current_time}\n")
 
 # Ask every question in FAQ
 questions()

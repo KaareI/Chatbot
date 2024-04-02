@@ -1,5 +1,4 @@
 import logging
-import time
 import db
 import os
 from dotenv import load_dotenv
@@ -36,19 +35,19 @@ def unique_chat_ids():
             for i, (chat_id, users) in enumerate(chat_id_users.items()):
                 if len(users) > 1:
                     if not found_duplicates:  # Log the general message only once
-                        logging.error("Duplicate chat IDs found:")
+                        logging.error("   Duplicate chat IDs found:")
                         found_duplicates = True
                         newline = "\n" if i != len(chat_id_users) - 1 else ""  # Add newline for the last element
-                    logging.error(f"  Duplicate chat ID: {chat_id}, Users IDs: {list(users)}{newline}")
+                    logging.error(f"   Duplicate chat ID: {chat_id}, Users IDs: {list(users)}{newline}")
 
             # Log if no duplicates were found
             if not found_duplicates:
-                logging.info("No duplicate chat IDs found.")
+                logging.info("   No duplicate chat IDs found.")
 
         except mysql.connector.Error as err:
-            logging.error("Error executing SQL statement: %s", err)
+            logging.error("   Error executing SQL statement: %s", err)
         finally:
             # Close the connection regardless of success or failure
             connection.close()
     else:
-        logging.error("Failed to connect to database.")
+        logging.error("   Failed to connect to database.")

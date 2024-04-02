@@ -38,17 +38,17 @@ def unique_order_ids():
 
             # Log or print the error list
             if error_list:
-                logging.error("Duplicate order IDs found:")
+                logging.error("   Duplicate order IDs found:")
                 for i, (chat_id, order_id) in enumerate(error_list):
                     newline = "\n" if i == len(error_list) - 1 else ""  # Add newline only for last element
-                    logging.error(f"    Chat ID: {chat_id}, Order ID: {order_id}{newline}")
+                    logging.error(f"   Chat ID: {chat_id}, Order ID: {order_id}{newline}")
             else:
-                logging.info("No duplicate order IDs found.")
+                logging.info("   No duplicate order IDs found.")
 
         except mysql.connector.Error as err:
-            logging.error("Error executing SQL statement: %s", err)
+            logging.error("   Error executing SQL statement: %s", err)
         finally:
             # Close the connection regardless of success or failure
             connection.close()
     else:
-        print("Failed to connect to database.")
+        logging.error("   Failed to connect to database.")

@@ -1,21 +1,25 @@
 import logging
-import time
+import mysql.connector
 import db
 import os
 from dotenv import load_dotenv
 
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+dotenv_path = os.path.join(os.path.dirname(__file__), ".env")
 load_dotenv(dotenv_path)
 
 # Configure logging
-logging.basicConfig(filename='test_results.log', level=logging.INFO)
+logging.basicConfig(filename="test_results.log", level=logging.INFO)
 
-def undefined_null_fields():
+
+def undefined_null_fields(delete_test_data=False):
+    newline = "\n\n"
+    if delete_test_data:
+        newline = ""
     connection = db.create_connection()
     if connection:
         try:
             # Get the SQL statement from environment variables
-            sql_statement = os.environ.get('UNDEFINED_NULL_FIELDS')
+            sql_statement = os.environ.get("UNDEFINED_NULL_FIELDS")
 
             # Execute the SQL statement
             cursor = connection.cursor()
@@ -26,17 +30,19 @@ def undefined_null_fields():
 
             # Log row IDs (assuming the first column is the row ID)
             if results:
-                logging.error("Rows with faulty data (NULL or empty string):")
+                logging.error(
+                    "   Rows with faulty data (NULL or empty string):" + newline
+                )
                 for row in results:
                     row_id = row[0]
                     logging.error(f"  Row ID: {row_id}")
             else:
-                logging.info("No rows with faulty data found.")  # Log as info
+                logging.info("   No rows with faulty data found." + newline)
 
         except mysql.connector.Error as err:
-            logging.error("Error executing SQL statement: %s", err)
+            logging.error("   Error executing SQL statement: %s", err + newline)
         finally:
             # Close the connection regardless of success or failure
             connection.close()
     else:
-        logging.error("Failed to connect to database.")
+        logging.error("   Failed to connect to database." + newline)

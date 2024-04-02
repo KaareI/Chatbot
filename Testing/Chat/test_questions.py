@@ -26,7 +26,7 @@ logging.basicConfig(filename="test_results.log", level=logging.INFO)
 def questions():
     driver = webdriver.Chrome()
     driver.get("http://localhost:3000/")
-    logging.info("\n\nAll questions test:")
+    logging.info("All questions test:")
 
     errorList = []
 
@@ -75,7 +75,7 @@ def questions():
                     driver.quit()
 
             if not errorList:
-                logging.info("All questions work")
+                logging.info("   SUCCESS\n")
             else:
                 error_messages = "\n".join(
                     [
@@ -84,17 +84,17 @@ def questions():
                     ]
                 )
                 logging.error(
-                    "QUESTIONS WERE NOT FOUND IN THE UI WITHIN 10s OR WERE NOT FOUND AT ALL\n"
+                    "    QUESTIONS WERE NOT FOUND IN THE UI WITHIN 10s OR WERE NOT FOUND AT ALL\n"
                 )
-                logging.error(" Asking these questions failed:\n" + error_messages)
+                logging.error("   Asking these questions failed:\n" + error_messages)
 
         else:
             # Handle unsuccessful login
-            logging.error(" Asking questions failed due to unsuccessful login")
+            logging.error("   Asking questions failed due to unsuccessful login\n")
 
     except Exception as e:
         # Log test failure
-        logging.error(f"    Asking questions failed: {str(e)}")
+        logging.error(f"   Asking questions failed: {str(e)}\n")
 
     finally:
         driver.quit()

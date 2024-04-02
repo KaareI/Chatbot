@@ -25,7 +25,7 @@ logging.basicConfig(filename="test_results.log", level=logging.INFO)
 def new_chat():
     driver = webdriver.Chrome()
     driver.get("http://localhost:3000/")
-    logging.info("\n\nNew chat test:")
+    logging.info("New chat test:")
 
     try:
         if login_user(driver):
@@ -140,15 +140,15 @@ def new_chat():
 
             # Successful test
             if test_successful:
-                logging.info("Handling new chat works")
+                logging.info("   SUCCESS\n")
 
         else:
             # Handle unsuccessful login
-            logging.error('" Test failed due to invalid login"')
+            logging.error("   Test failed due to invalid login\n")
 
     except Exception as e:
         # Log test failure
-        logging.error(f"Creating new chat failed: {str(e)}")
+        logging.error(f"   Creating new chat failed: {str(e)}\n")
 
     finally:
         driver.quit()

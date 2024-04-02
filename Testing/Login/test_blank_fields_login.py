@@ -18,7 +18,7 @@ def blank_fields_login():
         # Leave password field blank
 
         # IDs
-        login_button_id = "loginButto"
+        login_button_id = "loginButton"
 
         # Click login button
         try:
