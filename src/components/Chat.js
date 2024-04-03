@@ -8,7 +8,7 @@ import './ResponseContainer.css';
 import Greeting from "./Greeting";
 import Client from "./Client";
 
-const Chat = ({ messages, generatedAnswer }) => {
+const Chat = ({ messages, generatedAnswer, questions }) => {
     const lastMessageRef = useRef(null);
 
     const smoothScroll = () => { 
@@ -92,10 +92,10 @@ const Chat = ({ messages, generatedAnswer }) => {
                                 You may find your answer in following:
                             </div>
                             <button className={"Response Bot Button AddtionalAnswers"}>
-                                <i>"Can I have a demo and live account working at the same time?"</i>
+                                <i>"{questions[1].question}"</i>
                             </button>
                             <button className={"Response Bot Button AddtionalAnswers"}>
-                                <i>"Can I change the balance of my demo account?"</i>
+                                <i>"{questions[2].question}"</i>
                             </button>
                             <button className={"Response Bot Button AddtionalAnswers"}>
                                 "None of these help me"

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Import CSS
 import './ChatWindow.css'
@@ -13,6 +13,9 @@ import {
 } from './misc/BotAnswers';
 
 const ChatWindow = () => {
+
+    /* Current additional questions */
+    const [questions, setQuestions] = useState();
 
     /* Current conversation messages */
     const [messages, setMessages] = useState([]);
@@ -31,11 +34,11 @@ const ChatWindow = () => {
             newOrderId = prevMessages.length + messages.length + 1;
 
             /* If user is loading previous chat */
-/*            if (previousChat) {
-                newOrderId = prevMessages.length + messages.length + 1;
-            } else {
-                newOrderId = prevMessages.length + 1;
-            }*/
+            /*            if (previousChat) {
+                            newOrderId = prevMessages.length + messages.length + 1;
+                        } else {
+                            newOrderId = prevMessages.length + 1;
+                        }*/
 
             const newMessage = {
                 orderId: newOrderId,
@@ -77,7 +80,7 @@ const ChatWindow = () => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({storedMessages}),
+            body: JSON.stringify({ storedMessages }),
             credentials: 'same-origin',
         })
 
@@ -107,13 +110,13 @@ const ChatWindow = () => {
                 console.log("Messages type: ", typeof (messages))*/
     }, [storedMessages]);
 
-//TEMPO
-        // FOR DESIGNING BOT MESSAGES
-/*                 useEffect(() => {
-                    handleSendMessage("Do trading conditions differ on my live and demo account?", true)
-                    handleSendMessage(BotResponse[0].message, false)
-                }, []); */
-//TEMPO
+    //TEMPO
+    // FOR DESIGNING BOT MESSAGES
+    /*                 useEffect(() => {
+                        handleSendMessage("Do trading conditions differ on my live and demo account?", true)
+                        handleSendMessage(BotResponse[0].message, false)
+                    }, []); */
+    //TEMPO
 
     /* Logic handles the rendering of settings */
     const [inSettings, setInSettings] = useState(false);
@@ -135,14 +138,14 @@ const ChatWindow = () => {
         setInSettings(false);
     }
 
-/*    useEffect(() => {
-         console.log("Messages in chat: ", messages);
-                console.log("Stored messages for saving: ", storedMessages);
-                console.log("Saving user messages: ", saveUserMessages);
-                console.log("Rendering settings: ", inSettings);
-                console.log("Rendering previous chat: ", previousChat);
-        console.log("");
-    }, [inSettings]); */
+    /*    useEffect(() => {
+             console.log("Messages in chat: ", messages);
+                    console.log("Stored messages for saving: ", storedMessages);
+                    console.log("Saving user messages: ", saveUserMessages);
+                    console.log("Rendering settings: ", inSettings);
+                    console.log("Rendering previous chat: ", previousChat);
+            console.log("");
+        }, [inSettings]); */
 
     return (
         <div className="ChatWindow" id="ChatWindowID">
@@ -168,10 +171,13 @@ const ChatWindow = () => {
                 </>
             ) : (
                 <>
-                    <Chat messages={messages}
-                          generatedAnswer={generatedAnswer}
+                    <Chat
+                        messages={messages}
+                        generatedAnswer={generatedAnswer}
+                        questions={questions}
                     />
                     <UserInput
+                        setQuestions={setQuestions}
                         sendInput={handleSendMessage}
                         storeMessages={handleStoredMessages}
                         setGeneratedAnswer={setGeneratedAnswer}

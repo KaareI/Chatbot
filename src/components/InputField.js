@@ -8,7 +8,7 @@ import './Button.css';
 import SendButton from "../assets/Send.png";
 import { BotResponse } from "./misc/BotAnswers";
 
-const InputField = ({ sendInput, storeMessages, setGeneratedAnswer }) => {
+const InputField = ({ sendInput, storeMessages, setGeneratedAnswer, setQuestions }) => {
     const [inputValue, setInputValue] = useState('');
     const [isDisabled, setIsDisabled] = useState(false);
 
@@ -49,6 +49,9 @@ const InputField = ({ sendInput, storeMessages, setGeneratedAnswer }) => {
             askQuestion(userQuestion)
                 .then(object => {
                     console.log(object);
+                    // Send similar questions to Chat
+                    setQuestions(object)
+                    // Get the answer id
                     const answerID = parseInt(object[0].id);
                     let answer;
                     for (const response of BotResponse) {
