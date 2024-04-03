@@ -109,10 +109,10 @@ const ChatWindow = () => {
 
 //TEMPO
         // FOR DESIGNING BOT MESSAGES
-                useEffect(() => {
+/*                 useEffect(() => {
                     handleSendMessage("Do trading conditions differ on my live and demo account?", true)
                     handleSendMessage(BotResponse[0].message, false)
-                }, []);
+                }, []); */
 //TEMPO
 
     /* Logic handles the rendering of settings */

@@ -11,11 +11,15 @@ import Client from "./Client";
 const Chat = ({ messages, generatedAnswer }) => {
     const lastMessageRef = useRef(null);
 
-    useEffect(() => {
-        // Scroll to the last message when messages change
+    const smoothScroll = () => { 
         if (lastMessageRef.current) {
             lastMessageRef.current.scrollIntoView({ behavior: 'smooth' });
         }
+    }
+
+    useEffect(() => {
+        // Scroll to the last message when messages change
+        smoothScroll()
     }, [messages]);
 
     if (messages === undefined || messages.length === 0) {
@@ -56,6 +60,7 @@ const Chat = ({ messages, generatedAnswer }) => {
                 additionalAnswers[i].classList.add("ShowAddtionalAnswers");
             }
         }
+        smoothScroll()
     }
 
     return (

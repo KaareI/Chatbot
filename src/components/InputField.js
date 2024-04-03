@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 // Import CSS
 import './InputField.css';
@@ -6,9 +6,9 @@ import './Button.css';
 
 // Import assets
 import SendButton from "../assets/Send.png";
-import {BotResponse} from "./misc/BotAnswers";
+import { BotResponse } from "./misc/BotAnswers";
 
-const InputField = ({sendInput, storeMessages, setGeneratedAnswer}) => {
+const InputField = ({ sendInput, storeMessages, setGeneratedAnswer }) => {
     const [inputValue, setInputValue] = useState('');
     const [isDisabled, setIsDisabled] = useState(false);
 
@@ -31,7 +31,7 @@ const InputField = ({sendInput, storeMessages, setGeneratedAnswer}) => {
             /* Handle response from server */
             .then(response => {
                 if (!response.ok) {
-                    return {id: '9999'}
+                    return { id: '9999' }
                 }
                 return response.json();
             })
@@ -49,7 +49,7 @@ const InputField = ({sendInput, storeMessages, setGeneratedAnswer}) => {
             askQuestion(userQuestion)
                 .then(object => {
                     console.log(object);
-                    const answerID = parseInt(object.id);
+                    const answerID = parseInt(object[0].id);
                     let answer;
                     for (const response of BotResponse) {
                         if (response.id === answerID) {
@@ -109,12 +109,12 @@ const InputField = ({sendInput, storeMessages, setGeneratedAnswer}) => {
 
             <button
                 className={`Button ${inputValue.trim() === '' ? 'Disabled' : ''}`}
-                style={{margin: "auto"}}
+                style={{ margin: "auto" }}
                 onClick={handleButtonClick}
                 disabled={inputValue.trim() === ''}
             >
                 <img src={SendButton} alt="Send Button"
-                     style={{width: '24px', height: '16px', margin: "auto"}}
+                    style={{ width: '24px', height: '16px', margin: "auto" }}
                 />
             </button>
 
