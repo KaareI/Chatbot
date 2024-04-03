@@ -33,6 +33,11 @@ class Bot:
                 "Answer": "I assist user experience by providing an interactive FAQ chat.",
                 "id": "5000"
             },
+                        {
+                "Question": "None of these help me",
+                "Answer": "Try to rephrase question or contact support",
+                "id": "9997"
+            },
         ]
         for each_question in pre_built:
             if each_question["Question"].lower() in text.lower():

@@ -1,4 +1,4 @@
-# V1
+# V2
 import re, math
 from collections import Counter
 from corpus import CORPUS
@@ -28,14 +28,21 @@ def compare_similarity(word_one, word_two):
 
     return get_cosine(vector1, vector2)
 
-def find_most_similar(word):
-    max = {"answer": None, 'id': '9999', "score": 0, "question": None}
-
+def find_most_similar(word, top_n=3, min_score=0.2):
+    """Finds the top_n most similar objects based on cosine similarity."""
+    similarities = []
     for each in CORPUS:
         score = compare_similarity(word, each['Question'])
-        if score > max['score']:
-            max['score'] = score
-            max['id']=each['id']
-            max['answer'] = each['Answer']
-            max['question'] = each['Question']
-    return {"score": max['score'], "id": max['id'],"answer": max['answer'], "question": max['question']}
+        if score >= min_score:  # Only consider objects with scores above the threshold
+            similarities.append((score, each))
+        else:
+            # Create a default object with all keys, explicitly setting 'answer' and 'question' to None
+            similarities.append((score, {"id": "9999", "answer": None, "question": None}))
+
+    # Sort by score in descending order and take the top_n
+    similarities.sort(key=lambda x: x[0], reverse=True)
+    top_matches = similarities[:top_n]
+
+    # Extract and return the top matches
+    return [{"score": score, "id": obj.get('id', '9999'), "answer": obj.get('Answer'), "question": obj.get('Question')}
+            for score, obj in top_matches]

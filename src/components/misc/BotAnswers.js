@@ -4,8 +4,8 @@ export const BotResponse = [
     {
         id: 1,
         message: (
-            <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+            <>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Are trading conditions the same on my demo and live account?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -13,19 +13,19 @@ export const BotResponse = [
                     simulated environment which means that no slippage occurs whereas price updates might differ from
                     live accounts.
                 </p>
-            </div>
+            </>
         )
     },
     {
         id: 2,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Can I change the balance of my demo account?"</em></h4>
                 <p className={"Response Bot"}>
                     Yes. Simply send an email with your demo account number and decided balance to our <a
-                    title="Support Team" href="https://www.tickmill.eu/about/contact-us" target="_blank">Support
-                    team</a>.
+                        title="Support Team" href="https://www.tickmill.eu/about/contact-us" target="_blank">Support
+                        team</a>.
                 </p>
             </div>
         )
@@ -34,12 +34,12 @@ export const BotResponse = [
         id: 3,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Can I change the settings of my demo account?"</em></h4>
                 <p className={"Response Bot"}>
                     Yes. Simply send an email with your demo account number and decided balance to our <a
-                    title="Support Team" href="https://www.tickmill.eu/about/contact-us" target="_blank">Support
-                    team</a>.
+                        title="Support Team" href="https://www.tickmill.eu/about/contact-us" target="_blank">Support
+                        team</a>.
                 </p>
             </div>
         )
@@ -48,7 +48,7 @@ export const BotResponse = [
         id: 4,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Can I have a demo and live account working at the same time?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -62,12 +62,12 @@ export const BotResponse = [
         id: 5,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Can the account be closed/deleted?"</em>
                 </h4>
                 <p className={"Response Bot"}>
                     You can close an account but we will keep your data, in accordance with legislation, on our files
-                    for a minimum period of 7 years. <br/>If your account is inactive for 60 days or more and the
+                    for a minimum period of 7 years. <br />If your account is inactive for 60 days or more and the
                     balance is equal or less than 50 GBP/EUR/USD/CHF and/or 250 PLN, your account will be archived.
                 </p>
             </div>
@@ -77,7 +77,7 @@ export const BotResponse = [
         id: 6,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"How do I modify or delete a trade in the MetaTrader platform?"</em>
                 </h4>
                 <p className={"Response Bot"}>Right-click on the instrument you placed the trade with and use the
@@ -90,13 +90,13 @@ export const BotResponse = [
         id: 7,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"How do I open a MetaTrader account?"</em>
                 </h4>
                 <p className={"Response Bot"}>
                     You can open an account in the Client Area, efficiently and securely. Click <a title="Here"
-                                                                                                   target="_blank"
-                                                                                                   href="https://secure.tickmill.eu/users/login">here</a> to
+                        target="_blank"
+                        href="https://secure.tickmill.eu/users/login">here</a> to
                     open an account with us.
                 </p>
             </div>
@@ -106,15 +106,15 @@ export const BotResponse = [
         id: 8,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"I forgot my Client Area password. What do I do?"</em>
                 </h4>
                 <p className={"Response Bot"}>
                     Go to the <a title="Client Area" href="https://secure.tickmill.eu/users/login" target="_blank">Client
-                    Area</a> login page click on the ‘Forgot your Password?’ link under the ‘Login’ button and follow
+                        Area</a> login page click on the ‘Forgot your Password?’ link under the ‘Login’ button and follow
                     the instructions on how to reset your password. For further assistance, please contact our <a
-                    title="Client Support" href="https://www.tickmill.eu/about/contact-us" target="_blank">Client
-                    Support</a> team.
+                        title="Client Support" href="https://www.tickmill.eu/about/contact-us" target="_blank">Client
+                        Support</a> team.
                 </p>
             </div>
         )
@@ -123,15 +123,15 @@ export const BotResponse = [
         id: 9,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"I forgot my MetaTrader account password. What do I do?"</em>
                 </h4>
                 <p className={"Response Bot"}>
                     You can change the password of your MetaTrader 4 or MetaTrader 5 account inside the secure <a
-                    title="Client Area" href="https://secure.tickmill.eu/users/login" target="_blank">Client Area</a>.
+                        title="Client Area" href="https://secure.tickmill.eu/users/login" target="_blank">Client Area</a>.
                     For further assistance, please contact our <a title="Client Support"
-                                                                  href="https://www.tickmill.eu/about/contact-us"
-                                                                  target="_blank">Client Support</a> team.
+                        href="https://www.tickmill.eu/about/contact-us"
+                        target="_blank">Client Support</a> team.
                 </p>
             </div>
         )
@@ -140,19 +140,19 @@ export const BotResponse = [
         id: 10,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Is it possible to archive an account that is not in use?"</em>
                 </h4>
                 <p className={"Response Bot"}>
                     An account may get archived under certain conditions.
-                    <br/><br/>
+                    <br /><br />
                     <ul>
                         <li>If the account balance is equal to or less than 50 GBP/EUR/USD/CHF and/or 250 PLN.</li>
                         <li>If there have been no login attempts to the trading platform or no trading activity.</li>
                         <li>If there are no open positions and no withdrawals or deposits made for at least 60 days.
                         </li>
                     </ul>
-                    <br/>
+                    <br />
                     In such cases, the account will be automatically deactivated and archived by the system.
                     Consequently, it will no longer be visible in the Client Area. Any remaining balance will be
                     transferred to the wallet.
@@ -164,7 +164,7 @@ export const BotResponse = [
         id: 11,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What account types do you offer?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -205,10 +205,10 @@ export const BotResponse = [
                 <p className={"Response Bot"}>
                     <strong>Important note:</strong> The minimum balance requirement should always be fulfilled to
                     maintain VIP account status. Tickmill reserves the right to change your account type at any time if
-                    the above requirement is not met or if any abuse is identified.<br/><br/>You can find out more
-                    information about our account types at:<br/><a
-                    title="Https://www.tickmill.eu/trading/accounts-overview" target="_blank"
-                    href="https://www.tickmill.eu/trading/accounts-overview">https://www.tickmill.eu/trading/accounts-overview</a>
+                    the above requirement is not met or if any abuse is identified.<br /><br />You can find out more
+                    information about our account types at:<br /><a
+                        title="Https://www.tickmill.eu/trading/accounts-overview" target="_blank"
+                        href="https://www.tickmill.eu/trading/accounts-overview">https://www.tickmill.eu/trading/accounts-overview</a>
                 </p>
             </div>
         )
@@ -218,14 +218,14 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"What are the requirements to register for a Client Area?"</em>
                     </h4>
                     <p className={"Response Bot"}>
                         To register for an individual Client Area, you must submit your Proof of Address (POA) and Proof
                         of
                         Identity (POI) documents, whereas to register for a Corporate Client Area, you must
-                        submit:<br/><br/>
+                        submit:<br /><br />
                         <ol>
                             <li>Articles of association, identification document and proof of individual and corporate
                                 address
@@ -238,7 +238,7 @@ export const BotResponse = [
                     <p className={"Response Bot"}>
                         We will ask for additional documents depending on the country, beneficiary etc.
                         (offshore:).
-                        <br/><br/>E.g.:<br/><br/>
+                        <br /><br />E.g.:<br /><br />
                         <ol>
                             <li>Certificate of incorporation</li>
                             <li>Articles of association</li>
@@ -257,7 +257,7 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"When are swaps charged at a triple rate for currency pairs
                         and
                         metals?"</em>
@@ -266,10 +266,10 @@ export const BotResponse = [
                         Triple swap charges apply for positions on FX pairs, Silver and Gold that are held overnight
                         on
                         Wednesday.
-                        <br/>
+                        <br />
                         For the rest of the instruments, triple swap charges apply for positions that are held
                         overnight on Friday. This is a standard practice in the forex industry.
-                        <br/><br/>
+                        <br /><br />
                         These swaps cover the interest for Saturday and Sunday when the markets are closed. All
                         swaps are calculated based on the quote
                         currency.
@@ -279,7 +279,7 @@ export const BotResponse = [
                         <em>If you open a long position of 1 lot on EURAUD, the overnight swap charge would be -14.11
                             Australian Dollars. If you had opened the same position on a Wednesday and roll over the
                             position to the next day, the swap would be -14.11 * 3.
-                            <br/><br/>
+                            <br /><br />
                             If the account currency is
                             in USD, then we have to convert the amount above to USD by using AUDUSD spot rate.
                         </em>
@@ -293,14 +293,14 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"Where can I check the SWAP rates?"</em>
                     </h4>
                     <p className={"Response Bot"}>
                         We update the swaps based on the rates given to us by our counterparties and we recommend
                         checking the swap rates on a regular basis within the MetaTrader platform. Our updated swaps are
                         always available by clicking <a title="Here"
-                                                        href="https://www.tickmill.eu/conditions/spreads-swaps">here</a>.
+                            href="https://www.tickmill.eu/conditions/spreads-swaps">here</a>.
                     </p>
                     <p className={"Response Bot"}>
                         You can also check the swap rates by logging into the MetaTrader trading platform and select:
@@ -320,15 +320,15 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"Where can I find my account balance and my trading
                         history?"</em>
                     </h4>
                     <p className={"Response Bot"}>
                         You can find your account balance and trading history in the MetaTrader platform. The account
                         balance can also be seen in your <a title="Client Area"
-                                                            href="https://secure.tickmill.eu/users/login"
-                                                            target="_blank">Client Area</a>.
+                            href="https://secure.tickmill.eu/users/login"
+                            target="_blank">Client Area</a>.
                     </p>
                 </div>
             )
@@ -339,7 +339,7 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"Will my funds be protected at Tickmill?"</em>
                     </h4>
                     <p className={"Response Bot"}>
@@ -357,7 +357,7 @@ export const BotResponse = [
         id: 17,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Can I transfer my money from trading account if I have an open
                     position(s)?"</em>
                 </h4>
@@ -370,7 +370,7 @@ export const BotResponse = [
                     If you do not have sufficient free margin
                     on your trading account, a transfer from trading account to Wallet will not be executed until you
                     submit the correct amount of transfer and/or close the open positions on your account.
-                    <br/><br/>
+                    <br /><br />
                     Withdrawal from a Tickmill Wallet can be requested any time.
                 </p>
             </div>
@@ -380,13 +380,13 @@ export const BotResponse = [
         id: 18,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Can I withdraw via a different payment method from the one I used to
                     deposit?"</em>
                 </h4>
                 <p className={"Response Bot"}>
                     Tickmill’s policy is to process withdrawals <strong>via the same method that you used to
-                    deposit</strong>. For
+                        deposit</strong>. For
                     example, if you deposited using a credit card, the card will be credited with the amount equal to
                     the deposit amount. Upon request, we can send any profits via other payment methods under your name.
                 </p>
@@ -397,7 +397,7 @@ export const BotResponse = [
         id: 19,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Do you have any charges on deposits and withdrawals?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -410,15 +410,15 @@ export const BotResponse = [
         id: 20,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"How do I deposit funds to my account?"</em>
                 </h4>
                 <p className={"Response Bot"}>
                     You can make a deposit inside your <a title="Client Area" target="_blank"
-                                                          href="https://secure.tickmill.eu/users/login">Client
-                    Area</a> using any <a title="Funding Option" target="_blank"
-                                          href="https://www.tickmill.eu/conditions/deposit-and-withdrawal">funding
-                    option</a> that suits you best. There
+                        href="https://secure.tickmill.eu/users/login">Client
+                        Area</a> using any <a title="Funding Option" target="_blank"
+                            href="https://www.tickmill.eu/conditions/deposit-and-withdrawal">funding
+                        option</a> that suits you best. There
                     are no fees on deposits.
                 </p>
             </div>
@@ -428,7 +428,7 @@ export const BotResponse = [
         id: 21,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"How do I withdraw funds from my account?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -443,7 +443,7 @@ export const BotResponse = [
         id: 22,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"How fast do you process my withdrawals?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -456,7 +456,7 @@ export const BotResponse = [
         id: 23,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"How long does it take for funds to reach my bank account?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -472,7 +472,7 @@ export const BotResponse = [
         id: 24,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Is broker to broker transfer allowed?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -485,7 +485,7 @@ export const BotResponse = [
         id: 25,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What is the minimum deposit?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -499,7 +499,7 @@ export const BotResponse = [
         id: 26,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Are the measures permanent?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -513,7 +513,7 @@ export const BotResponse = [
         id: 27,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Can I have a professional account and a retail account at the same
                     time?"</em>
                 </h4>
@@ -529,12 +529,12 @@ export const BotResponse = [
         id: 28,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Do I get negative balance protection as an elective Professional
                     Client?"</em>
                 </h4>
                 <p className={"Response Bot"}>
-                    Yes, professional clients can benefit from negative balance protection.<br/><br/>It is important to
+                    Yes, professional clients can benefit from negative balance protection.<br /><br />It is important to
                     note that Tickmill offers Negative Balance Protection to professional clients, which is not the
                     industry standard. We also reserve the right to withdraw this privilege.
                 </p>
@@ -545,7 +545,7 @@ export const BotResponse = [
         id: 29,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Do the product intervention measures apply to companies as
                     well?"</em>
                 </h4>
@@ -560,7 +560,7 @@ export const BotResponse = [
         id: 30,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Do the product intervention measures only apply to clients living in
                     the EU?"</em>
                 </h4>
@@ -575,7 +575,7 @@ export const BotResponse = [
         id: 31,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Does my professional qualification guarantee I will become a
                     Professional Client?"</em>
                 </h4>
@@ -590,7 +590,7 @@ export const BotResponse = [
         id: 32,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"How can I become a Professional Client?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -599,11 +599,11 @@ export const BotResponse = [
                 </p>
                 <p className={"Response Bot"}>
                     Clients who wish to do so must complete the relevant application form inside the <a
-                    title="Client Area" href="https://secure.tickmill.eu/users/login">Client Area</a>.
+                        title="Client Area" href="https://secure.tickmill.eu/users/login">Client Area</a>.
                 </p>
                 <p className={"Response Bot"}>
                     Before completing the application, clients should read the information available in the <a
-                    title="Client Area" href="https://secure.tickmill.eu/users/login">Client Area</a> regarding
+                        title="Client Area" href="https://secure.tickmill.eu/users/login">Client Area</a> regarding
                     protections that Elective Professionals lose in comparison to Retail Clients.
                 </p>
             </div>
@@ -614,7 +614,7 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"Once I become a Professional Client, can I revert to Retail
                         Client status if I wish?"</em></h4>
                     <p className={"Response Bot"}><strong>Yes</strong> – Clients have the right to be reclassified at
@@ -628,13 +628,13 @@ export const BotResponse = [
         id: 34,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What are the minimum requirements to become a Professional
                     Client?"</em>
                 </h4>
                 <p className={"Response Bot"}>
                     A Professional Client must possess the relevant experience, knowledge and expertise to be able to
-                    make their own investment decisions and properly assess the risks involved.<br/><br/>Please
+                    make their own investment decisions and properly assess the risks involved.<br /><br />Please
                     refer to the criteria set out above, under ’Elective Professional Client’.
                 </p>
             </div>
@@ -644,14 +644,14 @@ export const BotResponse = [
         id: 35,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What are the practical implications of becoming a Professional
                     Client?"</em>
                 </h4>
                 <p className={"Response Bot"}>
                     As a Professional Client, you will not have the following protections afforded to Retail Clients
                     under CySEC:
-                    <br/><br/>
+                    <br /><br />
                     <ul>
                         <li>FOS – If you are an elective Professional Client who is not defined as a ‘consumer’, you
                             will not have access to the Financial Ombudsman Service (FOS).
@@ -664,9 +664,9 @@ export const BotResponse = [
                             Protection section in the Client Area that you need to read and accept before your
                             application
                             is submitted.
-                            <br/><br/>
+                            <br /><br />
                             <a title="Https://secure.tickmill.eu/users/login"
-                               href="https://secure.tickmill.eu/users/login">https://secure.tickmill.eu/users/login</a>
+                                href="https://secure.tickmill.eu/users/login">https://secure.tickmill.eu/users/login</a>
                         </li>
                     </ul>
                 </p>
@@ -677,7 +677,7 @@ export const BotResponse = [
         id: 36,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What are the product intervention measures?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -708,7 +708,7 @@ export const BotResponse = [
         id: 37,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What can I do if I fail to meet the minimum criteria to reclassify
                     as a Professional Client?"</em>
                 </h4>
@@ -724,7 +724,7 @@ export const BotResponse = [
         id: 38,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What can I use in my investment portfolio?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -742,7 +742,7 @@ export const BotResponse = [
         id: 39,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What criteria do I need to meet to become a Professional
                     Client?"</em>
                 </h4>
@@ -766,7 +766,7 @@ export const BotResponse = [
         id: 40,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What does a leverage limit imply?</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -791,7 +791,7 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"What evidence will a client be asked to submit to reclassify as
                         a
                         Professional Client?"</em>
@@ -805,8 +805,8 @@ export const BotResponse = [
                             <li>Any documentation that shows that the client has <strong>worked in the industry in the
                                 relevant
                                 financial sector for over a year</strong> in a professional position <strong>requiring
-                                knowledge of the
-                                transactions or services envisaged.</strong>
+                                    knowledge of the
+                                    transactions or services envisaged.</strong>
                             </li>
                             <li>Bank statements, share certificates, broker accounts, etc. that evidence <strong>500,000
                                 EUR
@@ -822,7 +822,7 @@ export const BotResponse = [
         id: 42,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What is ESMA?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -837,7 +837,7 @@ export const BotResponse = [
         id: 43,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What is negative balance protection?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -859,7 +859,7 @@ export const BotResponse = [
         id: 44,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What is the new margin close-out rule and what are the practical
                     implications of it?"</em>
                 </h4>
@@ -887,7 +887,7 @@ export const BotResponse = [
         id: 45,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What level of professional experience do I need to have to qualify
                     as a Professional Client?"</em>
                 </h4>
@@ -902,7 +902,7 @@ export const BotResponse = [
         id: 46,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Who can be a Professional Client?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -910,7 +910,7 @@ export const BotResponse = [
                 </p>
                 <p className={"Response Bot"}>
                     <h3><u>By Default Professional Client:</u></h3>
-                    <br/>
+                    <br />
                     <ul>
                         <li>A client required to be authorised or regulated to operate in the financial markets,
                             including but not limited to credit institutions, investment firms and insurance companies
@@ -918,13 +918,13 @@ export const BotResponse = [
                         <li>A large undertaking meeting of two of the following size requirements on a company basis:
                         </li>
                     </ul>
-                    <br/>
+                    <br />
                     <ol>
                         <li>A <strong>balance sheet</strong> total of <strong>20,000,000 EUR</strong> or more;</li>
                         <li>A <strong>net turnover</strong> of <strong>40,000,000 EUR</strong> or more;</li>
                         <li><strong>Own funds</strong> of <strong>2,000,000 EUR</strong> or more;</li>
                     </ol>
-                    <br/>
+                    <br />
                     <ul>
                         <li>A national or regional government, including a public body that manages public debt, central
                             banks, international or supranational institutions.
@@ -937,7 +937,7 @@ export const BotResponse = [
                 </p>
                 <p className={"Response Bot"}>
                     <h3><u>Elective Professional Client:</u></h3>
-                    <br/>
+                    <br />
                     <ul>
                         <li>A client must meet the requirements set by CySEC:</li>
                         <li>A client must pass a <em>"Qualitative test”</em>, where we must assess their knowledge,
@@ -948,18 +948,18 @@ export const BotResponse = [
                             following criteria</strong>, where applicable:
                         </li>
                     </ul>
-                    <br/>
+                    <br />
                     <ol>
                         <li>The client has carried out <strong>transactions in significant
                             size</strong> and <strong>averaged</strong> a frequency of <strong>over 10 trades per
-                            quarter on the relevant market over the previous 4 quarters</strong>;
+                                quarter on the relevant market over the previous 4 quarters</strong>;
                         </li>
                         <li>The client has an <strong>investment portfolio</strong> and <strong>cash
                             investments</strong> of <strong>over 500,000 EUR</strong> in value;
                         </li>
                         <li>The client is <strong>employed or had been employed in the financial sector for over a
                             year</strong> in a professional position that requires <strong>knowledge of the transactions
-                            or services envisaged.</strong></li>
+                                or services envisaged.</strong></li>
                     </ol>
                 </p>
             </div>
@@ -970,7 +970,7 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"Will my funds still be protected if I become a Professional
                         Client?"</em>
                     </h4>
@@ -985,12 +985,12 @@ export const BotResponse = [
         id: 48,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Are hedging and scalping allowed?"</em>
                 </h4>
                 <p className={"Response Bot"}>
                     Hedging is allowed. The required margin for hedging positions on <a title="Classic"
-                                                                                        href="https://www.tickmill.eu/trading/classic-account">Classic</a>,
+                        href="https://www.tickmill.eu/trading/classic-account">Classic</a>,
                     and Raw accounts is 0. Scalping is also allowed. There are no time limitations for keeping the
                     positions open.
                 </p>
@@ -1001,7 +1001,7 @@ export const BotResponse = [
         id: 49,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Do I get any requotes?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1014,20 +1014,20 @@ export const BotResponse = [
         id: 50,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Do you offer FIX API connection?"</em>
                 </h4>
                 <p className={"Response Bot"}>
                     We offer FIX API connection to our <strong>large private clients</strong> and <strong>institutional
-                    clients.</strong>
-                    <br/><br/>
+                        clients.</strong>
+                    <br /><br />
                     <ul>
                         <li>The minimum account balance required is 500,000 £$€
                         </li>
                         <li>Required minimum monthly commission fee generated should be 5,000 £$€
                         </li>
                     </ul>
-                    <br/>
+                    <br />
                     We are not offering a demo version.
                 </p>
                 <p className={"Response Bot"}>
@@ -1043,7 +1043,7 @@ export const BotResponse = [
         id: 51,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Do you offer MetaTrader MultiTerminal?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1052,10 +1052,10 @@ export const BotResponse = [
                 <p className={"Response Bot"}>
                     If you wish, you can install multiple MetaTrader
                     platforms and place them in different folders. You can download the <a title="Mt4 Platform"
-                                                                                           href="https://www.tickmill.eu/trading-platforms/mt4"
-                                                                                           target="_blank">MT4
-                    platform</a> and the <a title="Mt5 Platform" href="https://www.tickmill.eu/trading-platforms/mt5"
-                                            target="_blank">MT5 platform</a> from our website.
+                        href="https://www.tickmill.eu/trading-platforms/mt4"
+                        target="_blank">MT4
+                        platform</a> and the <a title="Mt5 Platform" href="https://www.tickmill.eu/trading-platforms/mt5"
+                            target="_blank">MT5 platform</a> from our website.
                 </p>
                 <p className={"Response Bot"}>
                     If you click
@@ -1072,7 +1072,7 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"Do you offer negative balance protection/cover negative
                         balance?"</em>
                     </h4>
@@ -1084,11 +1084,11 @@ export const BotResponse = [
                         lot on USDJPY on
                         Friday
                         evening, with 1:30 leverage and 200 USD margin.
-                        <br/><br/>On Sunday night, the market opens 30 pips away from Friday’s closing price in a
+                        <br /><br />On Sunday night, the market opens 30 pips away from Friday’s closing price in a
                         direction against you, so your position will immediately have a loss of 30 pips x 10 USD = 300
                         USD loss, while you have only 200 USD on your
                         account.
-                        <br/><br/>The position will be automatically closed and your account would have a negative
+                        <br /><br />The position will be automatically closed and your account would have a negative
                         balance of -100 USD. This situation is 100% impossible when a trader uses 1:1 leverage. The
                         higher leverage a trader uses, the more risks they take. Please also note that a negative
                         balance may occur due to a slippage during high volatility.
@@ -1098,7 +1098,7 @@ export const BotResponse = [
                         client trades irresponsibly, then we will notify the client via e-mail and ask them to reduce
                         risk exposure. Also, we might reduce the leverage on the client’s
                         account.
-                        <br/><br/>As a CySEC regulated broker, we cover the negative balance of our clients.
+                        <br /><br />As a CySEC regulated broker, we cover the negative balance of our clients.
                     </p>
                 </div>
             )
@@ -1108,13 +1108,13 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"Do you offer Swap-Free accounts?"</em>
                     </h4>
                     <p className={"Response Bot"}>
                         Yes, we offer Muslim traders all our accounts with a <a title="Swap-free Option"
-                                                                                href="https://www.tickmill.eu/trading/islamic-account">swap-free
-                        option</a>.
+                            href="https://www.tickmill.eu/trading/islamic-account">swap-free
+                            option</a>.
                     </p>
                 </div>
             )
@@ -1123,7 +1123,7 @@ export const BotResponse = [
         id: 54,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Do you provide tick data?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1139,7 +1139,7 @@ export const BotResponse = [
         id: 55,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Does slippage occur in your platform?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1153,7 +1153,7 @@ export const BotResponse = [
         id: 56,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Does Tickmill offer Cash or Future CFDs?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1167,7 +1167,7 @@ export const BotResponse = [
         id: 57,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"How can I find/check historical data?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1198,7 +1198,7 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"How many platforms are available for trading?"</em>
                     </h4>
                     <p className={"Response Bot"}>
@@ -1215,78 +1215,78 @@ export const BotResponse = [
         id: 59,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"VWAP Execution explained"</em>
                 </h4>
                 <p className={"Response Bot"}>
                     The VWAP or Volume Weighted Average Price is the average price at which your order is executed,
                     where each trade price is weighted by the fraction of the volume associated with the
                     trade.
-                    <br/><br/>For instance, when a trader places a large position, it may be filled at different
+                    <br /><br />For instance, when a trader places a large position, it may be filled at different
                     prices as per the current market liquidity. VWAP summarizes all trades that occurred from the start
                     of the order until the order was completed.
                 </p>
                 <p className={"Response Bot"}>
                     If you decide to buy 6 Million EURUSD at
                     market, the order will be filled through the top 3 price levels of the trading book:
-                    <br/><br/>
+                    <br /><br />
                     <table>
                         <tbody>
-                        <tr>
-                            <td><p><strong>BID Volume</strong></p></td>
-                            <td><p><strong>BID Quotes</strong></p></td>
-                            <td><p><strong>Spread</strong></p></td>
-                            <td><p><strong>ASK Quotes</strong></p></td>
-                            <td><p><strong>ASK Volume</strong></p></td>
-                        </tr>
-                        <tr>
-                            <td><p>1,000,000
-                            </p></td>
-                            <td><p>1.2020<strong>4</strong></p></td>
-                            <td><p>0.1 pip
-                            </p></td>
-                            <td><p>1.2020<strong>5</strong></p></td>
-                            <td><p>1,500,000
-                            </p></td>
-                        </tr>
-                        <tr>
-                            <td><p>5,000,000
-                            </p></td>
-                            <td><p>1.2020<strong>3</strong></p></td>
-                            <td><p>0.3 pip
-                            </p></td>
-                            <td><p>1.2020<strong>6</strong></p></td>
-                            <td><p>2,000,000
-                            </p></td>
-                        </tr>
-                        <tr>
-                            <td><p>600,000
-                            </p></td>
-                            <td><p>1.2020<strong>2</strong></p></td>
-                            <td><p>0.5 pip
-                            </p></td>
-                            <td><p>1.2020<strong>7</strong></p></td>
-                            <td><p>3,200,000
-                            </p></td>
-                        </tr>
-                        <tr>
-                            <td><p>2,200,000
-                            </p></td>
-                            <td><p>1.2020<strong>2</strong></p></td>
-                            <td><p>0.6 pip
-                            </p></td>
-                            <td><p>1.2020<strong>8</strong></p></td>
-                            <td><p>3,500,000
-                            </p></td>
-                        </tr>
+                            <tr>
+                                <td><p><strong>BID Volume</strong></p></td>
+                                <td><p><strong>BID Quotes</strong></p></td>
+                                <td><p><strong>Spread</strong></p></td>
+                                <td><p><strong>ASK Quotes</strong></p></td>
+                                <td><p><strong>ASK Volume</strong></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>1,000,000
+                                </p></td>
+                                <td><p>1.2020<strong>4</strong></p></td>
+                                <td><p>0.1 pip
+                                </p></td>
+                                <td><p>1.2020<strong>5</strong></p></td>
+                                <td><p>1,500,000
+                                </p></td>
+                            </tr>
+                            <tr>
+                                <td><p>5,000,000
+                                </p></td>
+                                <td><p>1.2020<strong>3</strong></p></td>
+                                <td><p>0.3 pip
+                                </p></td>
+                                <td><p>1.2020<strong>6</strong></p></td>
+                                <td><p>2,000,000
+                                </p></td>
+                            </tr>
+                            <tr>
+                                <td><p>600,000
+                                </p></td>
+                                <td><p>1.2020<strong>2</strong></p></td>
+                                <td><p>0.5 pip
+                                </p></td>
+                                <td><p>1.2020<strong>7</strong></p></td>
+                                <td><p>3,200,000
+                                </p></td>
+                            </tr>
+                            <tr>
+                                <td><p>2,200,000
+                                </p></td>
+                                <td><p>1.2020<strong>2</strong></p></td>
+                                <td><p>0.6 pip
+                                </p></td>
+                                <td><p>1.2020<strong>8</strong></p></td>
+                                <td><p>3,500,000
+                                </p></td>
+                            </tr>
                         </tbody>
                     </table>
-                    <br/><strong>Note:</strong> quotes and volumes in this table are only for illustrative purposes and
+                    <br /><strong>Note:</strong> quotes and volumes in this table are only for illustrative purposes and
                     they will depend on the current market liquidity
                 </p>
                 <p className={"Response Bot"}>
                     In detail,
-                    <br/><br/>
+                    <br /><br />
                     <ul>
                         <li>Buy 1,5 million at 1.2020<strong>5</strong> (cumulative volume = 1,5 million; remaining to
                             fill = 4,5 million)
@@ -1298,11 +1298,11 @@ export const BotResponse = [
                             fill = 0)
                         </li>
                     </ul>
-                    <br/>In summary, your VWAP or Volume Weighted Average Price, will be calculated using the
+                    <br />In summary, your VWAP or Volume Weighted Average Price, will be calculated using the
                     following formula:
-                    <br/><br/>VWAP = (1,500,000/6,000,000) x 1.20205 + (2,000,000/6,000,000) x
+                    <br /><br />VWAP = (1,500,000/6,000,000) x 1.20205 + (2,000,000/6,000,000) x
                     1.20206 + (2,500,000/6,000,000) x 1.20207
-                    <br/><br/>VWAP = 1.202062
+                    <br /><br />VWAP = 1.202062
                 </p>
 
             </div>
@@ -1313,7 +1313,7 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"What are the advantages of trading with Tickmill?"</em>
                     </h4>
                     <p className={"Response Bot"}>
@@ -1336,7 +1336,7 @@ export const BotResponse = [
         id: 61,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What are the limits of setting SL, TP, and TS?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1355,13 +1355,13 @@ export const BotResponse = [
         id: 62,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What are the minimum and maximum account leverage you offer?"</em>
                 </h4>
                 <p className={"Response Bot"}>
                     <h3>For Retail Clients:</h3>
                     The minimum leverage is 1:1. The maximum and default leverage is 1:30.
-                    <br/><br/>
+                    <br /><br />
                     <ul>
                         <li>1:30 on Major FX Pairs</li>
                         <li>1:20 on Major Stock Indices, Non-Major Currencies and Gold</li>
@@ -1372,14 +1372,14 @@ export const BotResponse = [
                 <p className={"Response Bot"}>
                     <h3>For Professional Clients:</h3>
                     The minimum leverage is 1:1. The maximum and default leverage is 1:300.
-                    <br/><br/>Leverage for Metals: The leverage for gold is equal to the account leverage, while the
+                    <br /><br />Leverage for Metals: The leverage for gold is equal to the account leverage, while the
                     leverage for silver is 4
                     times lower than the account leverage. If the trading account has a leverage of 1:300, then the
                     leverage for gold will be 1:300 and the leverage for silver will be 1:75.
                 </p>
                 <p className={"Response Bot"}>
                     For more information about our leverage and margin requirements, click <a title="Here"
-                                                                                              href="https://www.tickmill.eu/conditions/leverage-margin">here</a>.
+                        href="https://www.tickmill.eu/conditions/leverage-margin">here</a>.
                 </p>
             </div>
         )
@@ -1389,7 +1389,7 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"What are the minimum and maximum position sizes?"</em>
                     </h4>
                     <p className={"Response Bot"}>
@@ -1403,37 +1403,37 @@ export const BotResponse = [
         id: 64,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What are your margin call/stop out levels?"</em>
                 </h4>
                 <p className={"Response Bot"}>
                     Our margin call / stop out levels are different depending on whether you are a Retail or a
-                    Professional client:<br/><br/>
+                    Professional client:<br /><br />
                     <table>
                         <tbody>
-                        <tr>
-                            <td><strong>Client Classification</strong></td>
-                            <td><strong>Margin Call / Stop Out</strong></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Retail Client
-                            </td>
-                            <td>
-                                100% / 50%
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Professional Client
-                            </td>
-                            <td>
-                                100% / 30%
-                            </td>
-                        </tr>
+                            <tr>
+                                <td><strong>Client Classification</strong></td>
+                                <td><strong>Margin Call / Stop Out</strong></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Retail Client
+                                </td>
+                                <td>
+                                    100% / 50%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Professional Client
+                                </td>
+                                <td>
+                                    100% / 30%
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                    <br/>
+                    <br />
                     Your account may be subject to a margin call if your account equity falls to a level that is equal
                     to the margin of your existing positions. For example, you have an open position of 1 lot on EURUSD.
                     The margin to hold that position is 3,333.33 EUR for Retail Clients.*
@@ -1449,14 +1449,14 @@ export const BotResponse = [
                             close your positions immediately.
                         </li>
                     </ul>
-                    <br/>
+                    <br />
                     Taking the above example, if you open a position with 3,333.33 EUR of margin and your account equity
                     falls to 1,666.66 EUR, then the system starts to close your position. If you have several positions
                     opened, then the system closes them starting from the one with the biggest loss.
-                    <br/><br/>
+                    <br /><br />
                     If, while closing the positions, your account equity reaches a level of more than 50% of the
                     required margin, all other positions will remain open.
-                    <br/><br/>
+                    <br /><br />
                     *This is an illustrative example.
                 </p>
             </div>
@@ -1466,7 +1466,7 @@ export const BotResponse = [
         id: 65,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What are your spreads?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1474,8 +1474,8 @@ export const BotResponse = [
                     <ul>
                         <li>
                             <a title="Classic"
-                               href="https://www.tickmill.eu/trading/classic-account"
-                               target="_blank">Classic</a>
+                                href="https://www.tickmill.eu/trading/classic-account"
+                                target="_blank">Classic</a>
                             <ul>
                                 <li>Variable spreads starting from 1.6 pips.</li>
                                 <li>No commissions.</li>
@@ -1485,17 +1485,17 @@ export const BotResponse = [
                     <ul>
                         <li>
                             <a title="Pro"
-                               href="https://www.tickmill.eu/trading/pro-account"
-                               target="_blank">Pro</a>
+                                href="https://www.tickmill.eu/trading/pro-account"
+                                target="_blank">Pro</a>
                             <ul>
                                 <li>Variable spreads starting from 0.0 pips.</li>
                                 <li>Low commissions apply.</li>
                             </ul>
                         </li>
                     </ul>
-                    <br/>
+                    <br />
                     You can check out our spreads by clicking <a title="Here"
-                                                                 href="https://www.tickmill.eu/conditions/spreads-swaps">here</a>.
+                        href="https://www.tickmill.eu/conditions/spreads-swaps">here</a>.
                 </p>
                 <p className={"Response Bot"}>At market opening and closing times and prior to announcements, the market
                     spreads may widen substantially. Consequently, you must ensure that you have sufficient funds on
@@ -1508,7 +1508,7 @@ export const BotResponse = [
         id: 66,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What are your trading hours?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1519,7 +1519,7 @@ export const BotResponse = [
                         <li>Tuesday to Thursday: 00:00 - 24:00</li>
                         <li>Friday: 00:00 - 23:58 (MT4 Server time).</li>
                         <li><a title="Find out more here" href="https://www.tickmill.com/instruments/forex"
-                               target="_blank">Find out more here</a>
+                            target="_blank">Find out more here</a>
                         </li>
                     </ul>
                 </p>
@@ -1527,16 +1527,16 @@ export const BotResponse = [
                     <h3>CFDs Trading Hours:</h3>
                     <ul>
                         <li>Precious Metals: Specific trading hours <a title="Here"
-                                                                       href="https://www.tickmill.com/instruments/precious-metals"
-                                                                       target="_blank">here</a></li>
+                            href="https://www.tickmill.com/instruments/precious-metals"
+                            target="_blank">here</a></li>
                         <li>Stock Indices and Oil: Specific trading hours <a title="Here"
-                                                                             href="https://www.tickmill.com/instruments/stock-indices"
-                                                                             target="_blank">here</a></li>
+                            href="https://www.tickmill.com/instruments/stock-indices"
+                            target="_blank">here</a></li>
                         <li>Bonds: Specific trading hours <a title="Here"
-                                                             href="https://www.tickmill.com/instruments/bonds"
-                                                             target="_blank">here</a></li>
+                            href="https://www.tickmill.com/instruments/bonds"
+                            target="_blank">here</a></li>
                         <li>Stocks: Specific trading hours <a title="Here" href="/instruments/stocks"
-                                                              target="_blank">here</a></li>
+                            target="_blank">here</a></li>
                     </ul>
                 </p>
                 <p className={"Response Bot"}>
@@ -1545,10 +1545,10 @@ export const BotResponse = [
                 </p>
                 <p className={"Response Bot"}>
                     The server time is set to GMT+2 and GMT+3 during DST in the US and Europe.
-                    <br/><br/>
+                    <br /><br />
                     Trading hours can be also viewed in your MT4 or MT5 terminal (Market Watch > Right click on the
                     symbol > Specification).
-                    <br/><br/>
+                    <br /><br />
                     <strong>Note:</strong> Trading hours are subject to change without prior
                     notice. Liquidity Providers may adjust trading schedule as necessary, depending on market
                     conditions.
@@ -1561,7 +1561,7 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"What commission will I be charged for trading on the MetaTrader
                         platform?"</em>
                     </h4>
@@ -1569,23 +1569,23 @@ export const BotResponse = [
                         <ul>
                             <li>
                                 <strong><a title="Classic"
-                                           href="https://www.tickmill.eu/trading/classic-account"
-                                           target="_blank">Classic Account:</a></strong>
+                                    href="https://www.tickmill.eu/trading/classic-account"
+                                    target="_blank">Classic Account:</a></strong>
                                 <ul>
                                     <li>No commissions.</li>
                                 </ul>
                             </li>
                             <li>
                                 <strong><a title="Pro"
-                                           href="https://www.tickmill.eu/trading/pro-account"
-                                           target="_blank">Pro Account:</a></strong>
+                                    href="https://www.tickmill.eu/trading/pro-account"
+                                    target="_blank">Pro Account:</a></strong>
                                 <ul>
                                     <li>Commission: 2 units of the base currency per side per lot.</li>
                                 </ul>
                             </li>
                             <li>
                                 <strong><a title="Vip"
-                                           href="https://www.tickmill.eu/trading/vip-account">VIP Account:</a></strong>
+                                    href="https://www.tickmill.eu/trading/vip-account">VIP Account:</a></strong>
                                 <ul>
                                     <li>Commission: 1 unit of the base currency per side per lot.</li>
                                 </ul>
@@ -1599,7 +1599,7 @@ export const BotResponse = [
         id: 68,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What is slippage?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1607,7 +1607,7 @@ export const BotResponse = [
                     an Order at a specific price impossible to execute, when market orders are used, and also when large
                     Orders are executed when there may not be enough interest at the desired price level to maintain the
                     expected price of trade.
-                    <br/><br/>
+                    <br /><br />
                     All trades are executed at the first available market price. As market
                     prices are moving constantly, then it is often the case that clients get either positive or negative
                     slippage.
@@ -1619,7 +1619,7 @@ export const BotResponse = [
         id: 69,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What is the commission on the Pro account?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1646,7 +1646,7 @@ export const BotResponse = [
                             </ul>
                         </li>
                     </ul>
-                    <br/>
+                    <br />
                     <strong>Note:</strong> If you have a USD account, then 4 EUR, 4 GBP
                     and 4 AUD will be automatically converted to USD.
                 </p>
@@ -1657,7 +1657,7 @@ export const BotResponse = [
         id: 70,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What is the commission on the VIP account?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1684,7 +1684,7 @@ export const BotResponse = [
                             </ul>
                         </li>
                     </ul>
-                    <br/>
+                    <br />
                     <strong>Note:</strong> If you have a USD account, then 2 EUR, 2 GBP, and 2 AUD will be automatically
                     converted to USD.
                 </p>
@@ -1695,7 +1695,7 @@ export const BotResponse = [
         id: 71,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What is the margin call procedure for MT4/MT5?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1703,7 +1703,7 @@ export const BotResponse = [
                     automated margin close-out of positions. In the event that market conditions are unfavourable to
                     you, we will set a stop-out level to reduce your maximum loss. This means that we will set a
                     threshold of margin value, below which positions are automatically closed.
-                    <br/><br/>
+                    <br /><br />
                     <ul>
                         <li>Stop-Out Levels:</li>
                         <ul>
@@ -1720,13 +1720,13 @@ export const BotResponse = [
                             Clients).
                         </li>
                     </ul>
-                    <br/>
+                    <br />
                     In a nutshell, once your account net equity drops below 100% of the initial margin required to
                     establish the open position(s), the MT4/MT5 changes colour, to red, to indicate that you are close
                     to or, on margin call. Once your account net equity drops below 30% of the margin requirements
                     (depending on entity and client classification), it will close your trades one by one, starting with
                     the trade with the biggest loss.
-                    <br/><br/>
+                    <br /><br />
                     <strong>*Net equity</strong>: Defined as the sum of the client’s net profit and loss on an open
                     position(s) and client’s deposited funds.
                 </p>
@@ -1738,7 +1738,7 @@ export const BotResponse = [
         message:
             (
                 <div className={"ResponseContainer"}>
-                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                    <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"What is Tickmill’s trade execution model?"</em>
                     </h4>
                     <p className={"Response Bot"}>
@@ -1755,7 +1755,7 @@ export const BotResponse = [
         id: 73,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What is your order execution speed?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1768,7 +1768,7 @@ export const BotResponse = [
         id: 74,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Where is Tickmill regulated?"</em>
                 </h4>
                 <p className={"Response Bot"}>
@@ -1787,10 +1787,23 @@ export const BotResponse = [
         )
     },
     {
+        id: 75,
+        message: (
+            <div className={"ResponseContainer"}>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
+                <h4 className={"Response Bot"}><em>"What is your order execution speed?"</em>
+                </h4>
+                <p className={"Response Bot"}>
+                    Our average execution speed is around 0.20 seconds.
+                </p>
+            </div>
+        )
+    },
+    {
         id: 5000,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <p className={"Response Bot"}>
                     I assist user experience by providing an interactive FAQ chat.
                 </p>
@@ -1798,15 +1811,15 @@ export const BotResponse = [
         )
     },
     {
-        id: 9999,
+        id: 9997,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <p className={"Response Bot"}>
-                    I'm having trouble answering to you. Try to rephrase question or contact <a title="Client Support"
-                                                                                                href="https://www.tickmill.eu/about/contact-us"
-                                                                                                target="_blank">Client
-                    Support</a>
+                    Try to rephrase question or contact <a title="Client Support"
+                        href="https://www.tickmill.eu/about/contact-us"
+                        target="_blank">Client
+                        Support</a>
                 </p>
             </div>
         )
@@ -1815,9 +1828,23 @@ export const BotResponse = [
         id: 9998,
         message: (
             <div className={"ResponseContainer"}>
-                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true}/>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <p className={"Response Bot"}>
                     Glad I could assist!
+                </p>
+            </div>
+        )
+    },
+    {
+        id: 9999,
+        message: (
+            <div className={"ResponseContainer"}>
+                <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
+                <p className={"Response Bot"}>
+                    I'm having trouble answering to you. Try to rephrase question or contact <a title="Client Support"
+                        href="https://www.tickmill.eu/about/contact-us"
+                        target="_blank">Client
+                        Support</a>
                 </p>
             </div>
         )

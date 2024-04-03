@@ -42,7 +42,7 @@ const InputField = ({sendInput, storeMessages, setGeneratedAnswer}) => {
             });
     };
 
-    const botResponse = (userQuestion) => {
+    const getBotResponse = (userQuestion) => {
         /* Add loading animation till answer is generated */
         setGeneratedAnswer(false);
         return new Promise((resolve, reject) => {
@@ -82,7 +82,7 @@ const InputField = ({sendInput, storeMessages, setGeneratedAnswer}) => {
         // Set input value to empty
         setInputValue('')
         // Get bot response
-        botResponse(inputValue)
+        getBotResponse(inputValue)
             .then(answerID => {
                 // Store messages for saving
                 storeMessages(inputValue, true);

@@ -108,15 +108,12 @@ const ChatWindow = () => {
     }, [storedMessages]);
 
 //TEMPO
-    /*    // FOR DESIGNING BOT MESSAGES
+        // FOR DESIGNING BOT MESSAGES
                 useEffect(() => {
                     handleSendMessage("Do trading conditions differ on my live and demo account?", true)
-                    handleSendMessage(BotResponse[2].message, false)
-                }, []);*/
+                    handleSendMessage(BotResponse[0].message, false)
+                }, []);
 //TEMPO
-
-    /* TradingConditions[11].message */
-    /* TradingConditions[16].message */
 
     /* Logic handles the rendering of settings */
     const [inSettings, setInSettings] = useState(false);
@@ -145,7 +142,7 @@ const ChatWindow = () => {
                 console.log("Rendering settings: ", inSettings);
                 console.log("Rendering previous chat: ", previousChat);
         console.log("");
-    }, [inSettings]);*/
+    }, [inSettings]); */
 
     return (
         <div className="ChatWindow" id="ChatWindowID">

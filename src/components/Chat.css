@@ -11,6 +11,23 @@
     width: 0;
 }
 
+/* Classes for hiding and displaying answers based on if user has clicked "Yes" or "No" button */
+.AddtionalAnswers{
+    display: none !important;
+}
+
+.ShowAddtionalAnswers{
+    display: block !important;
+}
+
+.ConversationEnding{
+    display: none !important;
+}
+
+.ShowConversationEnding{
+    display: block !important;
+}
+
 /* Loading animation, when bot is generating answer */
 .loader {
     margin-top: 8px;

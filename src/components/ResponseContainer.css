@@ -37,6 +37,36 @@
     margin-top: 8px;
 }
 
+/* Margin for phrase "Did this answer help you?" */
+.MarginTop{
+    margin-top: 24px !important;
+}
+
+/* Flex style for parent div of "Yes" and "No" buttons */
+.Flex{
+    display: flex;
+}
+
+/* Style for "Yes" and "No" buttons */
+.Conformation{
+    font-style: italic;
+    font-weight: 200;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 4px;
+    background-color: #353535;
+    color: #ECECEC !important;
+    width: 40px;
+}
+
+/* Style for "No" button */
+.Button.Conformation:nth-child(2){
+    margin-left: 8px;
+  }
+
+i{
+    font-weight: 550;
+}
 
 /* Additional class for ChatBot "Response" box */
 .Bot {
