@@ -67,7 +67,6 @@ const SavedChats = ({
                     return response.json();
                 })
                 .then(Data => {
-                    /*                    console.log("Chats data:", Data);*/
                     setTimeout(() => {
                         setData(Data);
                         // Remove loading div for user
@@ -89,7 +88,6 @@ const SavedChats = ({
         setSaveUserMessages(false);
         // Add loading animation for generating answer
         setGeneratedAnswer(false);
-        /*        console.log("Chat id: ", chatID)*/
         fetch(`/previousChat?chatId=${chatID}`, {
             method: 'GET',
             credentials: 'same-origin',
@@ -101,7 +99,6 @@ const SavedChats = ({
                 return response.json();
             })
             .then(results => {
-                /*                console.log('Previous chat', results);*/
                 // Resolve bot messages
                 const resolvedMessages = results.map(result => ({
                     ...result,

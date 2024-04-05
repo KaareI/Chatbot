@@ -34,14 +34,6 @@ const ChatWindow = () => {
             /* Order id of a message in chat AKA position */
             let newOrderId;
             newOrderId = prevMessages.length + messages.length + 1;
-
-            /* If user is loading previous chat */
-            /*            if (previousChat) {
-                            newOrderId = prevMessages.length + messages.length + 1;
-                        } else {
-                            newOrderId = prevMessages.length + 1;
-                        }*/
-
             const newMessage = {
                 orderId: newOrderId,
                 userMessage: userMessage,
@@ -58,24 +50,17 @@ const ChatWindow = () => {
     /* Create new message */
     const handleSendMessage = (message, userMessage) => {
         setMessages(prevMessages => {
-            /*            console.log("Messages length in ChatWindow component: ", prevMessages.length);*/
             const newMessage = {
                 orderId: prevMessages.length + 1,
                 userMessage: userMessage,
                 message: message,
             };
-            /*            console.log("Message in ChatWindow component: ", message);
-                        console.log("Message type in ChatWindow component: ", typeof(message));
-                        console.log("Message is user message?: ", userMessage);*/
             return [...prevMessages, newMessage];
         });
     };
 
     /* Save last message to database */
     const saveMessages = () => {
-        /*         console.log("Messages before saving:", messages)
-                console.log("Stored messages before saving: ", storedMessages); */
-
         /* Make a request to server with messages */
         fetch("/saveMessages", {
             method: "PUT",
@@ -108,8 +93,6 @@ const ChatWindow = () => {
             // Messages array is not empty and saveUserMessages is true
             saveMessages();
         }
-        /*        console.log("Messages: ", messages)
-                console.log("Messages type: ", typeof (messages))*/
     }, [storedMessages]);
 
     //TEMPO
@@ -139,15 +122,6 @@ const ChatWindow = () => {
         /* User is not in settings anymore so rerender chat */
         setInSettings(false);
     }
-
-    /*    useEffect(() => {
-             console.log("Messages in chat: ", messages);
-                    console.log("Stored messages for saving: ", storedMessages);
-                    console.log("Saving user messages: ", saveUserMessages);
-                    console.log("Rendering settings: ", inSettings);
-                    console.log("Rendering previous chat: ", previousChat);
-            console.log("");
-        }, [inSettings]); */
 
     return (
         <div className="ChatWindow" id="ChatWindowID">

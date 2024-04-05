@@ -49,7 +49,6 @@ const InputField = ({ sendInput, storeMessages, setGeneratedAnswer, setQuestions
         return new Promise((resolve, reject) => {
             askQuestion(userQuestion)
                 .then(object => {
-                    console.log(object);
                     // Send similar questions to Chat
                     setQuestions(object)
                     // Get the answer id
