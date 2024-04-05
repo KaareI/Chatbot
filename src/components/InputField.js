@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Import CSS
 import './InputField.css';
@@ -8,14 +8,15 @@ import './Button.css';
 import SendButton from "../assets/Send.png";
 import { BotResponse } from "./misc/BotAnswers";
 
-const InputField = ({ sendInput, storeMessages, setGeneratedAnswer, setQuestions }) => {
+const InputField = ({ sendInput, storeMessages, setGeneratedAnswer, setQuestions, questions, renderQuestion, setRenderQuestion }) => {
     const [inputValue, setInputValue] = useState('');
+    const [inputSet, setInputSet] = useState(false);
     const [isDisabled, setIsDisabled] = useState(false);
 
     /* Send user message when "ENTER" is pressed */
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
-            handleButtonClick();
+            handleSend();
         }
     };
 
@@ -75,9 +76,7 @@ const InputField = ({ sendInput, storeMessages, setGeneratedAnswer, setQuestions
         });
     };
 
-
-
-    const handleButtonClick = () => {
+    const handleSend = () => {
         // User can not type
         setIsDisabled(true);
         // Send user input value
@@ -96,6 +95,29 @@ const InputField = ({ sendInput, storeMessages, setGeneratedAnswer, setQuestions
             });
     };
 
+    useEffect(() => {
+        switch (renderQuestion) {
+            case 1:
+                setInputValue(questions[1].question)
+                setInputSet(true);
+                break;
+            case 2:
+                setInputValue(questions[2].question)
+                setInputSet(true);
+                break;
+            case 3:
+                setInputValue("None of these help me")
+                setInputSet(true);
+                break;
+            default:
+        }
+        if (renderQuestion !== 0 && inputSet){
+            setRenderQuestion(0)
+            setInputSet(false); 
+            handleSend()
+        }
+    }, [renderQuestion, inputValue]);
+
     return (
         <div className={"InputField"}>
 
@@ -113,7 +135,7 @@ const InputField = ({ sendInput, storeMessages, setGeneratedAnswer, setQuestions
             <button
                 className={`Button ${inputValue.trim() === '' ? 'Disabled' : ''}`}
                 style={{ margin: "auto" }}
-                onClick={handleButtonClick}
+                onClick={handleSend}
                 disabled={inputValue.trim() === ''}
             >
                 <img src={SendButton} alt="Send Button"

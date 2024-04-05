@@ -11,7 +11,7 @@ const SavedChats = ({
     setMessages,
     setStoredMessages,
     setPreviousChat,
-    setGeneratedAnswer
+    setGeneratedAnswer,
 }) => {
     const [data, setData] = useState([]);
     const [error, setError] = useState('');

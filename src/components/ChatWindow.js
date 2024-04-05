@@ -14,6 +14,8 @@ import {
 
 const ChatWindow = () => {
 
+    const [renderQuestion, setRenderQuestion] = useState(0);
+
     /* Current additional questions */
     const [questions, setQuestions] = useState();
 
@@ -71,8 +73,8 @@ const ChatWindow = () => {
 
     /* Save last message to database */
     const saveMessages = () => {
-        console.log("Messages before saving:", messages)
-        console.log("Stored messages before saving: ", storedMessages);
+        /*         console.log("Messages before saving:", messages)
+                console.log("Stored messages before saving: ", storedMessages); */
 
         /* Make a request to server with messages */
         fetch("/saveMessages", {
@@ -175,12 +177,16 @@ const ChatWindow = () => {
                         messages={messages}
                         generatedAnswer={generatedAnswer}
                         questions={questions}
+                        setRenderQuestion={setRenderQuestion}
                     />
                     <UserInput
                         setQuestions={setQuestions}
+                        questions={questions}
                         sendInput={handleSendMessage}
                         storeMessages={handleStoredMessages}
                         setGeneratedAnswer={setGeneratedAnswer}
+                        setRenderQuestion={setRenderQuestion}
+                        renderQuestion={renderQuestion}
                     />
                 </>
             )}

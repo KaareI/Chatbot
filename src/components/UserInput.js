@@ -5,7 +5,7 @@ import './UserInput.css';
 
 // Import components
 import InputField from "./InputField";
-const UserInput = ({ sendInput, storeMessages, setGeneratedAnswer, setQuestions}) => {
+const UserInput = ({ sendInput, storeMessages, setGeneratedAnswer, setQuestions, questions, renderQuestion, setRenderQuestion}) => {
     return (
         <div className={"UserInput"}>
             <InputField
@@ -13,6 +13,9 @@ const UserInput = ({ sendInput, storeMessages, setGeneratedAnswer, setQuestions}
                 sendInput={sendInput}
                 storeMessages={storeMessages}
                 setGeneratedAnswer={setGeneratedAnswer}
+                setRenderQuestion={setRenderQuestion}
+                renderQuestion={renderQuestion}
+                questions={questions}
             />
         </div>
     );

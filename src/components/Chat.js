@@ -8,10 +8,10 @@ import './ResponseContainer.css';
 import Greeting from "./Greeting";
 import Client from "./Client";
 
-const Chat = ({ messages, generatedAnswer, questions }) => {
+const Chat = ({ messages, generatedAnswer, questions, setRenderQuestion }) => {
     const lastMessageRef = useRef(null);
 
-    const smoothScroll = () => { 
+    const smoothScroll = () => {
         if (lastMessageRef.current) {
             lastMessageRef.current.scrollIntoView({ behavior: 'smooth' });
         }
@@ -33,7 +33,7 @@ const Chat = ({ messages, generatedAnswer, questions }) => {
         );
     }
 
-    function handleConformation(event) {
+    const handleConformation = (event) => {
         // Get the clicked button element
         const clickedButton = event.target;
         // Change its background color to blue
@@ -63,6 +63,9 @@ const Chat = ({ messages, generatedAnswer, questions }) => {
         smoothScroll()
     }
 
+    /* Exclude these ids from having additional questions like "Did this answer help you?"  */
+    const excludedIds = [5000, 9997, 9998, 9999];
+
     return (
         <div className={"Chat"}>
             <div className={"ResponseContainer"}>
@@ -75,34 +78,61 @@ const Chat = ({ messages, generatedAnswer, questions }) => {
                     ) : (
                         <>
                             {message.message}
-                            <div className={"Response Bot MarginTop"}>
-                                <i>Did this answer help you?</i>
-                            </div>
-                            <div className={"Bot Flex"}>
-                                <button className={"Button Conformation"}
-                                    onClick={(event) => { handleConformation(event) }}>
-                                    Yes
-                                </button>
-                                <button className={"Button Conformation"}
-                                    onClick={(event) => { handleConformation(event) }}>
-                                    No
-                                </button>
-                            </div>
-                            <div className={"Response Bot MarginTop AddtionalAnswers"}>
-                                You may find your answer in following:
-                            </div>
-                            <button className={"Response Bot Button AddtionalAnswers"}>
-                                <i>"{questions[1].question}"</i>
-                            </button>
-                            <button className={"Response Bot Button AddtionalAnswers"}>
-                                <i>"{questions[2].question}"</i>
-                            </button>
-                            <button className={"Response Bot Button AddtionalAnswers"}>
-                                "None of these help me"
-                            </button>
-                            <div className={"Response Bot MarginTop ConversationEnding"}>
-                                Fantastic! If you have any more questions feel free to ask.
-                            </div>
+                            {/* Condtional rendering of addtional questions when:
+                            1) It is last message of messages array
+                            2) questions is not empty or false
+                            3) questions[1].id is not 9999 or questions[2].id is not 9999
+                            4) If the question concerns FAQs
+                             */}
+                            {index === messages.length - 1 && questions && (questions[1].id !== 9999 || questions[2].id !== 9999) && !excludedIds.includes(parseInt(questions[0].id, 10)) && (
+                                <>
+                                    <div className={"Response Bot MarginTop"}>
+                                        <i>Did this answer help you?</i>
+                                    </div>
+                                    <div className={"Bot Flex"}>
+                                        <button
+                                            className={"Button Conformation"}
+                                            onClick={(event) => {
+                                                handleConformation(event);
+                                            }}
+                                        >
+                                            Yes
+                                        </button>
+                                        <button
+                                            className={"Button Conformation"}
+                                            onClick={(event) => {
+                                                handleConformation(event);
+                                            }}
+                                        >
+                                            No
+                                        </button>
+                                    </div>
+                                    <div className={"Response Bot MarginTop AddtionalAnswers"}>
+                                        You may find your answer in following:
+                                    </div>
+                                    <button
+                                        className={"Response Bot Button AddtionalAnswers"}
+                                        onClick={() => setRenderQuestion(1)}
+                                    >
+                                        <i>"{questions[1].question}"</i>
+                                    </button>
+                                    <button
+                                        className={"Response Bot Button AddtionalAnswers"}
+                                        onClick={() => setRenderQuestion(2)}
+                                    >
+                                        <i>"{questions[2].question}"</i>
+                                    </button>
+                                    <button
+                                        className={"Response Bot Button AddtionalAnswers"}
+                                        onClick={() => setRenderQuestion(3)}
+                                    >
+                                        "None of these help me"
+                                    </button>
+                                    <div className={"Response Bot MarginTop ConversationEnding"}>
+                                        Fantastic! If you have any more questions feel free to ask.
+                                    </div>
+                                </>
+                            )}
                         </>
                     )}
                 </div>

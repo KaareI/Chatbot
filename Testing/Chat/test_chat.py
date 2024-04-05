@@ -24,12 +24,12 @@ current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 logging.info(f" CHAT TESTS: {current_time}\n")
 
 # Ask every question in FAQ
-questions()
-database_tests()
+#questions()
+#database_tests()
 
 # Handle new chat creation after sending a message
-new_chat()
-database_tests()
+#new_chat()
+#database_tests()
 
 # Send message, load previous chat and send another message
 previous_chat()

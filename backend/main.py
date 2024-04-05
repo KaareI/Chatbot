@@ -40,8 +40,8 @@ class Bot:
             },
         ]
         for each_question in pre_built:
-            if each_question["Question"].lower() in text.lower():
-                return {"id": each_question["id"]}
+            if each_question["Question"].lower() == text.lower():
+                return [{"id": each_question["id"]}]
         return None
 
     def thank_responses(self, text):
@@ -83,7 +83,7 @@ class Bot:
 
         for variant in thank_variants:
             if text.lower() == variant:
-                return {"id": "9998"}
+                return [{"id": "9998"}]
         return None
 
 
