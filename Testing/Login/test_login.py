@@ -14,7 +14,7 @@ logging.basicConfig(filename="test_results.log", level=logging.INFO)
 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 # Execute test cases
-logging.info(f" LOGIN TESTS: {current_time}\n")
+logging.info(f" STARTED LOGIN TESTS AT: {current_time}\n")
 valid_login()
 invalid_username_login()
 invalid_password_login()

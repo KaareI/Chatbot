@@ -114,8 +114,6 @@ const SavedChats = ({
                 setStoredMessages([]);
                 // Save user messages after chat is rendered
                 setSaveUserMessages(true);
-                // Set the state of previousChat to true for stored messages orderId handling
-                setPreviousChat(true);
                 // Remove loading animation for generating answer
                 setGeneratedAnswer(true);
                 // Switch user view

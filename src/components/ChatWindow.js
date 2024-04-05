@@ -25,8 +25,6 @@ const ChatWindow = () => {
     /* State of bot generating answer */
     const [generatedAnswer, setGeneratedAnswer] = useState(false);
 
-    const [previousChat, setPreviousChat] = useState(false);
-
     /* Store messages */
     const [storedMessages, setStoredMessages] = useState([]);
     const handleStoredMessages = (message, userMessage) => {
@@ -117,8 +115,6 @@ const ChatWindow = () => {
         setStoredMessages([]);
         /* Save user messages */
         setSaveUserMessages(true)
-        // Set the state of previousChat to false for stored messages orderId handling
-        setPreviousChat(false)
         /* User is not in settings anymore so rerender chat */
         setInSettings(false);
     }
@@ -138,7 +134,6 @@ const ChatWindow = () => {
                         setSaveUserMessages={setSaveUserMessages}
                         setMessages={setMessages}
                         setStoredMessages={setStoredMessages}
-                        setPreviousChat={setPreviousChat}
                         setGeneratedAnswer={setGeneratedAnswer}
                     />
                     <p className={"Disclaimer UserInput"}><strong>Disclaimer:</strong> Your conversations are saved for
