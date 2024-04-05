@@ -84,7 +84,7 @@ const Chat = ({ messages, generatedAnswer, questions, setRenderQuestion }) => {
                             3) questions[1].id is not 9999 or questions[2].id is not 9999
                             4) If the question concerns FAQs
                              */}
-                            {index === messages.length - 1 && questions && (questions[1].id !== 9999 || questions[2].id !== 9999) && !excludedIds.includes(parseInt(questions[0].id, 10)) && (
+                            {index === messages.length - 1 && questions && questions[1].id != 9999 && questions[2].id != 9999 && !excludedIds.includes(parseInt(questions[0].id, 10)) && (
                                 <>
                                     <div className={"Response Bot MarginTop"}>
                                         <i>Did this answer help you?</i>
