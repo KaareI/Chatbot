@@ -81,16 +81,16 @@ const Chat = ({ messages, generatedAnswer, questions, setRenderQuestion }) => {
                             {/* Condtional rendering of addtional questions when:
                             1) It is last message of messages array
                             2) questions is not empty or false
-                            3) questions[1].id is not 9999 or questions[2].id is not 9999
-                            4) If the question concerns FAQs
-                             */}
-                            {index === messages.length - 1 && questions && questions[1].id != 9999 && questions[2].id != 9999 && !excludedIds.includes(parseInt(questions[0].id, 10)) && (
+                            3) question.id is does not include excludedIds
+                             */}  
+                            {index === messages.length - 1 && questions && questions.slice(0, 3).every(question => !excludedIds.includes(parseInt(question.id, 10))) && (
                                 <>
                                     <div className={"Response Bot MarginTop"}>
                                         <i>Did this answer help you?</i>
                                     </div>
                                     <div className={"Bot Flex"}>
                                         <button
+                                            id="Yes"
                                             className={"Button Conformation"}
                                             onClick={(event) => {
                                                 handleConformation(event);
@@ -99,6 +99,7 @@ const Chat = ({ messages, generatedAnswer, questions, setRenderQuestion }) => {
                                             Yes
                                         </button>
                                         <button
+                                            id="No"
                                             className={"Button Conformation"}
                                             onClick={(event) => {
                                                 handleConformation(event);
@@ -126,7 +127,7 @@ const Chat = ({ messages, generatedAnswer, questions, setRenderQuestion }) => {
                                         className={"Response Bot Button AddtionalAnswers"}
                                         onClick={() => setRenderQuestion(3)}
                                     >
-                                        "None of these help me"
+                                        <i>"None of these help me"</i>
                                     </button>
                                     <div className={"Response Bot MarginTop ConversationEnding"}>
                                         Fantastic! If you have any more questions feel free to ask.

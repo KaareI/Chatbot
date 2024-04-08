@@ -5,6 +5,8 @@ from datetime import datetime
 from test_questions import questions
 from test_new_chat import new_chat
 from test_previous_chat import previous_chat
+from test_helpful_answer import helpful_answer
+from test_unhelpful_answer import unhelpful_answer
 import sys
 import os
 
@@ -29,6 +31,14 @@ database_tests()
 
 # Handle new chat creation after sending a message
 new_chat()
+database_tests()
+
+# User finds the bot repsonse helpful
+helpful_answer()
+database_tests()
+
+# User finds the bot repsonse not useful
+unhelpful_answer()
 database_tests()
 
 # Send message, load previous chat and send another message
