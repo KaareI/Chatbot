@@ -8,9 +8,6 @@ import Navigation from "./Navigation";
 import Chat from "./Chat";
 import UserInput from "./UserInput";
 import SavedChats from "./SavedChats";
-import {
-    BotResponse
-} from './misc/BotAnswers';
 
 const ChatWindow = () => {
 
@@ -92,14 +89,6 @@ const ChatWindow = () => {
             saveMessages();
         }
     }, [storedMessages]);
-
-    //TEMPO
-    // FOR DESIGNING BOT MESSAGES
-/*     useEffect(() => {
-        handleSendMessage("Do trading conditions differ on my live and demo account?", true)
-        handleSendMessage(BotResponse[63].message, false)
-    }, []); */
-    //TEMPO
 
     /* Logic handles the rendering of settings */
     const [inSettings, setInSettings] = useState(false);
