@@ -8,6 +8,7 @@ import './ResponseContainer.css';
 import Greeting from "./Greeting";
 import Client from "./Client";
 
+
 const Chat = ({ messages, generatedAnswer, questions, setRenderQuestion }) => {
     const lastMessageRef = useRef(null);
 

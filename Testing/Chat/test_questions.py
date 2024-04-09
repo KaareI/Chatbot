@@ -38,9 +38,20 @@ def questions():
             user_input_id = "userInput"
 
             for question in CORPUS:
-                user_input = WebDriverWait(driver, 5).until(
-                    EC.presence_of_element_located((By.ID, user_input_id))
-                )
+                try:
+                    user_input = WebDriverWait(driver, 5).until(
+                        EC.presence_of_element_located((By.ID, user_input_id))
+                    )
+                # Can not find user input
+                except:
+                    logging.error(
+                        "   Failed to find user input field by HTML ID: "
+                        + user_input_id
+                        + "\n"
+                    )
+                    return
+                    driver.quit()
+                    
                 user_input.clear()
                 user_input.send_keys(question["Question"])
                 user_input.send_keys(Keys.RETURN)  # Press Enter key

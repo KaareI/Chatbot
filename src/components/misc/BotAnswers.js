@@ -1,4 +1,5 @@
 import Branding from "../Branding";
+import VWAP from "../../assets/VWAP.png"
 
 export const BotResponse = [
     {
@@ -947,58 +948,8 @@ export const BotResponse = [
                 <p className={"Response Bot"}>
                     If you decide to buy 6 Million EURUSD at market, the order will be filled through the top 3 price levels of the trading book:
                     <br /><br />
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><p><strong>BID Volume</strong></p></td>
-                                <td><p><strong>BID Quotes</strong></p></td>
-                                <td><p><strong>Spread</strong></p></td>
-                                <td><p><strong>ASK Quotes</strong></p></td>
-                                <td><p><strong>ASK Volume</strong></p></td>
-                            </tr>
-                            <tr>
-                                <td><p>1,000,000
-                                </p></td>
-                                <td><p>1.2020<strong>4</strong></p></td>
-                                <td><p>0.1 pip
-                                </p></td>
-                                <td><p>1.2020<strong>5</strong></p></td>
-                                <td><p>1,500,000
-                                </p></td>
-                            </tr>
-                            <tr>
-                                <td><p>5,000,000
-                                </p></td>
-                                <td><p>1.2020<strong>3</strong></p></td>
-                                <td><p>0.3 pip
-                                </p></td>
-                                <td><p>1.2020<strong>6</strong></p></td>
-                                <td><p>2,000,000
-                                </p></td>
-                            </tr>
-                            <tr>
-                                <td><p>600,000
-                                </p></td>
-                                <td><p>1.2020<strong>2</strong></p></td>
-                                <td><p>0.5 pip
-                                </p></td>
-                                <td><p>1.2020<strong>7</strong></p></td>
-                                <td><p>3,200,000
-                                </p></td>
-                            </tr>
-                            <tr>
-                                <td><p>2,200,000
-                                </p></td>
-                                <td><p>1.2020<strong>2</strong></p></td>
-                                <td><p>0.6 pip
-                                </p></td>
-                                <td><p>1.2020<strong>8</strong></p></td>
-                                <td><p>3,500,000
-                                </p></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br />
+                    <img src={VWAP} alt="VWAP Execution Table" style={{width: '100%', height: 'auto'}}/>
+                    <br /><br />
                     Note: quotes and volumes in this table are only for illustrative purposes and they will depend on the current market liquidity
                 </p>
                 <p className={"Response Bot"}>
