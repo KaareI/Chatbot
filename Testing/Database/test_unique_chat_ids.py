@@ -1,4 +1,5 @@
 import logging
+import mysql.connector
 import db
 import os
 from dotenv import load_dotenv

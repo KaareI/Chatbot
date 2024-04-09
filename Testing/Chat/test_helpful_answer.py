@@ -115,6 +115,8 @@ def helpful_answer():
             # Successful test
             if test_successful:
                 logging.info("   SUCCESS\n")
+            else:
+                logging.error("   FAILURE\n")
 
         else:
             # Handle unsuccessful login

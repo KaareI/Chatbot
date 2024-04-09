@@ -202,6 +202,8 @@ def previous_chat():
         # Successful test
         if test_successful:
             logging.info("   SUCCESS\n")
+        else:
+            logging.error("   FAILURE\n")
 
     except Exception as e:
         logging.error(f"   An error occurred: {str(e)}\n")

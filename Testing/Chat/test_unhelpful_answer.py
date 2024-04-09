@@ -1,5 +1,4 @@
 import logging
-import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -23,6 +22,7 @@ from corpus import CORPUS
 logging.basicConfig(filename="test_results.log", level=logging.INFO)
 
 test_successful = False
+
 
 def unhelpful_answer():
     driver = webdriver.Chrome()
@@ -179,6 +179,8 @@ def unhelpful_answer():
             # Successful test
             if test_successful:
                 logging.info("   SUCCESS\n")
+            else:
+                logging.error("   FAILURE\n")
 
         else:
             # Handle unsuccessful login

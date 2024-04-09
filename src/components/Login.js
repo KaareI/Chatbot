@@ -20,11 +20,9 @@ const Login = (props) => {
     /* Send user message when "ENTER" is pressed */
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
-            checkCredentials("test", "test")
-/*             handleLogin(); */
+            handleLogin();
         }
     };
-
 
     // Function to send credentials to the server
     const checkCredentials = (username, password) => {
