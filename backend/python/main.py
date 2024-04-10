@@ -6,7 +6,7 @@ import os
 
 app = Flask(__name__)
 # Enable CORS from backend server
-cors = CORS(app, resources={r"/*": {"origins": "http://localhost:5000"}})
+cors = CORS(app, resources={r"/*": {"origins": "http://backend-server:5000"}})
 # Load environment variables from .env file
 load_dotenv()
 

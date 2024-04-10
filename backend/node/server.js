@@ -11,7 +11,7 @@ const app = express();
 const PORT = 5000;
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'http://react-app:3000',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 };
 
@@ -275,7 +275,7 @@ app.post('/question', async (req, res) => {
     const secretKey = process.env.SECRET_KEY;
 
     try {
-        const response = await fetch('http://127.0.0.1:5001/ask', {
+        const response = await fetch('http://python-server:5001/ask', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

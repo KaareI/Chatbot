@@ -1,0 +1,38 @@
+services:
+  dependencies:
+    build:
+      context: ./Testing/Database
+      dockerfile: Dockerfile.dependencies
+  react-app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend-server
+      - dependencies
+  mysql:
+    image: mysql:8.1.0
+    environment:
+      MYSQL_HOST: localhost
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: chatbot
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./src/components/misc/chatbot_file.sql:/docker-entrypoint-initdb.d/dump.sql
+  python-server:
+    build: ./backend/python
+    ports:
+      - "5001:5001"
+    depends_on:
+      - mysql
+  backend-server:
+    build: ./backend/node
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+      - python-server
+
+volumes:
+  mysql-data:

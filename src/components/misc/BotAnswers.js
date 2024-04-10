@@ -21,7 +21,7 @@ export const BotResponse = [
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Can I change the balance of my demo account?"</em></h4>
                 <p className={"Response Bot"}>
-                    Yes. Simply send an email with your demo account number and decided balance to our <a title="Support Team" href="https://www.tickmill.eu/about/contact-us" target="_blank">Support team</a>.
+                    Yes. Simply send an email with your demo account number and decided balance to our <a title="Support Team" rel="noopener noreferrer" href="https://www.tickmill.eu/about/contact-us" target="_blank">Support team</a>.
                 </p>
             </>
         )
@@ -33,7 +33,7 @@ export const BotResponse = [
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"Can I change the settings of my demo account?"</em></h4>
                 <p className={"Response Bot"}>
-                    Yes. Simply send an email with your demo account number and decided changes to our <a title="Support Team" href="https://www.tickmill.eu/about/contact-us" target="_blank">Support team</a>.
+                    Yes. Simply send an email with your demo account number and decided changes to our <a title="Support Team" rel="noopener noreferrer" href="https://www.tickmill.eu/about/contact-us" target="_blank">Support team</a>.
                 </p>
             </>
         )
@@ -83,7 +83,7 @@ export const BotResponse = [
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"How do I open a MetaTrader account?"</em></h4>
                 <p className={"Response Bot"}>
-                    You can open an account in the Client Area, efficiently and securely. Click <a title="Here" target="_blank" href="https://secure.tickmill.eu/users/login">here</a> to open an account with us.
+                    You can open an account in the Client Area, efficiently and securely. Click <a title="Here" rel="noopener noreferrer" target="_blank" href="https://secure.tickmill.eu/users/login">here</a> to open an account with us.
                 </p>
             </>
         )
@@ -95,7 +95,7 @@ export const BotResponse = [
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"I forgot my Client Area password. What do I do?"</em></h4>
                 <p className={"Response Bot"}>
-                    Go to the <a title="Client Area" href="https://secure.tickmill.eu/users/login" target="_blank">Client Area</a> login page click on the ‘Forgot your Password?’ link under the ‘Login’ button and follow the instructions on how to reset your password. For further assistance, please contact our <a title="Client Support" href="https://www.tickmill.eu/about/contact-us" target="_blank">Client Support</a> team.
+                    Go to the <a title="Client Area" rel="noopener noreferrer" href="https://secure.tickmill.eu/users/login" target="_blank">Client Area</a> login page click on the ‘Forgot your Password?’ link under the ‘Login’ button and follow the instructions on how to reset your password. For further assistance, please contact our <a title="Client Support" rel="noopener noreferrer" href="https://www.tickmill.eu/about/contact-us" target="_blank">Client Support</a> team.
                 </p>
             </>
         )
@@ -107,7 +107,7 @@ export const BotResponse = [
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"I forgot my MetaTrader account password. What do I do?"</em></h4>
                 <p className={"Response Bot"}>
-                    You can change the password of your MetaTrader 4 or MetaTrader 5 account inside the secure <a title="Client Area" href="https://secure.tickmill.eu/users/login" target="_blank">Client Area</a>. For further assistance, please contact our <a title="Client Support" href="https://www.tickmill.eu/about/contact-us" target="_blank">Client Support</a> team.
+                    You can change the password of your MetaTrader 4 or MetaTrader 5 account inside the secure <a title="Client Area" href="https://secure.tickmill.eu/users/login" rel="noopener noreferrer" target="_blank">Client Area</a>. For further assistance, please contact our <a title="Client Support" rel="noopener noreferrer" href="https://www.tickmill.eu/about/contact-us" target="_blank">Client Support</a> team.
                 </p>
             </>
         )
@@ -127,7 +127,7 @@ export const BotResponse = [
                         <li>If there are no open positions and no withdrawals or deposits made for at least 60 days</li>
                     </ul>
                     <br />
-                    In such cases, the account will be automatically deactivated and archived by the system and it will no longer be visible in the <a title="Client Area" href="https://secure.tickmill.eu/users/login" target="_blank">Client Area</a>. Any balance will be transferred to the wallet.
+                    In such cases, the account will be automatically deactivated and archived by the system and it will no longer be visible in the <a title="Client Area" rel="noopener noreferrer" href="https://secure.tickmill.eu/users/login" target="_blank">Client Area</a>. Any balance will be transferred to the wallet.
                 </p>
             </>
         )
@@ -228,7 +228,7 @@ export const BotResponse = [
                     <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                     <h4 className={"Response Bot"}><em>"Where can I find my account balance and my trading history?"</em></h4>
                     <p className={"Response Bot"}>
-                        You can find your account balance and trading history in the MetaTrader platform. The account balance can also be seen in your <a title="Client Area" href="https://secure.tickmill.eu/users/login" target="_blank">Client Area</a>.
+                        You can find your account balance and trading history in the MetaTrader platform. The account balance can also be seen in your <a title="Client Area" rel="noopener noreferrer" href="https://secure.tickmill.eu/users/login" target="_blank">Client Area</a>.
                     </p>
                 </>
             )
@@ -296,7 +296,7 @@ export const BotResponse = [
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"How do I deposit funds to my account?"</em></h4>
                 <p className={"Response Bot"}>
-                    You can make a deposit inside your <a title="Client Area" target="_blank" href="https://secure.tickmill.eu/users/login">Client Area</a> using any <a title="Funding Option" target="_blank" href="https://www.tickmill.eu/conditions/deposit-and-withdrawal">funding option</a> that suits you best. There are no fees on deposits.
+                    You can make a deposit inside your <a title="Client Area" rel="noopener noreferrer" target="_blank" href="https://secure.tickmill.eu/users/login">Client Area</a> using any <a title="Funding Option" rel="noopener noreferrer" target="_blank" href="https://www.tickmill.eu/conditions/deposit-and-withdrawal">funding option</a> that suits you best. There are no fees on deposits.
                 </p>
             </>
         )
@@ -308,7 +308,7 @@ export const BotResponse = [
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"How do I withdraw funds from my account?"</em></h4>
                 <p className={"Response Bot"}>
-                    <a title="Log In" href="https://secure.tickmill.eu/users/login" target="_blank">Log in</a> to your Client Area and fill in the respective withdrawal form. There are no fees on withdrawals.
+                    <a title="Log In" href="https://secure.tickmill.eu/users/login" rel="noopener noreferrer" target="_blank">Log in</a> to your Client Area and fill in the respective withdrawal form. There are no fees on withdrawals.
                 </p>
             </>
         )
@@ -812,7 +812,7 @@ export const BotResponse = [
                     We do not offer MetaTrader MultiTerminal.
                 </p>
                 <p className={"Response Bot"}>
-                    If you wish, you can install multiple MetaTrader platforms and place them in different folders. You can download the <a title="Mt4 Platform" href="https://www.tickmill.eu/trading-platforms/mt4" target="_blank">MT4 platform</a> and the <a title="Mt5 Platform" href="https://www.tickmill.eu/trading-platforms/mt5" target="_blank">MT5 platform</a> from our website.
+                    If you wish, you can install multiple MetaTrader platforms and place them in different folders. You can download the <a title="Mt4 Platform" rel="noopener noreferrer" href="https://www.tickmill.eu/trading-platforms/mt4" target="_blank">MT4 platform</a> and the <a title="Mt5 Platform" rel="noopener noreferrer" href="https://www.tickmill.eu/trading-platforms/mt5" target="_blank">MT5 platform</a> from our website.
                 </p>
                 <p className={"Response Bot"}>
                     If you click ‘NEXT’ on the first screen, it will then install MT4 or MT5 to the default folder without asking. On the first screen, you will see the options ‘NEXT’, ‘CANCEL’ and ‘SETTINGS’. You need to click on ‘SETTINGS’ to change the default folder. Then, the system will give you the option to change the default install patch.
@@ -1114,7 +1114,7 @@ export const BotResponse = [
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
                 <h4 className={"Response Bot"}><em>"What are your spreads?"</em></h4>
                 <p className={"Response Bot"}>
-                    We offer floating spreads for both account types – <a title="Classic" target="_blank" href="https://www.tickmill.eu/trading/classic-account">Classic</a> and Raw. The Classic account offers variable spreads, starting from 1.6 pips with no commissions. The Raw account offers variable spreads, starting from 0.0 pips with low commissions.
+                    We offer floating spreads for both account types – <a title="Classic" target="_blank" rel="noopener noreferrer" href="https://www.tickmill.eu/trading/classic-account">Classic</a> and Raw. The Classic account offers variable spreads, starting from 1.6 pips with no commissions. The Raw account offers variable spreads, starting from 0.0 pips with low commissions.
                 </p>
                 <p className={"Response Bot"}>
                     You can check out our spreads by <a title="Clicking Here" href="/conditions/spreads-swaps">clicking here</a>. Keep in mind the MT4/5 charts are designed to display prices aligned with raw spreads, regardless of the account type you are using. For classic accounts, we recommend you keep in mind the spreads associated with it.
@@ -1138,7 +1138,7 @@ export const BotResponse = [
                         <li>Monday: 00:02 - 24:00</li>
                         <li>Tuesday to Thursday: 00:00 - 24:00</li>
                         <li>Friday: 00:00 - 23:58 (MT4 Server time).</li>
-                        <li>Find out more <a title="Here" href="https://www.tickmill.com/instruments/forex" target="_blank">here</a>
+                        <li>Find out more <a title="Here" href="https://www.tickmill.com/instruments/forex" target="_blank" rel="noopener noreferrer">here</a>
                         </li>
                     </ul>
                 </p>
@@ -1147,13 +1147,13 @@ export const BotResponse = [
                     <ul>
                         <li>Precious Metals: Specific trading hours <a title="Here"
                             href="https://www.tickmill.com/instruments/precious-metals"
-                            target="_blank">here</a></li>
+                            target="_blank" rel="noopener noreferrer">here</a></li>
                         <li>Stock Indices and Oil: Specific trading hours <a title="Here"
                             href="https://www.tickmill.com/instruments/stock-indices"
-                            target="_blank">here</a></li>
+                            target="_blank" rel="noopener noreferrer">here</a></li>
                         <li>Bonds: Specific trading hours <a title="Here"
                             href="https://www.tickmill.com/instruments/bonds"
-                            target="_blank">here</a></li>
+                            target="_blank" rel="noopener noreferrer">here</a></li>
                         <li>Stocks: Specific trading hours <a title="Here" href="/instruments/stocks"
                             target="_blank">here</a></li>
                     </ul>
@@ -1293,7 +1293,7 @@ export const BotResponse = [
                 <p className={"Response Bot"}>
                     Try to rephrase question or contact <a title="Client Support"
                         href="https://www.tickmill.eu/about/contact-us"
-                        target="_blank">Client
+                        target="_blank" rel="noopener noreferrer">Client
                         Support</a>
                 </p>
             </>
@@ -1318,7 +1318,7 @@ export const BotResponse = [
                 <p className={"Response Bot"}>
                     I'm having trouble answering to you. Try to rephrase question or contact <a title="Client Support"
                         href="https://www.tickmill.eu/about/contact-us"
-                        target="_blank">Client
+                        target="_blank" rel="noopener noreferrer">Client
                         Support</a>
                 </p>
             </>

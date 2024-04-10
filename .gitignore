@@ -6,8 +6,7 @@
 .pnp.js
 .idea
 __pycache__
-backend/node_modules
-
+backend/node/node_modules
 
 # testing
 Testing/test_results
