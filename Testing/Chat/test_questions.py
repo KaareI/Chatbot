@@ -14,7 +14,7 @@ import sys
 import os
 
 backend_dir = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), "..", "..", "backend")
+    os.path.join(os.path.dirname(__file__), "..", "..", "backend", "python")
 )
 sys.path.append(backend_dir)
 from corpus import CORPUS

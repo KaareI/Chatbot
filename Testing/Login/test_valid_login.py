@@ -87,7 +87,7 @@ def valid_login():
 
         except:
             logging.error(
-                " Failed to find chat window after successful login by HTML I: "
+                " Failed to find chat window after successful login by HTML ID: "
                 + chat_window_id
                 + "\n\n"
             )

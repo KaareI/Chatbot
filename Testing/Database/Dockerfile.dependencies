@@ -1,0 +1,11 @@
+# Base Image
+FROM python:3.12.0
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements.txt
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install -r requirements.txt
