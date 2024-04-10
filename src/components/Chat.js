@@ -12,6 +12,7 @@ import Client from "./Client";
 const Chat = ({ messages, generatedAnswer, questions, setRenderQuestion }) => {
     const lastMessageRef = useRef(null);
 
+    // Scrolls seamlessly to bots response
     const smoothScroll = () => {
         if (lastMessageRef.current) {
             lastMessageRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -34,6 +35,7 @@ const Chat = ({ messages, generatedAnswer, questions, setRenderQuestion }) => {
         );
     }
 
+    // Handles "Yes" or "No" button click
     const handleConformation = (event) => {
         // Get the clicked button element
         const clickedButton = event.target;

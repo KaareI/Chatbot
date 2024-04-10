@@ -948,7 +948,7 @@ export const BotResponse = [
                 <p className={"Response Bot"}>
                     If you decide to buy 6 Million EURUSD at market, the order will be filled through the top 3 price levels of the trading book:
                     <br /><br />
-                    <img src={VWAP} alt="VWAP Execution Table" style={{width: '100%', height: 'auto'}}/>
+                    <img src={VWAP} alt="VWAP Execution Table" style={{width: '100%', height: 'auto', maxWidth: '380px'}}/>
                     <br /><br />
                     Note: quotes and volumes in this table are only for illustrative purposes and they will depend on the current market liquidity
                 </p>
