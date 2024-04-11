@@ -1,19 +1,14 @@
 services:
-  dependencies:
-    build:
-      context: ./Testing/Database
-      dockerfile: Dockerfile.dependencies
   react-app:
     build: .
     ports:
       - "3000:3000"
     depends_on:
       - backend-server
-      - dependencies
   mysql:
     image: mysql:8.1.0
     environment:
-      MYSQL_HOST: localhost
+      MYSQL_HOST: mysql
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: chatbot
