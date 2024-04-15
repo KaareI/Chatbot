@@ -71,4 +71,5 @@ docker-compose up -d
 
 ## References
 
-- Cosine similarity calculation in Python: https://github.com/canonicalmg/FAQ-Chat-Bot
+* Cosine similarity calculation in Python: https://github.com/canonicalmg/FAQ-Chat-Bot
+* Loading animation: https://css-loaders.com/dots-bars/
