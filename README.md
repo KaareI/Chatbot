@@ -62,6 +62,7 @@ docker-compose up -d
     * Python (Flask): Implements the question-answering logic.
     * Node.js (Express.js): Handles data retrieval, conversation saving, and deletion of old data.
 * **Database:** MySQL
+* **Design:** Figma [Design file](https://www.figma.com/file/86kEi2PsP4jGAdUXrKCzvI/Chatbot?type=design&node-id=0%3A1&mode=design&t=birgjFIdqRU8hxLh-1)
 
 ## Screenshots
 
