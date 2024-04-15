@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Chatbot for FAQ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Chatbot for FAQ project! This README will guide you through setup and provide project details.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+**Prerequisites:**
 
-### `npm start`
+*   [Docker](https://www.docker.com/products/docker-desktop/)
+*   [Git](https://git-scm.com/downloads)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Steps:**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1.  Open your terminal as administrator.
+2.  Navigate to the desired installation directory.
+3.  Clone the repository:
 
-### `npm test`
+```bash
+git clone https://github.com/KaareI/Chatbot
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Build the application:
 
-### `npm run build`
+```bash
+docker-compose build --no-cache
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Launch the application in detached mode:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+docker-compose up -d
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. Access chatbot in your browser at http://localhost:3000.
 
-### `npm run eject`
+## Project Details
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Functionality:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Analyzes user input and compares it to existing FAQ questions using [Cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity)
+* Provides top 3 matches for questions.
+* Stores conversations for 30 days and then automatically deletes them.
+* Automated end-to-end tests with Pyhton Selenium, that cover key parts of application (currently not working)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Data Source:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* FAQ page of https://www.tickmill.eu/about/faq (last updated on Tuesday, April 9, 2024, at 13:20 GMT+3).
 
-## Learn More
+**Credentials:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* **Default User:**
+    * Username: kasutaja
+    * Password: kasutaja
+* **Test User (for testing purposes / end-to-end tests):**
+    * Username: test
+    * Password: test
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technology Stack
 
-### Code Splitting
+* **Frontend:** React
+* **Backend:**
+    * Python (Flask): Implements the question-answering logic.
+    * Node.js (Express.js): Handles data retrieval, conversation saving, and deletion of old data.
+* **Database:** MySQL
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Screenshots
 
-### Analyzing the Bundle Size
+![Login screen](/src/assets/Login_screen.png)
+![Chat example](/src/assets/Chat_example.png)
+![Saved chats](/src/assets/Saved_chats.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## References
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Cosine similarity calculation in Python: https://github.com/canonicalmg/FAQ-Chat-Bot
