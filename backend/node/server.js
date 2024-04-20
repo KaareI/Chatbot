@@ -12,7 +12,7 @@ const PORT = 5000;
 
 const corsOptions = {
     origin: 'http://react-app:3000',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    methods: 'GET,PUT,POST,DELETE'
 };
 
 app.use(express.json());
@@ -20,7 +20,7 @@ app.use(cors(corsOptions));
 app.use(session({
     secret: process.env.SECRET_KEY,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
 }));
 
 // Schedule to delete data every day

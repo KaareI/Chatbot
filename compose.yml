@@ -1,5 +1,6 @@
 services:
   react-app:
+    working_dir: /
     build: .
     ports:
       - "3000:3000"
@@ -12,22 +13,30 @@ services:
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: chatbot
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-P", "3306", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
     volumes:
       - mysql-data:/var/lib/mysql
       - ./src/components/misc/chatbot_file.sql:/docker-entrypoint-initdb.d/dump.sql
   python-server:
+    working_dir: /backend/python
     build: ./backend/python
     ports:
       - "5001:5001"
-    depends_on:
-      - mysql
   backend-server:
+    platform: linux/amd64
+    working_dir: /backend/node
     build: ./backend/node
     ports:
       - "5000:5000"
     depends_on:
-      - mysql
-      - python-server
+      mysql:
+        condition: service_healthy
+      python-server:
+        condition: service_started
 
 volumes:
   mysql-data:

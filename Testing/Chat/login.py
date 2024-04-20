@@ -35,7 +35,8 @@ def login_user(driver):
             EC.presence_of_element_located((By.CLASS_NAME, 'ChatWindow'))
         )
         
-        return True
+        if successful_login:
+            return True
 
     except Exception as e:
         logging.error(f'Unsuccessful login with username: {username}\n and password: {password}.\n\n Error: {str(e)}')

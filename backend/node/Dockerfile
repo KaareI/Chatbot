@@ -1,19 +1,16 @@
 # Base image
 FROM node:18.16.0
 
-# Set working directory
-WORKDIR /app
-
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
-# Copy project files
-COPY . .
+RUN npm install bcrypt --build-from-source
 
-RUN npm rebuild bcrypt --build-from-source
+# Copy project files
+COPY . /backend/node
 
 # Expose port
 EXPOSE 5000

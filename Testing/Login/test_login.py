@@ -15,7 +15,15 @@ current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 # Execute test cases
 logging.info(f" STARTED LOGIN TESTS AT: {current_time}\n")
+
+# Try login with valid credentials
 valid_login()
+
+# Try login with incorrect username
 invalid_username_login()
+
+# Try login with false password
 invalid_password_login()
+
+# Try login with empty login fields
 blank_fields_login()

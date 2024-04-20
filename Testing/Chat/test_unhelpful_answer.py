@@ -21,8 +21,8 @@ from corpus import CORPUS
 # Configure logging
 logging.basicConfig(filename="test_results.log", level=logging.INFO)
 
+global test_successful
 test_successful = False
-
 
 def unhelpful_answer():
     driver = webdriver.Chrome()
