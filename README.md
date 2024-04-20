@@ -17,7 +17,7 @@ Welcome to the Chatbot for FAQ project! This README will guide you through setup
 4. Clone the repository:
 
 ```bash
-git clone https://github.com/KaareI/Chatbot
+git clone https://github.com/KaareI/Chatbot && cd chatbot
 ```
 
 5. Build and launch the application. This process typically takes around 9 minutes, but it may vary depending on your computer's specifications and internet connection speed:
