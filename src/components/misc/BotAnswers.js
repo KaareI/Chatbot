@@ -378,7 +378,7 @@ export const BotResponse = [
         message: (
             <>
                 <Branding imgWidth="12px" imgHeight="16px" imgMarginRight="6px" sizeSmall={true} />
-                <h4 className={"Response Bot"}><em>"Can I have a professional account and a retail account at the same time?"</em>F</h4>
+                <h4 className={"Response Bot"}><em>"Can I have a professional account and a retail account at the same time?"</em></h4>
                 <p className={"Response Bot"}>
                     A client can be a Retail or a Professional Client. Tickmill Europe Ltd will not be offering a retail and a professional account at the same time. You will be classified either as a Professional or a Retail Client.
                 </p>
