@@ -1,11 +1,7 @@
 import logging
 import mysql.connector
 import db
-import os
-from dotenv import load_dotenv
-
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-load_dotenv(dotenv_path)
+from load_sql_statements import load_sql_query
 
 # Configure logging
 logging.basicConfig(filename='test_results.log', level=logging.INFO)
@@ -14,8 +10,8 @@ def delete_test_user_data():
     connection = db.create_connection()
     if connection:
         try:
-            # Get the SQL statement from environment variables
-            sql_statement = os.environ.get('DELETE_TEST_USER_DATA')
+            # Get the SQL statement
+            sql_statement = load_sql_query('DELETE_TEST_USER_DATA.sql')
 
             # Execute the SQL statement
             cursor = connection.cursor()

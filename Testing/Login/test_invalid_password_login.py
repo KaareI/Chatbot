@@ -86,7 +86,8 @@ def invalid_password_login():
             # Log test success
             logging.info("  SUCCESS\n\n")
         else:
-            logging.error('    Invalid password login failed:\n' + "Input fields had visual error feedback: " + str(input_fields.is_displayed()) + "\nUnauthorized found in browser console: " + str(error_found) + "\n\n")
+            logging.error('    Invalid password login failed:\n' + "Input fields had visual error feedback: " 
+            + str(input_fields.is_displayed()) + "\nUnauthorized found in browser console: " + str(error_found) + "\n\n")
 
     except Exception as e:
         # Log test failure

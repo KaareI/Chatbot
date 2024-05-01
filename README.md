@@ -1,6 +1,6 @@
 # Chatbot for FAQ
 
-Welcome to the Chatbot for FAQ project! This README will guide you through setup and provide project details.
+Welcome to the Chatbot for FAQ project! This README will guide you through setup and provide project details. Please note that this is a prototype.
 
 ## Installation
 
@@ -58,6 +58,8 @@ docker-compose build --no-cache && docker-compose up
 * **Test User (for testing purposes / end-to-end tests):**
     * Username: test
     * Password: test
+    
+**NOTE:** Please be aware that, for production, it's essential to remove all '#' characters from the .gitignore file, within the '#production' section.
 
 ## Technology Stack
 

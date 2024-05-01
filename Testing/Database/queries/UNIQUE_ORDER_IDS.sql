@@ -1,0 +1,1 @@
+SELECT Message_chat_id AS ChatID, Message_order_id AS OrderID FROM messagedata;

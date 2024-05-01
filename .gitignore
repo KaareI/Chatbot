@@ -8,6 +8,12 @@ backend/node/node_modules
 
 # production
 /build
+#/.env
+#/backend/node/.env
+#/backend/queries
+#/backend/python/.env
+#/Testing/Database/.env
+#/Testing/Database/queries
 
 npm-debug.log*
 yarn-debug.log*

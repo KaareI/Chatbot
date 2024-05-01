@@ -1,0 +1,1 @@
+DELETE FROM messagedata WHERE Message_user_id = 1;

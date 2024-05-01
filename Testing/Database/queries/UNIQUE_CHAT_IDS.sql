@@ -1,0 +1,1 @@
+SELECT DISTINCT Message_chat_id AS ChatID, Message_user_id AS UserID FROM messagedata;
