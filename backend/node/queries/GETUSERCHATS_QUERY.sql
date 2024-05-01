@@ -1,0 +1,1 @@
+SELECT Message_message AS message, Message_chat_id AS chatId, Message_time AS time FROM messagedata WHERE Message_order_id = 1 AND Message_user_id = ?

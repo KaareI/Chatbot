@@ -1,0 +1,1 @@
+INSERT INTO messagedata (Message_order_id, Message_user_id, Message_chat_id, Message_user_message, Message_time, Message_message) VALUES (?, ?, ?, ?, ?, ?)

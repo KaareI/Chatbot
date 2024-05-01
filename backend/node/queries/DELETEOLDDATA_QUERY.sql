@@ -1,0 +1,1 @@
+DELETE FROM messagedata WHERE Message_chat_id IN ({placeholders})

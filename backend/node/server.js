@@ -4,6 +4,8 @@ const cors = require('cors');
 const cron = require('node-cron');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
+const fs = require('fs');
+const path = require('path');
 const db = require('./db')
 require('dotenv').config();
 
@@ -14,6 +16,17 @@ const corsOptions = {
     origin: 'http://react-app:3000',
     methods: 'GET,PUT,POST,DELETE'
 };
+
+// Function to load SQL queries from files
+function loadSqlQuery(fileName) {
+    // Construct the file path
+    const filePath = path.join(__dirname, 'queries', fileName);
+    
+    // Read the contents of the file
+    const sqlQuery = fs.readFileSync(filePath, 'utf8');
+    
+    return sqlQuery;
+}
 
 app.use(express.json());
 app.use(cors(corsOptions));
@@ -55,7 +68,8 @@ function deleteOldData() {
     const formattedDate = thirtyDaysAgo.toISOString().split('T')[0];
 
     // Get old chat id's
-    const retrieveQuery = process.env.RETRIEVEOLDDATA_QUERY;
+    const retrieveQuery = loadSqlQuery('RETRIEVEOLDDATA_QUERY.sql');
+
     db.query(retrieveQuery, [formattedDate], (error, results) => {
         if (error) {
             console.error('Error retrieving old data:', error);
@@ -72,7 +86,9 @@ function deleteOldData() {
             // Generate the placeholders for the parameterized query
             const placeholders = chatIDsToDelete.map(() => '?').join(',');
 
-            const deleteQuery = process.env.DELETEOLDDATA_QUERY.replace('{placeholders}', placeholders);
+            const deleteQuery = loadSqlQuery('RETRIEVEOLDDATA_QUERY.sql');
+
+            const modifiedQuery = deleteQuery.replace('{placeholders}', placeholders);
 
             // Delete old chats with ids
             db.query(deleteQuery, chatIDsToDelete, (deleteError, deleteResults) => {
@@ -101,7 +117,7 @@ app.post('/login', async (req, res) => {
     const {username, password} = req.body;
 
     // Retrieve the hashed password from the database based on the username
-    const query = process.env.LOGIN_QUERY;
+    const query = loadSqlQuery('LOGIN_QUERY.sql');
 
     db.query(query, [username], async (err, results) => {
         if (err) {
@@ -188,7 +204,7 @@ app.put('/saveMessages', (req, res) => {
             time: getDatabaseDate(),
         }));
 
-        const query = process.env.SAVEMESSAGE_QUERY;
+        const query = loadSqlQuery('SAVEMESSAGE_QUERY.sql');
 
         // Iterate over each message and save it to the database if it hasn't been sent before
         messagesWithUserId.forEach(message => {
@@ -217,7 +233,8 @@ app.get('/userChats', (req, res) => {
     }
 
     // Execute a SQL query to retrieve message chat id and message time values
-    const query = process.env.GETUSERCHATS_QUERY;
+    const query = loadSqlQuery('GETUSERCHATS_QUERY.sql');
+
     db.query(query, [req.session.loggedInUserId], (error, results) => {
         if (error) {
             console.error('Error fetching messages:', error);
@@ -251,8 +268,8 @@ app.get('/previousChat', (req, res) => {
     }
 
     req.session.CurrentChatId = chatId;
-
-    const query = process.env.GETPREVIOUSCHAT_QUERY;
+    const query = loadSqlQuery('GETPREVIOUSCHAT_QUERY.sql');
+    
     db.query(query, [chatId, req.session.loggedInUserId], (error, results) => {
         if (error) {
             console.error('Error fetching messages:', error);

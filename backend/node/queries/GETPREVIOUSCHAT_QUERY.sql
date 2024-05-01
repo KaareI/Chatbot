@@ -1,0 +1,1 @@
+SELECT Message_message AS message, Message_order_id AS orderId, Message_user_message AS userMessage FROM messagedata WHERE Message_chat_id = ? AND Message_user_Id = ? ORDER BY Message_order_id ASC;
