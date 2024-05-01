@@ -58,8 +58,14 @@ docker-compose build --no-cache && docker-compose up
 * **Test User (for testing purposes / end-to-end tests):**
     * Username: test
     * Password: test
-    
-**NOTE:** Please be aware that, for production, it's essential to remove all '#' characters from the .gitignore file, within the '#production' section.
+
+## For further developement
+
+* Remove all '#' characters from the .gitignore file, within the '#production' section.
+* Automate the process of updating the data corpus.
+* Implement data hashing for inter-service communication instead of transmitting plain text.
+* Enhance automated testing for more comprehensive coverage.
+* Hard-coded answers in React should have diffrent implementation.
 
 ## Technology Stack
 
