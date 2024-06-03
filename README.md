@@ -28,7 +28,7 @@ docker-compose build --no-cache && docker-compose up
 
 6. Access chatbot in your browser at http://localhost:3000.
 
-"Experiencing difficulty accessing your React application at localhost:3000? Here are some troubleshooting steps:
+Experiencing difficulty accessing your React application at localhost:3000? Here are some troubleshooting steps:
 
 * Try loading on incognito tab.
 * Restart the Docker container.
@@ -49,6 +49,7 @@ docker-compose build --no-cache && docker-compose up
 **Data Source:**
 
 * FAQ page of https://www.tickmill.eu/about/faq (last updated on Tuesday, April 9, 2024, at 13:20 GMT+3).
+* Questions that the chabot answers are located at /backend/python/corpus.py
 
 **Credentials:**
 
