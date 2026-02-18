@@ -79,8 +79,8 @@ Experiencing difficulty accessing your React application at localhost:3000? Here
 
 ## Screenshots
 
-![Login screen](/src/assets/Login_screen.png)
 ![Chat example](/src/assets/Chat_example.png)
+![Login screen](/src/assets/Login_screen.png)
 ![Saved chats](/src/assets/Saved_chats.png)
 
 ## Docker optimization issues
